@@ -1,8 +1,7 @@
 require_relative '../config/environment'
 
-welcome
-get_user
+play_game
 
+#binding.pry
 
-
-puts "HELLO WORLD"
+puts "Hello World"
