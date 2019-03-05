@@ -1,7 +1,5 @@
 require_relative '../config/environment'
+require_relative '../db/seeds'
 
-User.delete_all
-
-claire = User.create(name: "Claire")
 
 puts "HELLO WORLD"
