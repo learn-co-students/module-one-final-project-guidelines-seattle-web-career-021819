@@ -26,5 +26,4 @@ def question_loop
 end
 
 def game_show_print(question)
-  
 end
