@@ -7,6 +7,7 @@ def initiate_game(user)
   new_game = Game.create
   new_game_session = GameSession.new(user_id: user.id, game_id: new_game.id)
 
+  Question.delete_all
   TriviaApi.get_questions.each do |question|
     Question.create(question)
   end
