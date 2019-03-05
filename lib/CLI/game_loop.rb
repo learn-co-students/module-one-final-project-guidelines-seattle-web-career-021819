@@ -18,3 +18,7 @@ def question_loop
     binding.pry
   end
 end
+
+def pretty_print_question(question)
+
+end
