@@ -15,7 +15,6 @@ end
 
 def question_loop
   Question.all.each do |quest|
-    binding.pry
     puts quest.question
     answer_hash = shuffle_and_print_answers(quest)
     puts
@@ -48,10 +47,12 @@ end
 def check_answer(quest, answer_hash, user_input)
   #track points in game_session. store correctness?
   if answer_hash[user_input.upcase] == quest.correct
-    puts "Correct"
+    puts "Correct".colorize(:green)
     puts
   else
-    puts "Bearly missed it."
+    puts "Bearly missed it.".colorize(:red)
+    puts
+    puts "The correct answer was: #{quest.correct}"
     puts
   end
 end
