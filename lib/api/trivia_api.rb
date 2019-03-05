@@ -2,13 +2,12 @@ TRIVIA_API = "https://opentdb.com/api.php?"
 
 class TriviaApi
   def self.get_json(amount:, category:, difficulty:, type:)
-    api_url = "
-      #{TRIVIA_API}
-      amount=#{amount}
-      &category=#{category}
-      &difficulty=#{difficulty}
-      &type=#{type}
-    "
+    api_url =
+      "#{TRIVIA_API}" +
+      "amount=#{amount}" +
+      "&category=#{category}" +
+      "&difficulty=#{difficulty}" +
+      "&type=#{type}"
     response = RestClient.get(api_url)
     json = JSON.parse(response.body)
   end
@@ -21,17 +20,19 @@ class TriviaApi
       type: type
     )
     points = {"easy" => 5, "medium" => 10, "hard" => 20}
-    question_hash = {}
+    questions = []
 
-    data["results"].each do |question|
-      question_hash["question"] = question["question"]
-      question_hash["correct"] = question["correct_answer"]
-      question_hash["incorrect1"] = question["incorrect_answers"][0]
-      question_hash["incorrect2"] = question["incorrect_answers"][1]
-      question_hash["incorrect3"] = question["incorrect_answers"][2]
-      question_hash["score"] = points[question["difficulty"]]
+    questions << data["results"].map do |question|
+      {
+        question: question["question"],
+        correct: question["correct_answer"],
+        incorrect1: question["incorrect_answers"][0],
+        incorrect2: question["incorrect_answers"][1],
+        incorrect3: question["incorrect_answers"][2],
+        score: points[question["difficulty"]]
+      }
     end
 
-    question_hash
+    questions
   end
 end
