@@ -1,7 +1,7 @@
 TRIVIA_API = "https://opentdb.com/api.php?"
 
 class TriviaApi
-  def self.get_json(amount: "10", category: "9", difficulty: "easy", type: "multiple")
+  def self.get_json(amount:, category:, difficulty:, type:)
     api_url = "
       #{TRIVIA_API}
       amount=#{amount}
@@ -13,12 +13,17 @@ class TriviaApi
     json = JSON.parse(response.body)
   end
 
-  def self.get_questions
-    data = self.get_json["results"]
+  def self.get_questions(amount: "10", category: "9", difficulty: "easy", type: "multiple")
+    data = self.get_json(
+      amount: amount,
+      category: category,
+      difficulty: difficulty,
+      type: type
+    )
     points = {"easy" => 5, "medium" => 10, "hard" => 20}
     question_hash = {}
 
-    data.each do |question|
+    data["results"].each do |question|
       question_hash["question"] = question["question"]
       question_hash["correct"] = question["correct_answer"]
       question_hash["incorrect1"] = question["incorrect_answers"][0]
