@@ -47,6 +47,7 @@ end
 def check_answer(quest, answer_hash, user_input)
   #track points in game_session. store correctness?
   if answer_hash[user_input.upcase] == quest.correct || user_input.downcase == quest.correct.downcase
+
     puts "Correct".colorize(:green)
     puts
   else
