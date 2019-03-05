@@ -26,6 +26,7 @@ def question_loop
   end
 end
 
+
 def shuffle_and_print_answers(question)
   answers = [
     question.correct,
@@ -57,6 +58,7 @@ end
 
 
 
-def pretty_print_question(question)
+
+def game_show_print(question)
 
 end

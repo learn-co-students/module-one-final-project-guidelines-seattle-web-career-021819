@@ -12,7 +12,7 @@ class TriviaApi
     json = JSON.parse(response.body)
   end
 
-  def self.get_questions(amount: "10", category: "9", difficulty: "easy", type: "multiple")
+  def self.get_questions(amount: "100", category: "9", difficulty: "easy", type: "multiple")
     data = self.get_json(
       amount: amount,
       category: category,
@@ -24,15 +24,20 @@ class TriviaApi
 
     questions << data["results"].map do |question|
       {
-        question: question["question"],
-        correct: question["correct_answer"],
-        incorrect1: question["incorrect_answers"][0],
-        incorrect2: question["incorrect_answers"][1],
-        incorrect3: question["incorrect_answers"][2],
+        question: self.sanitize_string(question["question"]),
+        correct: self.sanitize_string(question["correct_answer"]),
+        incorrect1: self.sanitize_string(question["incorrect_answers"][0]),
+        incorrect2: self.sanitize_string(question["incorrect_answers"][1]),
+        incorrect3: self.sanitize_string(question["incorrect_answers"][2]),
         score: points[question["difficulty"]]
       }
     end
 
     questions
+  end
+
+  # Changes html characters to their literal form
+  def self.sanitize_string(string)
+    HTMLEntities.new.decode(string)
   end
 end
