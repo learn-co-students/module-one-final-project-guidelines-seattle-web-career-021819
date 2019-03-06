@@ -101,6 +101,7 @@ def shuffle_and_print_answers(question)
   return answers_hash
 end
 
+
 # Compares user answer with one of the possible answers
 def check_answer(quest, answer_hash, user_input)
   #track points in game_session. store correctness?
@@ -144,6 +145,7 @@ def show_answer()
   print_answers
 end
 
+
 def print_answers(answers)
   Terminal::Table.new do |t|
     t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
@@ -163,17 +165,13 @@ def print_colorized_answers(answers, guess, correct)
       "#{letter}. #{answer}"
     end
   end
+end
 
+def print_answers(answers)
   Terminal::Table.new do |t|
-    t.add_row [
-      colorized_ans[0],
-      colorized_ans[1]
-    ]
-    t.add_row [
-      colorized_ans[2],
-      colorized_ans[3]
-    ]
-    t.style = {:all_separators => true, :width => #{$GAME_WITH}}
+    t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
+    t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
+    t.style = {:all_separators => true, :width => $GAME_WIDTH}
   end
 end
 
