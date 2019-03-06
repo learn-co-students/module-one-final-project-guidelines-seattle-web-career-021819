@@ -14,6 +14,10 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "game_sessions", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "game_id"
+  end
+
+  create_table "games", force: :cascade do |t|
   end
 
   create_table "questions", force: :cascade do |t|

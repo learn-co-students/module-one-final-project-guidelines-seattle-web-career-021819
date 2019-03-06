@@ -12,7 +12,7 @@ class TriviaApi
     json = JSON.parse(response.body)
   end
 
-  def self.get_questions(amount: "100", category: "9", difficulty: "easy", type: "multiple")
+  def self.get_questions(amount: "10", category: "9", difficulty: "easy", type: "multiple")
     data = self.get_json(
       amount: amount,
       category: category,
