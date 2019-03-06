@@ -61,7 +61,6 @@ end
 
 
 def shuffle_and_print_answers(question)
-  binding.pry
   answers = [
     question.correct,
     question.incorrect1,

@@ -6,7 +6,7 @@ class GameSession < ActiveRecord::Base
     UserGuess.all.select {|guess| guess.correctness}
   end
 
-  def total_score
+  def current_total_score
     total = self.get_correct_questions.inject(0){|sum, guess| sum+guess.question.score}
     self.update(total_score: total)
     total

@@ -40,17 +40,36 @@ end
 
 
 def menu(user)
+  system "clear"
   aa = Artii::Base.new :font => 'small'
   puts aa.asciify("What would you like to do?")
   puts
   puts aa.asciify("1. Play a new game")
-  puts aa.asciify("2. Exit")
+  puts aa.asciify("2. View Leaderboard")
+  puts aa.asciify("3. exit")
   user_input = gets.chomp
   if user_input == "1"
     start_game(user)
-    #new_game_session = GameSession.new(user_id: user.id)
+  elsif user_input == "2"
+    display_leaderboard(user)
+  elsif user_input == "3"
+    puts aa.asciify("Thanks for playing!")
+    return nil
   else
-    puts "Thanks for playing!"
-    return
+    puts "Selection not recognized"
   end
+end
+
+def display_leaderboard(user)
+  system "clear"
+  count = 1
+  puts "Leaderboard:"
+  puts
+  top_scores = GameSession.all.max_by(10){|sesh| sesh.total_score}
+  top_scores.each do |gg|
+   puts "#{count}. #{gg.user.name}"
+    count += 1
+   end
+   sleep(3)
+   menu(user)
 end
