@@ -59,7 +59,9 @@ def check_answer(quest, answer_hash, user_input)
     puts "Correct"
     puts
   else
-    puts "Bearly missed it."
+    puts "Bearly missed it.".colorize(:red)
+    puts
+    puts "The correct answer was: #{quest.correct}"
     puts
   end
 
