@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has_many :games, through: :game_result
+  has_many :game_sessions
 end
