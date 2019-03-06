@@ -9,12 +9,17 @@ def get_recipes_by_ingredient(ingredient)
     puts "ingredients: #{xx["ingredients"]}"
     puts
   end
-  save_to_favorites
+  # choice = save_to_favorites
+  # if choice == y
 end
 
 def save_to_favorites
   puts "Would you like to save any recipes to your favorites? (Y/N)"
   choice = gets.chomp.downcase
+end
+
+def yes_save_to_favorites
+
 end
 
   # We can access the recipe name through response_hash["results"][0]["title"]
