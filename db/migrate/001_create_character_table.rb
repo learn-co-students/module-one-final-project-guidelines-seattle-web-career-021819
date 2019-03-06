@@ -5,7 +5,6 @@ class CreateCharacterTable < ActiveRecord::Migration[4.2]
 			t.string :name
 			t.string :seasons
 			t.string :books
-			t.string :character_url
 		end
 	end
 end

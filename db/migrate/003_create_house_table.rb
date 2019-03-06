@@ -5,7 +5,7 @@ class CreateHouseTable < ActiveRecord::Migration[4.2]
 			t.string :name
 			t.string :members
 			t.string :coat_of_arms
-			t.string :house_url
 		end
 	end
+	
 end
