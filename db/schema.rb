@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 4) do
+ActiveRecord::Schema.define(version: 6) do
 
   create_table "games", force: :cascade do |t|
     t.integer "number_correct"
     t.integer "number_incorrect"
     t.integer "user_id"
+    t.integer "game_points"
   end
 
   create_table "recipes", force: :cascade do |t|
     t.string "drink"
     t.string "instructions"
+    t.string "ingredients"
   end
 
   create_table "rounds", force: :cascade do |t|
