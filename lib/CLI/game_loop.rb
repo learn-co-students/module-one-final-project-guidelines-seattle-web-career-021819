@@ -24,14 +24,16 @@ def question_loop
 
   $MAX_QUESTIONS.times do |index|
     difficulty = "easy"
-    if (5...7).include?(index)
+    if (5..7).include?(index)
       difficulty = "medium"
     elsif index > 7
       difficulty = "hard"
     end
 
     question = Question.find do |question|
-      question.difficulty == difficulty && !question.used
+      question.difficulty == difficulty &&
+      !question.used &&
+      question.correct != nil
     end
 
     answer_hash = shuffle_and_print_answers(question)
@@ -59,6 +61,7 @@ end
 
 
 def shuffle_and_print_answers(question)
+  binding.pry
   answers = [
     question.correct,
     question.incorrect1,
