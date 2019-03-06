@@ -3,6 +3,8 @@ $game_session = nil
 def start_game(user)
   initiate_game(user)
   question_loop
+  end_message
+  play_again?(user)
 end
 
 def clear_all
@@ -21,6 +23,7 @@ def initiate_game(user)
 end
 
 def question_loop
+  system "clear"
   Question.all.each do |quest|
     answer_hash = shuffle_and_print_answers(quest)
     puts
@@ -28,6 +31,8 @@ def question_loop
     puts "Enter your answer:"
     user_input = gets.chomp
     check_answer(quest, answer_hash, user_input)
+    sleep(1.5)
+    system "clear"
   end
 end
 
@@ -79,5 +84,21 @@ def print_answers(answers)
     t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
     t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
     t.style = {:all_separators => true, :width => 100}
+  end
+
+def end_message
+  puts "Thanks for playing!"
+  puts "You got #{$game_session.get_correct_questions.length} questions correct and earned #{$game_session.total_score} points!!"
+  puts
+end
+
+def play_again?(user)
+  puts "Would you like to play again? (yes/no)"
+  user_input = gets.chomp
+  if user_input == "yes"
+    start_game(user)
+  else
+    puts "Goodbye!"
+    return
   end
 end
