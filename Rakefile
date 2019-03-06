@@ -11,3 +11,8 @@ desc 'Run the CLI'
 task :run do
 	CLI.run
 end
+
+desc 'run the seed file'
+task :seed do
+	Seed.run
+end
