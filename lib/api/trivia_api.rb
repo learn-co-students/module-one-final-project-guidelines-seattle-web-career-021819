@@ -20,20 +20,18 @@ class TriviaApi
       type: type
     )
     points = {"easy" => 5, "medium" => 10, "hard" => 20}
-    questions = []
 
-    questions << data["results"].map do |question|
+    data["results"].map do |question|
       {
         question: self.sanitize_string(question["question"]),
         correct: self.sanitize_string(question["correct_answer"]),
         incorrect1: self.sanitize_string(question["incorrect_answers"][0]),
         incorrect2: self.sanitize_string(question["incorrect_answers"][1]),
         incorrect3: self.sanitize_string(question["incorrect_answers"][2]),
+        difficulty: difficulty,
         score: points[question["difficulty"]]
       }
     end
-
-    questions
   end
 
   # Changes html characters to their literal form

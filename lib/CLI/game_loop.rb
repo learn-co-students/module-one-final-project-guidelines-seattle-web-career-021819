@@ -1,4 +1,5 @@
 $game_session = nil
+$MAX_QUESTIONS = 10
 
 def start_game(user)
   initiate_game(user)
@@ -21,17 +22,26 @@ end
 def question_loop
   system "clear"
   counter = 0
-  Question.all.each do |quest|
-    return if counter == 3
-    counter += 1
 
+  Question.all.each do |quest|
+    return if counter == $MAX_QUESTIONS
+
+    # Skip question if not the right difficulty for current round
+    if (counter < 5 && quest.difficulty != "easy" ||
+        (5...7).include?(counter) && quest.difficulty != "medium" ||
+        counter > 7 && quest.difficulty != "hard")
+      next
+    end
+
+    counter += 1
     answer_hash = shuffle_and_print_answers(quest)
     puts
 
+    puts "(#{quest.difficulty.capitalize}, $#{quest.score})"
     puts "Enter your answer:"
     user_input = gets.chomp
     check_answer(quest, answer_hash, user_input)
-    sleep(3)
+    #sleep(3)
     system "clear"
   end
 end
@@ -68,7 +78,7 @@ def check_answer(quest, answer_hash, user_input)
   puts
 
   if correctness
-    puts "Correct!".colorize(:green)
+    puts "Pawesome!".colorize(:green)
     puts
   else
     puts "Bearly missed it.".colorize(:red)
@@ -123,7 +133,7 @@ end
 def end_message
   puts "Thanks for playing!"
   print "You got #{$game_session.get_correct_questions.length} questions correct "
-  print "with a total score of #{$game_session.total_score}!!"
+  print "with total earnings of $#{$game_session.total_score}!!"
   puts
 end
 
