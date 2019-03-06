@@ -79,6 +79,11 @@ def check_answer(quest, answer_hash, user_input)
   )
 end
 
+def show_answer()
+  system "clear"
+  print_answers
+end
+
 def print_answers(answers)
   Terminal::Table.new do |t|
     t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
