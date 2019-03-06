@@ -1,26 +1,31 @@
 def welcome
-  puts "Welcome to our program!"
+  puts "Hello!  Welcome to Foodflix!"
+end
 
+def get_user_name
   run = true
   while run
     puts "Have you been here before? (y/n)"
     choice = gets.chomp.downcase
-
-    if choice == "y"
+    if choice == "y" || choice == "yes"
       puts "Please enter username:"
       name = gets.chomp
-      username = User.find_by(name: name)
       run = false
+      user = User.find_by(name: name)
+      if user == nil
+        puts "cannot find user"
+      else
+        return user
+      end
     elsif choice == "n"
       puts "Create username:"
       name = gets.chomp
-      username = User.create(name: name)
       run = false
+      return User.create(name: name)
     else
-      puts "Invalid input!"
+      puts "Please enter (y)es or (n)o"
     end
   end
-  menu
 end
 
 def menu
