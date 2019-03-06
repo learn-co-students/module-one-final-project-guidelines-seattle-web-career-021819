@@ -3,7 +3,6 @@ require_relative '../config/environment'
 API_URL = "https://www.episodate.com/api/"
 
 
-# how can we clear the terminal each time we go into a new menu??
 # (prevent text clutter + spacing with empty puts lines)
 
 
@@ -11,42 +10,32 @@ class CLI
   attr_accessor :user, :title_search, :menu_message
 
 
-
-  # FOR NOW: keep loaded User instance in @@user - available to all CLI methods
-  # @@user = nil
-  # def self.user
-  #   @@user
-  # end
-
-  # FOR NOW: store current title search in @@title_search - use to re-search
-  # by page number within get_array_of_tv_shows, elsif "pages > 1" option
-  # @@title_search = ""
-  # def self.title_search
-  #   @@title_search
-  # end
-
-
   def self.run
     self.welcome_message
   end
 
 
-
+## ========== WELCOME PAGE (TOP) ========== ##
   def self.welcome_message
     system('clear')
-    puts "Welcome to the Show Randomizer!"
-    puts "Here, you can select your favorite shows"
-    puts "and generate playlists of random episodes"
-    puts "from your favorites!"
+    puts "
+Welcome to the Show Randomizer!
+-------------------------------
+Here, you can select your favorite shows
+and generate playlists of random episodes
+from your favorites!"
     puts
     self.user_select
   end
 
 
-
+## ========== WELCOME PAGE (BOTTOM) ========== ##
   def self.user_select
     puts
-    puts "Please enter a user name:"  # add: ", or press Enter to see a list of users:" ???
+    puts "
+Please enter a user name:
+NOTE: Usernames are case sensitive"
+# add: ", or press Enter to see a list of users:" ???
     user_input = STDIN.gets.chomp
     # check if string is empty, or only spaces (try the string.strip! method)
     self.create_or_load_profile(user_input)
@@ -55,81 +44,62 @@ class CLI
 
 
   def self.create_or_load_profile(user_input)
-    # search User database by user_name = user_input
-    # if record found, load profile
-    # if no record found, .create new row for User table
-    # =>  COME BACK TO THIS ONCE USER TABLE/DATABASE IS SET UP
-
-    user_profile = User.find_by(name: user_input) #=> returns User instance
-
+    user_profile = User.find_by(name: user_input)
     if user_profile == nil
-      # create a new User row with :name = user_input
       @user = User.create(name: user_input)
-
     else
       @user = user_profile
     end
-
-    self.main_menu#(@user)
+    self.main_menu
   end
 
 
-
-  def self.main_menu#(user)
+## ========== USER MAIN MENU (DISPLAY)========== ##
+  def self.main_menu
     @menu_message = nil
     system('clear')
-    puts "Welcome #{@user.name}!"   # check this interpolation once User class is built
-    puts "Please select an option below:"
-    puts
-          # main menu options
-    puts "1. Search shows by title" # expand to include genre, and network?
-    puts "2. Show current list of favorite shows"
-    puts "3. Generate playlist!"
-    puts "4. Select different user"
+    puts "
+Welcome #{@user.name}!
+Please select an option below:
+
+1. [Search] shows by title
+2. Show current list of [favorite] shows
+3. Generate [playlist]!
+4. Select different [user]
+
+0. [Q]uit"
     # puts "4. Show user statistics"
-    puts "0. Quit"
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
 
 
-
+## ========== USER MAIN MENU (BACKEND)========== ##
   def self.route_user_input(user_input)
-    # build tree of user_input options here
-    if user_input == "1"
+    if user_input == "1" || user_input.downcase.include?("search")
       self.search_shows_by_title
-    elsif user_input == "2"
+    elsif user_input == "2" || user_input.downcase.include?("favorite")
       print_list_of_favorites(@user)
-    elsif user_input == "3"
+    elsif user_input == "3" || user_input.downcase.include?("playlist")
       fetch_episodes_for_playlist(@user)
-    elsif user_input == "4"
+    elsif user_input == "4" || user_input.downcase.include?("user")
       self.user_select
-
-    elsif user_input == "0"
+    elsif user_input == "0" || user_input.downcase.include?("q")
       system('clear')
       puts "Thank you! Goodbye!"
       puts
       exit
-
-
     else
       puts "Invalid input. Please try again:"
-      self.main_menu#(self.user)
+      self.main_menu
     end
   end
 
 
-  # def self.get_list_of_favorites(user)
-  #   favorites_array = Favorite.where(user_id: user.id)
-  #   favorites_array.each do |favorite_instance|
-  #     sid = favorite_instance["show_id"]
-  #
-  #   binding.pry
-  # end
-
+## ========== OPTION 1. FROM USER MAIN MENU ========== ##
   def self.search_shows_by_title
     system('clear')
-    puts "Enter show title:"
+    puts "Enter show title to search:"
     @title_search = STDIN.gets.chomp
     url = API_URL + "search?q=" + @title_search
     url.gsub!(" ", "%20")
@@ -139,10 +109,7 @@ class CLI
 
 
   def self.get_array_of_tv_shows(json)
-    # check page numbers - if "pages" > 1, then iterate through each page (While? Until? Each?)
-    # to grab correct array of shows
     all_pages = []
-
     if json["pages"] == 1
       all_pages = json["tv_shows"]
 
@@ -170,75 +137,85 @@ class CLI
   end
 
 
+
+  def self.select_id_from_results(formatted_list)
+    puts "Please enter the id number for the show you are looking for:"
+    user_input = STDIN.gets.chomp
+    formatted_list.each do |string|
+      if string.include?(user_input)
+        url = API_URL + "show-details?q=" + user_input.to_s
+        show_hash = get_json(url)["tvShow"] #=> hash of ONLY THE SPECIFIC show's details
+        @menu_message = nil
+        self.display_found_show_details(show_hash)
+      end
+    end
+    @menu_message = "ID not found. Please enter a valid ID"
+    self.print_search_results(formatted_list)
+  end
+
+
+## ========== RESULTS PAGE (DISPLAY)========== ##
   def self.print_search_results(formatted_list)
+    system('clear')
+    puts @menu_message
     puts
     puts "Search results (total count: #{formatted_list.count})"
     puts "=================================="
     puts formatted_list
     puts
-    self.select_id_from_results
+    self.select_id_from_results(formatted_list)
   end
 
 
-
-  def self.select_id_from_results
-    puts "Please enter the id number for the show you are looking for:"
-    user_input = STDIN.gets.chomp
-    url = API_URL + "show-details?q=" + user_input.to_s
-    show_hash = get_json(url)["tvShow"] #=> hash of ONLY THE SPECIFIC show's details
-    self.display_found_show_details(show_hash)
-  end
-
-  # now that we have the show details in a nice lil hash,
-  # we can operate on it from a sub-menu:
-  # 1. Show description
-  # 2. Add to Favorites
-  # 3. Search for another title
-  # 4. Back to main menu
-
+## ========== SHOW DETAILS PAGE (DISPLAY)========== ##
   def self.display_found_show_details(show_hash)
     system('clear')
-    puts
-    puts "You have selected:"
-    puts "=================="
-    puts "Title: #{show_hash["name"]}"
-    puts "Genre: #{show_hash["genres"][0]}"   # currently, only grabs first genre listed (in array)
-    puts "Air Date: #{show_hash["start_date"]}"
-    puts "Network: #{show_hash["network"]}"
-    #Scrub HTML tags from description
-    puts "Description: \n#{show_hash["description"]}".gsub!(/<br\s*\/?>/, '').gsub!(/<b\s*\/?>/, '').gsub!(/\<\/b>/, '')
-    puts
     puts @menu_message
-    puts "What would you like to do?"
+    puts
+    puts "
+You have selected:
+==================
+Title: #{show_hash["name"]}
+Genre: #{show_hash["genres"][0]}
+Air Date: #{show_hash["start_date"]}
+Network: #{show_hash["network"]}
 
-#    puts "1. Show description"
-    puts "1. Add to Favorites"
-    puts "2. Search for another title"
-    puts "3. Back to main menu"
-    puts "0. Exit"
+Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/?>/, '').gsub(/\<\/b>/, '').gsub(/<i\s*\/?>/, '').gsub(/\<\/i>/, '')
+    # currently only displays first genre (in array)
+    # .gsub stuff: Scrub HTML tags from description
+    puts
+    puts
+    puts "
+What would you like to do?
+1. [Add] to Favorites
+2. [Search] for another title
+3. [Back] to main menu
+0. [Q]uit"
 
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)
   end
 
-
+## ========== SHOW DETAILS PAGE (BACKEND) ========== ##
   def self.what_would_you_like_to_do(user_input, show_hash)
-    if user_input == "1"
+    if user_input == "1" || user_input.downcase.include?("add")
       self.add_to_favorites(show_hash)
-    elsif user_input == "2"
+    elsif user_input == "2" || user_input.downcase.include?("search")
       self.search_shows_by_title
-    elsif user_input == "3"
+    elsif user_input == "3" || user_input.downcase.include?("back")
       self.main_menu
-    elsif user_input == "0"
+    elsif user_input == "0" || user_input.downcase.include?("q")
       system('clear')
       puts "Thank you! Goodbye!"
       exit
     else
-      puts "Please enter a valid option"
+      @menu_message = "Please enter a valid option"
       self.display_found_show_details(show_hash)
     end
   end
 
+
+## ========== OPTION 1. FROM SHOW DETAILS ========== ##
   def self.add_to_favorites(show_hash)
    favorite_show = Favorite.find_by(user_id: @user.id, show_id: show_hash["id"])
 
@@ -267,7 +244,7 @@ class CLI
   #   self.main_menu#(@user)
   #   end
 
-
+## ================ FOR DEVELOPMENT ============= ##
   # this method is only for development - use it to test the outputs for the
   # season_list and title_list arrays below
   def self.episode_menu(episode_array)
