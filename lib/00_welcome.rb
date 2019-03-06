@@ -15,6 +15,7 @@ def get_user_name
       if user == nil
         puts "cannot find user"
       else
+        puts "Welcome back #{user.name}"
         return user
       end
     elsif choice == "n"
@@ -28,8 +29,8 @@ def get_user_name
   end
 end
 
-def menu
-  puts "Please pick a number:"
+def main_menu
+  puts "Please make a selection"
   puts "0. exit"
   puts "1. search for a recipe by ingredient"
   puts "2. view favorite recipes"
@@ -39,16 +40,22 @@ def menu
 end
 
 def menu_selection(choice)
-  if choice == "0" || "exit"
-
-  elsif choice == "1" || "search"
+  case choice
+  when "0", "exit"
+    puts "Goodbye #{$username.name}! Happy cooking!"
+  when "1", "search"
     # search for a recipe by ingredient
     get_ingredient_from_user
-  elsif choice == "2"
+  when "2"
     # view user's favorite recipes
-  elsif choice == "3"
+  when "3"
     # view most popular recipes
   else
     puts "Invalid input!"
   end
 end
+
+
+# def get_and_return_user_input
+#   choice = gets.chomp
+# end
