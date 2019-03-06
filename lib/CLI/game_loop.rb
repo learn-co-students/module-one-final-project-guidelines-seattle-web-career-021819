@@ -26,7 +26,6 @@ end
 # Question loop that fetches questions with increasing difficulty
 def question_loop
   system "clear"
-  binding.pry
 
   $MAX_QUESTIONS.times do |index|
     difficulty = "easy"
@@ -39,10 +38,6 @@ def question_loop
     curr_question = Question.find do |question|
       question.difficulty == difficulty &&
       !question.used
-    end
-
-    if (!curr_question)
-      binding.pry
     end
 
     # If we run out of unique questions, reset
