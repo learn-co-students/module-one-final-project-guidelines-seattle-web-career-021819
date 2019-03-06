@@ -9,4 +9,5 @@ require_relative '../db/seeds'
 # binding.pry
 puts "HELLO WORLD"
 welcome
-get_ingredient_from_user
+ingredient = get_ingredient_from_user
+get_recipes_by_ingredient(ingredient)
