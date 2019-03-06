@@ -11,24 +11,24 @@ def welcome
   aa = Artii::Base.new :font => 'big'
   bb = Artii::Base.new :font => 'univers'
   cc = Artii::Base.new :font => 'epic'
-  # puts aa.asciify('Welcome to')
-  # sleep(2)
-  # system "clear"
-  # puts aa.asciify("Who Wants To Be A")
-  # sleep(1)
-  # puts bb.asciify("Millionbear").center(100)
-  # puts cc.asciify("$$$").center(100)
-  # sleep(2)
-#   system "clear"
-#   puts aa.asciify "With your host"
-#   sleep(1)
-#   system "clear"
-#   puts bb.asciify "Alex Trebear"
-#   sleep(2)
-#   system "clear"
-#   bear_host
+  puts aa.asciify('Welcome to')
+  sleep(2)
+  system "clear"
+  puts aa.asciify("Who Wants To Be A")
+  sleep(1)
+  puts bb.asciify("Millionbear").center(100)
+  puts cc.asciify("$$$").center(100)
+  sleep(2)
+  system "clear"
+  puts aa.asciify "With your host"
+  sleep(1)
+  system "clear"
+  puts bb.asciify "Alex Trebear"
+  sleep(2)
+  system "clear"
+  bear_host
 end
-#
+
 def get_user
   dd= Artii::Base.new :font => 'invita'
   puts
