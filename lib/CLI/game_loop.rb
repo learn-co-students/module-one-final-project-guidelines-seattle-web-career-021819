@@ -25,12 +25,11 @@ end
 def question_loop
   system "clear"
   Question.all.each do |quest|
-    puts quest.question
     answer_hash = shuffle_and_print_answers(quest)
     puts
-    puts"Enter your answer:"
+
+    puts "Enter your answer:"
     user_input = gets.chomp
-    #take letter or text?
     check_answer(quest, answer_hash, user_input)
     sleep(1.5)
     system "clear"
@@ -46,14 +45,17 @@ def shuffle_and_print_answers(question)
     question.incorrect3
   ].shuffle
 
-  hash = {}
+  answers_hash = {}
   letter = "A"
   answers.each do |answer|
-    puts "#{letter}. #{answer}"
-    hash[letter] = answer
+    answers_hash[letter] = answer
     letter = letter.next
   end
-  return hash
+
+  puts question.question.center(100)
+  puts
+  puts print_answers(answers_hash)
+  return answers_hash
 end
 
 def check_answer(quest, answer_hash, user_input)
@@ -77,6 +79,13 @@ def check_answer(quest, answer_hash, user_input)
   )
 end
 
+def print_answers(answers)
+  Terminal::Table.new do |t|
+    t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
+    t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
+    t.style = {:all_separators => true, :width => 100}
+  end
+
 def end_message
   puts "Thanks for playing!"
   puts "You got #{$game_session.get_correct_questions.length} questions correct and earned #{$game_session.total_score} points!!"
@@ -92,8 +101,4 @@ def play_again?(user)
     puts "Goodbye!"
     return
   end
-end
-
-def game_show_print(question)
-
 end
