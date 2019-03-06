@@ -33,6 +33,7 @@ class CLI
 
 
   def self.welcome_message
+    system('clear')
     puts "Welcome to the Show Randomizer!"
     puts "Here, you can select your favorite shows"
     puts "and generate playlists of random episodes"
@@ -45,8 +46,9 @@ class CLI
 
   def self.user_select
     puts
-    puts "Please enter a user name:"
+    puts "Please enter a user name:"  # add: ", or press Enter to see a list of users:" ???
     user_input = STDIN.gets.chomp
+    # check if string is empty, or only spaces (try the string.strip! method)
     self.create_or_load_profile(user_input)
   end
 
@@ -68,25 +70,24 @@ class CLI
       @user = user_profile
     end
 
-    self.main_menu(@user)
+    self.main_menu#(@user)
   end
 
 
 
-  def self.main_menu(user)
-    puts
-    puts
+  def self.main_menu#(user)
+    system('clear')
     puts "Welcome #{@user.name}!"   # check this interpolation once User class is built
     puts "Please select an option below:"
     puts
           # main menu options
     puts "1. Search shows by title" # expand to include genre, and network?
-  #  puts "1.5 Search shows by id number" - build in as hidden menu option??
     puts "2. Show current list of favorite shows"
     puts "3. Generate playlist!"
     puts "4. Select different user"
     # puts "4. Show user statistics"
     puts "0. Quit"
+    puts "1.5. Skip to method fetch_episodes_by_id, for The Simpsons (id# 6122)"
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -106,20 +107,25 @@ class CLI
       self.user_select
 
     elsif user_input == "0"
+      system('clear')
       puts "Thank you! Goodbye!"
       puts
       exit
 
+    # easter egg / shortcut to: fetch_episodes_by_id
+    elsif user_input == "1.5"
+      self.fetch_episodes_by_id("6122")
+
     else
       puts "Invalid input. Please try again:"
-      self.main_menu(self.user)
+      self.main_menu#(self.user)
     end
   end
 
 
 
   def self.search_shows_by_title
-    puts
+    system('clear')
     puts "Enter show title:"
     @title_search = STDIN.gets.chomp
     url = API_URL + "search?q=" + @title_search
@@ -206,19 +212,131 @@ class CLI
   # 4. Back to main menu
 
   def self.display_found_show_details(show_hash)
+    system('clear')
     puts
     puts "You have selected:"
     puts "=================="
     puts "Title: #{show_hash["name"]}"
     puts "Genre: #{show_hash["genres"][0]}"   # currently, only grabs first genre listed (in array)
     puts "Air Date: #{show_hash["start_date"]}"
+    puts "Description: \n#{show_hash["description"]}"
     puts
     puts "What would you like to do?"
-    puts "1. Show description"
-    puts "2. Add to Favorites"
-    puts "3. Search for another title"
-    puts "4. Back to main menu"
+
+#    puts "1. Show description"
+    puts "1. Add to Favorites"
+    puts "2. Search for another title"
+    puts "3. Back to main menu"
+    puts "0. Exit"
+
     user_input = STDIN.gets.chomp
+    self.what_would_you_like_to_do(user_input, show_hash)
+  end
+
+
+  def self.what_would_you_like_to_do(user_input, show_hash)
+    if user_input == "1"
+      self.add_to_favorites(show_hash)
+      # puts "UNDER CONSTRUCTION"
+      # self.display_found_show_details(show_hash)
+    elsif user_input == "2"
+      self.search_shows_by_title
+    elsif user_input == "3"
+      self.main_menu
+    elsif user_input == "0"
+      system('clear')
+      puts "Thank you! Goodbye!"
+      exit
+    else
+      puts "Please enter a valid option"
+      self.display_found_show_details(show_hash)
+    end
+  end
+
+   def self.add_to_favorites(show_hash)
+     favorite_show = Favorite.find_by(user_id: @user.id, show_id: show_hash["id"])
+
+     if favorite_show == nil
+       Favorite.new(user_id: @user.id, show_id: show_hash["id"])
+       puts "#{show_hash["name"]} has been added to your favorites!"
+       self.display_found_show_details(show_hash)
+     else
+       puts "#{show_hash["name"]} is already in your favorites!"
+       self.display_found_show_details(show_hash)
+     end
+   end
+  #
+  #
+  #   user_profile = User.find_by(name: user_input) #=> returns User instance
+  #
+  #   if user_profile == nil
+  #     # create a new User row with :name = user_input
+  #     @user = User.create(name: user_input)
+  #
+  #   else
+  #     @user = user_profile
+  #   end
+  #
+  #   self.main_menu#(@user)
+  #   end
+
+
+  # ==========================
+  # Isa's work - home, 3-5-19
+  # ==========================
+
+
+  def self.fetch_episodes_by_id(num)
+    url = API_URL + "show-details?q=" + num
+    episode_array = self.get_json(url)["tvShow"]["episodes"] #=> array of hash-episodes
+    self.episode_menu(episode_array)
+  end
+
+
+
+  # the methods below demonstrate code that can be used to organize/collect
+  # seasons and episode names in a formatted fashion.
+  # use main_menu input "1.5" to skip to this part.
+  # once comfortable with the organization of the data,
+  # build a method to prepare strings for entry into the Playlist table
+  # (individual episodes will be selected PRIOR to this formatting via a Randomizer)
+
+
+  # this method is only for development - use it to test the outputs for the
+  # season_list and title_list arrays below
+  def self.episode_menu(episode_array)
+    puts
+    puts "List of Seasons:"
+    puts "================"
+    puts self.season_list(episode_array)
+    puts
+    puts "Please enter a season number:"
+    user_input = STDIN.gets.chomp.
+    # should printing the episode list happen in a different method??
+    season_num = user_input.downcase!.tr("season", "").strip!.to_i
+    puts
+    puts self.title_list(episode_array, season_num)
+  end
+
+
+
+  # creates an array of formatted "Season #" strings - can be printed as a list
+  def self.season_list(episode_array)
+    episode_array.map do |episode_hash|
+      "Season #{episode_hash["season"]}"
+    end.uniq
+  end
+
+
+  # creates an array of formatted episode titles - modify to include S01e01 notation??
+  def self.title_list(episode_array, season_num)
+    title_array = []
+    episode_array.each do |episode_hash|
+      if episode_hash["season"] == season_num
+        title_array << "#{episode_hash["episode"]}. #{episode_hash["name"]}"
+      end
+    end
+    title_array
   end
 
 

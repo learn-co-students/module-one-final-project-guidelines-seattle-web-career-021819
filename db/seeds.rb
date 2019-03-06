@@ -1,5 +1,3 @@
-
-def seed_db
   User.create(id: 1, name: "Dr. Mantis Toboggan")        #user_id = 1
   User.create(id: 2, name: "Big Dumb Flightless Bird")   #user_id = 2
   User.create(id: 3, name: "Ratslayer")                  #user_id = 3
@@ -17,4 +15,3 @@ def seed_db
 
   Favorite.create(id: 3, user_id: 2, show_id: 2)
   Favorite.create(id: 4, user_id: 2, show_id: 3)
-end
