@@ -21,6 +21,7 @@ def initiate_game(user)
 end
 
 def question_loop
+  system "clear"
   Question.all.each do |quest|
     puts quest.question
     answer_hash = shuffle_and_print_answers(quest)
@@ -29,6 +30,8 @@ def question_loop
     user_input = gets.chomp
     #take letter or text?
     check_answer(quest, answer_hash, user_input)
+    sleep(1.5)
+    system "clear"
   end
 end
 
