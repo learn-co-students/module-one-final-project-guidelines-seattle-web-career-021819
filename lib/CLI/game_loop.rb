@@ -40,9 +40,6 @@ def question_loop
       !question.used
     end
 
-    if (!curr_question)
-    end
-
     # If we run out of unique questions, reset
     if !curr_question
       Question.select do |question|
@@ -113,11 +110,23 @@ def check_answer(quest, answer_hash, user_input)
   puts print_colorized_answers(answer_hash, user_input.upcase, quest.correct)
   puts
 
+  correct_msg = [
+    "Pawesome!",
+    "Beary good!",
+    "More money for your honey!"
+  ]
+  wrong_msg = [
+    "Bearly missed it.",
+    "I hate to be the bearer of bad news...",
+    "Not this time, Goldilocks.",
+    "You can still claw your way back."
+  ]
+
   if correctness
-    puts "Pawesome!".colorize(:green)
+    puts correct_msg.sample.colorize(:green)
     puts
   else
-    puts "Bearly missed it.".colorize(:red)
+    puts wrong_msg.sample.colorize(:red)
     puts
   end
 
