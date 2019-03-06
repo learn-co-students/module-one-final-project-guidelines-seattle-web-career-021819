@@ -7,7 +7,25 @@ def play_game
 end
 
 def welcome
-  puts "Who Wants To Be A Millionare?"
+  system "clear"
+  aa = Artii::Base.new :font => 'big'
+  bb = Artii::Base.new :font => 'univers'
+  cc = Artii::Base.new :font => 'epic'
+  puts aa.asciify('Welcome to')
+  sleep(2)
+  system "clear"
+  puts aa.asciify("Who Wants To Be A")
+  sleep(1)
+  puts bb.asciify("Millionbear").center(100)
+  puts cc.asciify("$$$").center(100)
+  sleep(2)
+  system "clear"
+  puts aa.asciify "With your host"
+  sleep(1)
+  system "clear"
+  puts bb.asciify "Alex Trebear"
+  sleep(2)
+  system "clear"
 end
 
 def get_user
