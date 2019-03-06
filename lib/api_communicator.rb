@@ -24,5 +24,11 @@ def print_recipe_names(recipe_array)
       puts "#{i+1}. #{title}"
     end
  end
+ # puts
+ # puts "Here are some recipes to try! Select a number of a recipe you'd like to save."
+end
+
+
+def save_recipe
 
 end
