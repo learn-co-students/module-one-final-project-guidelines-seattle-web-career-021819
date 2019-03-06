@@ -70,14 +70,18 @@ end
 
 def display_leaderboard(user)
   system "clear"
+  rows = []
   count = 1
   puts "Leaderboard:"
   puts
   top_scores = GameSession.all.max_by(10){|sesh| sesh.total_score}
   top_scores.each do |gg|
-   puts "#{count}. #{gg.user.name}"
+    rows << [count, gg.user.name, gg.total_score]
+   #puts "#{count}. #{gg.user.name}"
     count += 1
    end
+   table = Terminal::Table.new :headings => ["Rank", "Name", "Score"], :rows => rows
+   puts table
    sleep(3)
    menu(user)
 end

@@ -20,7 +20,7 @@ end
 # start new game session for user
 def initiate_game(user)
   clear_all
-  $game_session = GameSession.create(user_id: user.id)
+  $game_session = GameSession.create(user_id: user.id, total_score: 0)
 end
 
 # Question loop that fetches questions with increasing difficulty
