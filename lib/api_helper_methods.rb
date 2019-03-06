@@ -118,3 +118,17 @@ def print_new_playlist(episode_array)
   STDIN.gets.chomp
   CLI.main_menu
 end
+
+
+
+# ============================
+# Isa - 3-6-18 afternoon, solo
+# ============================
+
+# plug into:
+# CLI, #47 - self.user_select (add option to see list of users - will need to check if user_input == "")
+# CLI, #78 - self.main_menu (add option to see list of users)
+def list_all_users
+  puts User.pluck(:name)
+end
+# after printing list, re-prompt to enter User name
