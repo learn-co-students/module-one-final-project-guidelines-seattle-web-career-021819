@@ -52,7 +52,7 @@ def shuffle_and_print_answers(question)
     letter = letter.next
   end
 
-  puts question.question.center(100)
+  puts question.question.center(80)
   puts
   puts print_answers(answers_hash)
   return answers_hash
@@ -83,8 +83,9 @@ def print_answers(answers)
   Terminal::Table.new do |t|
     t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
     t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
-    t.style = {:all_separators => true, :width => 100}
+    t.style = {:all_separators => true, :width => 80}
   end
+end
 
 def end_message
   puts "Thanks for playing!"
