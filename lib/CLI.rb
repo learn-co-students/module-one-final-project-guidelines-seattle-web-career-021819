@@ -2,13 +2,6 @@ GAME_OF_THRONES_URL = "https://anapioficeandfire.com/api/"
 
 class CLI
 
-	def self.run
-		count = 0
-		while count < 2139
-			character = GameOfThronesApi.get_characters[count]
-			Character.new = 
-	end
-
 
 
 
