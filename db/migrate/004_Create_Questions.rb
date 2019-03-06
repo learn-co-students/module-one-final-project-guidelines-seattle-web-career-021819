@@ -7,6 +7,7 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
       t.string :incorrect2
       t.string :incorrect3
       t.integer :score
+      t.boolean :used
     end
   end
 end

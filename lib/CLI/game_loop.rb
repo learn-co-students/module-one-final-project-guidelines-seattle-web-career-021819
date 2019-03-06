@@ -10,21 +10,21 @@ end
 def clear_all
   GameSession.delete_all
   UserGuess.delete_all
-  Question.delete_all
+  #Question.delete_all
 end
 
 def initiate_game(user)
   clear_all
   $game_session = GameSession.create(user_id: user.id)
-
-  TriviaApi.get_questions.each do |question|
-    Question.create(question)
-  end
 end
 
 def question_loop
   system "clear"
+  counter = 0
   Question.all.each do |quest|
+    return if counter == 3
+    counter += 1
+
     answer_hash = shuffle_and_print_answers(quest)
     puts
 
@@ -122,14 +122,15 @@ end
 
 def end_message
   puts "Thanks for playing!"
-  puts "You got #{$game_session.get_correct_questions.length} questions correct and earned #{$game_session.total_score} points!!"
+  print "You got #{$game_session.get_correct_questions.length} questions correct "
+  print "with a total score of #{$game_session.total_score}!!"
   puts
 end
 
 def play_again?(user)
   puts "Would you like to play again? (yes/no)"
   user_input = gets.chomp
-  if user_input == "yes"
+  if user_input.start_with?("y")
     start_game(user)
   else
     puts "Goodbye!"
