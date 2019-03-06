@@ -1,6 +1,7 @@
 # Main method for starting the game
 # Called in bin/run.rb
 def play_game
+  print "\e[8;1000;1000t"
   welcome if !$TEST_MODE
   current_user = get_user
   menu(current_user)
