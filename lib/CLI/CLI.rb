@@ -51,7 +51,7 @@ def menu(user)
   puts
   puts aa.asciify("1. Play a new game")
   puts aa.asciify("2. View Leaderboard")
-  puts aa.asciify("3. exit")
+  puts aa.asciify("3. Exit")
   user_input = gets.chomp
   if user_input == "1"
     start_game(user)
