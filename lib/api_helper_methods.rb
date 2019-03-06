@@ -1,0 +1,120 @@
+# UNDER CONSTRUCTION
+def fetch_list_of_favorites(user)
+  favorites_array = Favorite.where(user_id: user.id)
+end
+
+
+def print_list_of_favorites(user)
+  show_array = []
+  favorites_array = fetch_list_of_favorites(user)
+  if favorites_array.count == 0
+    system('clear')
+    puts "You have no favorites yet!"
+  else
+    favorites_array.each do |favorite_instance|
+      show =  Show.find_by(api_id: favorite_instance.show_id)
+      show_array << show.name
+    end
+    system('clear')
+    puts "Here are your favorite shows!"
+    puts "-----------------------------"
+    puts show_array
+  end
+
+  puts
+  puts "Press enter to return to episode menu"
+  STDIN.gets.chomp
+  CLI.main_menu
+end
+
+
+def get_json(url)
+  response = RestClient.get(url)
+  json = JSON.parse(response.body) #=> json = hash, containing "page", "pages", "tv_shows" keys
+end
+
+
+def search_results(all_pages)
+  formatted_list = []
+  all_pages.each do |show_hash|
+    formatted_list << "id. #{show_hash["id"]} - #{show_hash["name"]}"
+  end
+  if formatted_list.count != 1
+    self.print_search_results(formatted_list)
+  else
+    fetch_show_by_id(all_pages[0]["id"].to_s)
+  end
+end
+
+# the methods below demonstrate code that can be used to organize/collect
+# seasons and episode names in a formatted fashion.
+# use main_menu input "1.5" to skip to this part.
+# once comfortable with the organization of the data,
+# build a method to prepare strings for entry into the Playlist table
+# (individual episodes will be selected PRIOR to this formatting via a Randomizer)
+
+def fetch_show_by_id(num)
+  url = API_URL + "show-details?q=" + num
+  show_hash = get_json(url)["tvShow"]
+  self.display_found_show_details(show_hash)
+end
+
+
+def fetch_episodes_by_id(num)
+  url = API_URL + "show-details?q=" + num.to_s
+  show_info = get_json(url)["tvShow"]
+  episode_array = show_info["episodes"] #=> array of hash-episodes
+  episode_array.each do |episode_hash|
+    episode_hash["show_name"] = show_info["name"]
+  end
+  episode_array
+end
+
+
+def add_show_to_table(show_hash)
+  show = Show.find_by(api_id: show_hash["id"])
+  if show == nil
+    Show.create(api_id: show_hash["id"], name: show_hash["name"], description: show_hash["description"], genre: show_hash["genres"][0], network: show_hash["network"], start_date: show_hash["start_date"])
+  end
+end
+
+
+def fetch_episodes_for_playlist(user)
+  all_episodes_array = []
+  favorites_array = fetch_list_of_favorites(user)
+  favorites_array.each do |favorite_instance|
+    all_episodes_array += fetch_episodes_by_id(favorite_instance.show_id)
+  end
+  add_playlist_to_table(all_episodes_array, user)
+end
+
+
+def add_playlist_to_table(array, user)
+  random_array = array.sample(10)
+  episode_array = random_array.map do |episode_hash|
+    "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
+  end
+  Playlist.create(user_id: user.id,
+    episode_1: episode_array[0],
+    episode_2: episode_array[1],
+    episode_3: episode_array[2],
+    episode_4: episode_array[3],
+    episode_5: episode_array[4],
+    episode_6: episode_array[5],
+    episode_7: episode_array[6],
+    episode_8: episode_array[7],
+    episode_9: episode_array[8],
+    episode_10: episode_array[9]
+  )
+  print_new_playlist(episode_array)
+end
+
+def print_new_playlist(episode_array)
+  system('clear')
+  puts "Playlist created!"
+  puts episode_array
+  puts
+  puts "Press enter to return to the main menu"
+  STDIN.gets.chomp
+  CLI.main_menu
+end
