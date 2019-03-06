@@ -58,7 +58,10 @@ def menu(user)
   elsif user_input == "2"
     display_leaderboard(user)
   elsif user_input == "3"
+    system "clear"
     puts aa.asciify("Thanks for playing!")
+    bye_bear
+    sleep(3)
     return nil
   else
     puts "Selection not recognized"
