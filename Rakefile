@@ -8,7 +8,7 @@ task :console do
 end
 
 
-desc 'runs the program'
+desc 'runs the bin/CLI.rb program'
 task :run do
   CLI.run
 end
@@ -19,5 +19,5 @@ task :reset do
   User.destroy_all
   Favorite.destroy_all
   Show.destroy_all
-  seed_db
+  Rake::Task["db:seed"].invoke
 end

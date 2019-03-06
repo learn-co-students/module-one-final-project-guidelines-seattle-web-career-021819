@@ -46,8 +46,9 @@ class CLI
 
   def self.user_select
     puts
-    puts "Please enter a user name:"
+    puts "Please enter a user name:"  # add: ", or press Enter to see a list of users:" ???
     user_input = STDIN.gets.chomp
+    # check if string is empty, or only spaces (try the string.strip! method)
     self.create_or_load_profile(user_input)
   end
 
@@ -81,12 +82,12 @@ class CLI
     puts
           # main menu options
     puts "1. Search shows by title" # expand to include genre, and network?
-  #  puts "1.5 Search shows by id number" - build in as hidden menu option??
     puts "2. Show current list of favorite shows"
     puts "3. Generate playlist!"
     puts "4. Select different user"
     # puts "4. Show user statistics"
     puts "0. Quit"
+    puts "1.5. Skip to method fetch_episodes_by_id, for The Simpsons (id# 6122)"
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -110,6 +111,10 @@ class CLI
       puts "Thank you! Goodbye!"
       puts
       exit
+
+    # easter egg / shortcut to: fetch_episodes_by_id
+    elsif user_input == "1.5"
+      self.fetch_episodes_by_id("6122")
 
     else
       puts "Invalid input. Please try again:"
@@ -217,11 +222,13 @@ class CLI
     puts "Description: \n#{show_hash["description"]}"
     puts
     puts "What would you like to do?"
+
 #    puts "1. Show description"
     puts "1. Add to Favorites"
     puts "2. Search for another title"
     puts "3. Back to main menu"
     puts "0. Exit"
+
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)
   end
@@ -272,5 +279,65 @@ class CLI
   #
   #   self.main_menu#(@user)
   #   end
+
+
+  # ==========================
+  # Isa's work - home, 3-5-19
+  # ==========================
+
+
+  def self.fetch_episodes_by_id(num)
+    url = API_URL + "show-details?q=" + num
+    episode_array = self.get_json(url)["tvShow"]["episodes"] #=> array of hash-episodes
+    self.episode_menu(episode_array)
+  end
+
+
+
+  # the methods below demonstrate code that can be used to organize/collect
+  # seasons and episode names in a formatted fashion.
+  # use main_menu input "1.5" to skip to this part.
+  # once comfortable with the organization of the data,
+  # build a method to prepare strings for entry into the Playlist table
+  # (individual episodes will be selected PRIOR to this formatting via a Randomizer)
+
+
+  # this method is only for development - use it to test the outputs for the
+  # season_list and title_list arrays below
+  def self.episode_menu(episode_array)
+    puts
+    puts "List of Seasons:"
+    puts "================"
+    puts self.season_list(episode_array)
+    puts
+    puts "Please enter a season number:"
+    user_input = STDIN.gets.chomp.
+    # should printing the episode list happen in a different method??
+    season_num = user_input.downcase!.tr("season", "").strip!.to_i
+    puts
+    puts self.title_list(episode_array, season_num)
+  end
+
+
+
+  # creates an array of formatted "Season #" strings - can be printed as a list
+  def self.season_list(episode_array)
+    episode_array.map do |episode_hash|
+      "Season #{episode_hash["season"]}"
+    end.uniq
+  end
+
+
+  # creates an array of formatted episode titles - modify to include S01e01 notation??
+  def self.title_list(episode_array, season_num)
+    title_array = []
+    episode_array.each do |episode_hash|
+      if episode_hash["season"] == season_num
+        title_array << "#{episode_hash["episode"]}. #{episode_hash["name"]}"
+      end
+    end
+    title_array
+  end
+
 
 end
