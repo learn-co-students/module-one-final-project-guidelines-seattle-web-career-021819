@@ -13,6 +13,7 @@ end
 def get_user
   puts "What's your name?"
   new_name = gets.chomp
+  puts
   new_user = User.create(name: new_name)
   new_user
 end
