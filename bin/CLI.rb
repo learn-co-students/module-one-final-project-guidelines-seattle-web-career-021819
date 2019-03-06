@@ -8,7 +8,7 @@ API_URL = "https://www.episodate.com/api/"
 
 
 class CLI
-  attr_accessor :user, :title_search
+  attr_accessor :user, :title_search, :menu_message
 
 
 
@@ -76,6 +76,7 @@ class CLI
 
 
   def self.main_menu#(user)
+    @menu_message = nil
     system('clear')
     puts "Welcome #{@user.name}!"   # check this interpolation once User class is built
     puts "Please select an option below:"
@@ -87,7 +88,6 @@ class CLI
     puts "4. Select different user"
     # puts "4. Show user statistics"
     puts "0. Quit"
-    puts "1.5. Skip to method fetch_episodes_by_id, for The Simpsons (id# 6122)"
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -98,11 +98,10 @@ class CLI
     # build tree of user_input options here
     if user_input == "1"
       self.search_shows_by_title
-
     elsif user_input == "2"
-
+      print_list_of_favorites(@user)
     elsif user_input == "3"
-
+      fetch_episodes_for_playlist(@user)
     elsif user_input == "4"
       self.user_select
 
@@ -112,9 +111,6 @@ class CLI
       puts
       exit
 
-    # easter egg / shortcut to: fetch_episodes_by_id
-    elsif user_input == "1.5"
-      self.fetch_episodes_by_id("6122")
 
     else
       puts "Invalid input. Please try again:"
@@ -123,6 +119,13 @@ class CLI
   end
 
 
+  # def self.get_list_of_favorites(user)
+  #   favorites_array = Favorite.where(user_id: user.id)
+  #   favorites_array.each do |favorite_instance|
+  #     sid = favorite_instance["show_id"]
+  #
+  #   binding.pry
+  # end
 
   def self.search_shows_by_title
     system('clear')
@@ -130,17 +133,9 @@ class CLI
     @title_search = STDIN.gets.chomp
     url = API_URL + "search?q=" + @title_search
     url.gsub!(" ", "%20")
-    json = self.get_json(url) #=> receive Hash of search-result
+    json = get_json(url) #=> receive Hash of search-result
     self.get_array_of_tv_shows(json)
   end
-
-
-
-  def self.get_json(url)
-    response = RestClient.get(url)
-    json = JSON.parse(response.body) #=> json = hash, containing "page", "pages", "tv_shows" keys
-  end
-
 
 
   def self.get_array_of_tv_shows(json)
@@ -171,18 +166,8 @@ class CLI
       puts "Returning to self.search_shows_by_title CLI class method."
       self.search_shows_by_title
     end
-    self.search_results(all_pages)
+    search_results(all_pages)
   end
-
-
-  def self.search_results(all_pages)
-    formatted_list = []
-    all_pages.each do |show_hash|
-      formatted_list << "id. #{show_hash["id"]} - #{show_hash["name"]}"
-    end
-    self.print_search_results(formatted_list)
-  end
-
 
 
   def self.print_search_results(formatted_list)
@@ -200,7 +185,7 @@ class CLI
     puts "Please enter the id number for the show you are looking for:"
     user_input = STDIN.gets.chomp
     url = API_URL + "show-details?q=" + user_input.to_s
-    show_hash = self.get_json(url)["tvShow"] #=> hash of ONLY THE SPECIFIC show's details
+    show_hash = get_json(url)["tvShow"] #=> hash of ONLY THE SPECIFIC show's details
     self.display_found_show_details(show_hash)
   end
 
@@ -219,8 +204,11 @@ class CLI
     puts "Title: #{show_hash["name"]}"
     puts "Genre: #{show_hash["genres"][0]}"   # currently, only grabs first genre listed (in array)
     puts "Air Date: #{show_hash["start_date"]}"
-    puts "Description: \n#{show_hash["description"]}"
+    puts "Network: #{show_hash["network"]}"
+    #Scrub HTML tags from description
+    puts "Description: \n#{show_hash["description"]}".gsub!(/<br\s*\/?>/, '').gsub!(/<b\s*\/?>/, '').gsub!(/\<\/b>/, '')
     puts
+    puts @menu_message
     puts "What would you like to do?"
 
 #    puts "1. Show description"
@@ -237,8 +225,6 @@ class CLI
   def self.what_would_you_like_to_do(user_input, show_hash)
     if user_input == "1"
       self.add_to_favorites(show_hash)
-      # puts "UNDER CONSTRUCTION"
-      # self.display_found_show_details(show_hash)
     elsif user_input == "2"
       self.search_shows_by_title
     elsif user_input == "3"
@@ -253,20 +239,21 @@ class CLI
     end
   end
 
-   def self.add_to_favorites(show_hash)
-     favorite_show = Favorite.find_by(user_id: @user.id, show_id: show_hash["id"])
+  def self.add_to_favorites(show_hash)
+   favorite_show = Favorite.find_by(user_id: @user.id, show_id: show_hash["id"])
 
-     if favorite_show == nil
-       Favorite.new(user_id: @user.id, show_id: show_hash["id"])
-       puts "#{show_hash["name"]} has been added to your favorites!"
-       self.display_found_show_details(show_hash)
-     else
-       puts "#{show_hash["name"]} is already in your favorites!"
-       self.display_found_show_details(show_hash)
-     end
+   if favorite_show == nil
+     Favorite.create(user_id: @user.id, show_id: show_hash["id"])
+     @menu_message = "#{show_hash["name"]} has been added to your favorites!"
+     add_show_to_table(show_hash)
+     self.display_found_show_details(show_hash)
+   else
+     @menu_message = "#{show_hash["name"]} is already in your favorites!"
+     self.display_found_show_details(show_hash)
    end
-  #
-  #
+  end
+
+
   #   user_profile = User.find_by(name: user_input) #=> returns User instance
   #
   #   if user_profile == nil
@@ -281,27 +268,6 @@ class CLI
   #   end
 
 
-  # ==========================
-  # Isa's work - home, 3-5-19
-  # ==========================
-
-
-  def self.fetch_episodes_by_id(num)
-    url = API_URL + "show-details?q=" + num
-    episode_array = self.get_json(url)["tvShow"]["episodes"] #=> array of hash-episodes
-    self.episode_menu(episode_array)
-  end
-
-
-
-  # the methods below demonstrate code that can be used to organize/collect
-  # seasons and episode names in a formatted fashion.
-  # use main_menu input "1.5" to skip to this part.
-  # once comfortable with the organization of the data,
-  # build a method to prepare strings for entry into the Playlist table
-  # (individual episodes will be selected PRIOR to this formatting via a Randomizer)
-
-
   # this method is only for development - use it to test the outputs for the
   # season_list and title_list arrays below
   def self.episode_menu(episode_array)
@@ -311,9 +277,9 @@ class CLI
     puts self.season_list(episode_array)
     puts
     puts "Please enter a season number:"
-    user_input = STDIN.gets.chomp.
+    user_input = STDIN.gets.chomp
     # should printing the episode list happen in a different method??
-    season_num = user_input.downcase!.tr("season", "").strip!.to_i
+    season_num = user_input.downcase.tr("season", "").strip.to_i
     puts
     puts self.title_list(episode_array, season_num)
   end
@@ -329,6 +295,7 @@ class CLI
 
 
   # creates an array of formatted episode titles - modify to include S01e01 notation??
+  # MARKED FOR DELETION!!
   def self.title_list(episode_array, season_num)
     title_array = []
     episode_array.each do |episode_hash|

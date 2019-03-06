@@ -10,8 +10,8 @@
   # The Wire: show_id = 3
 
 
-  Favorite.create(id: 1, user_id: 1, show_id: 1)
-  Favorite.create(id: 2, user_id: 1, show_id: 2)
+  Favorite.create(id: 1, user_id: 1, show_id: 3950)
+  Favorite.create(id: 2, user_id: 1, show_id: 4079)
 
-  Favorite.create(id: 3, user_id: 2, show_id: 2)
-  Favorite.create(id: 4, user_id: 2, show_id: 3)
+  Favorite.create(id: 3, user_id: 2, show_id: 4079)
+  Favorite.create(id: 4, user_id: 2, show_id: 6227)
