@@ -5,4 +5,6 @@ require_relative "../lib/command_line_interface.rb"
 
 puts "HELLO WORLD"
 welcome
-get_ingredient_from_user
+i = get_ingredient_from_user
+array = get_recipes_from_api(i)
+print_recipe_names(array)
