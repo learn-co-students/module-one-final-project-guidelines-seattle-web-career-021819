@@ -25,6 +25,7 @@ end
 
 # Question loop that fetches questions with increasing difficulty
 def question_loop
+  print "\e[8;30;#{$GAME_WIDTH}t"
   system "clear"
 
   $MAX_QUESTIONS.times do |index|
@@ -94,7 +95,7 @@ def shuffle_and_print_answers(question)
     letter = letter.next
   end
 
-  puts question.question.center(85)
+  puts question.question.center($GAME_WIDTH)
   puts
   puts print_answers(answers_hash)
   return answers_hash
@@ -105,7 +106,7 @@ def check_answer(quest, answer_hash, user_input)
   #track points in game_session. store correctness?
   correctness = answer_hash[user_input.upcase] == quest.correct
   system "clear"
-  puts quest.question.center(85)
+  puts quest.question.center($GAME_WIDTH)
   puts
   puts print_colorized_answers(answer_hash, user_input.upcase, quest.correct)
   puts
@@ -147,7 +148,7 @@ def print_answers(answers)
   Terminal::Table.new do |t|
     t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
     t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
-    t.style = {:all_separators => true, :width => 85}
+    t.style = {:all_separators => true, :width => $GAME_WIDTH}
   end
 end
 
@@ -172,7 +173,7 @@ def print_colorized_answers(answers, guess, correct)
       colorized_ans[2],
       colorized_ans[3]
     ]
-    t.style = {:all_separators => true, :width => 85}
+    t.style = {:all_separators => true, :width => #{$GAME_WITH}}
   end
 end
 
