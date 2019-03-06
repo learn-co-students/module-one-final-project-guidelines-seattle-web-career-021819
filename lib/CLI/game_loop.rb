@@ -21,28 +21,29 @@ end
 
 def question_loop
   system "clear"
-  counter = 0
 
-  Question.all.each do |quest|
-    return if counter == $MAX_QUESTIONS
-
-    # Skip question if not the right difficulty for current round
-    if (counter < 5 && quest.difficulty != "easy" ||
-        (5...7).include?(counter) && quest.difficulty != "medium" ||
-        counter > 7 && quest.difficulty != "hard")
-      next
+  $MAX_QUESTIONS.times do |index|
+    difficulty = "easy"
+    if (5...7).include?(index)
+      difficulty = "medium"
+    elsif index > 7
+      difficulty = "hard"
     end
 
-    counter += 1
-    answer_hash = shuffle_and_print_answers(quest)
+    question = Question.find do |question|
+      question.difficulty == difficulty && !question.used
+    end
+
+    answer_hash = shuffle_and_print_answers(question)
+    question.update(used: true)
     puts
 
-    puts "(#{quest.difficulty.capitalize}, $#{quest.score})"
+    puts "(#{question.difficulty.capitalize}, $#{question.score})"
     puts "Enter your answer:"
     # user_input = gets.chomp
     user_input = get_answer
-    check_answer(quest, answer_hash, user_input)
-    #sleep(3)
+    check_answer(question, answer_hash, user_input)
+    sleep(3) if !$TEST_MODE
     system "clear"
   end
 end

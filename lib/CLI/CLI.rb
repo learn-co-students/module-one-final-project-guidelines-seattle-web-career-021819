@@ -1,5 +1,3 @@
-$TEST_MODE = true
-
 def play_game
   welcome if !$TEST_MODE
   current_user = get_user
