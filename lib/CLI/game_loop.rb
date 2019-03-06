@@ -6,7 +6,7 @@ def start_game(user)
   initiate_game(user)
   question_loop
   end_message
-  play_again?(user)
+  menu(user)
 end
 
 # Clear tables that shouldn't persist
@@ -26,7 +26,6 @@ end
 # Question loop that fetches questions with increasing difficulty
 def question_loop
   system "clear"
-  binding.pry
 
   $MAX_QUESTIONS.times do |index|
     difficulty = "easy"
@@ -42,7 +41,6 @@ def question_loop
     end
 
     if (!curr_question)
-      binding.pry
     end
 
     # If we run out of unique questions, reset
@@ -174,17 +172,18 @@ def end_message
   puts "Thanks for playing!"
   print "You got #{$game_session.get_correct_questions.length} questions correct "
   print "with total earnings of $#{$game_session.total_score}!!"
+  sleep(3)
   puts
 end
 
 # Asks for user input to play again
-def play_again?(user)
-  puts "Would you like to play again? (yes/no)"
-  user_input = gets.chomp
-  if user_input.start_with?("y")
-    start_game(user)
-  else
-    puts "Goodbye!"
-    return
-  end
-end
+# def play_again?(user)
+#   puts "Would you like to play again? (yes/no)"
+#   user_input = gets.chomp
+#   if user_input.start_with?("y")
+#     start_game(user)
+#   else
+#     puts "Goodbye!"
+#     return
+#   end
+# end
