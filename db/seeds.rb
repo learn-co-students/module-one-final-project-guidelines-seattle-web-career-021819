@@ -1,11 +1,19 @@
-TriviaApi.get_questions(amount: "250", difficulty: "easy").shuffle.each do |question|
-  Question.create(question)
+5.times do
+  TriviaApi.get_questions(amount: "50", difficulty: "easy").shuffle.each do |question|
+    Question.create(question)
+  end
 end
-TriviaApi.get_questions(amount: "150", difficulty: "medium").shuffle.each do |question|
-  Question.create(question)
+
+3.times do
+  TriviaApi.get_questions(amount: "50", difficulty: "medium").shuffle.each do |question|
+    Question.create(question)
+  end
 end
-TriviaApi.get_questions(amount: "100", difficulty: "hard").shuffle.each do |question|
-  Question.create(question)
+
+2.times do
+  TriviaApi.get_questions(amount: "50", difficulty: "hard").shuffle.each do |question|
+    Question.create(question)
+  end
 end
 
 User.create(name: "Brian")

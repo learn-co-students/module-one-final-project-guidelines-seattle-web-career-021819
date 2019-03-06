@@ -1,9 +1,12 @@
+# Main method for starting the game
+# Called in bin/run.rb
 def play_game
   welcome if !$TEST_MODE
   current_user = get_user
   menu(current_user)
 end
 
+# Gratuitous ASCII art introduction
 def welcome
   system "clear"
   aa = Artii::Base.new :font => 'big'
@@ -27,6 +30,8 @@ def welcome
   bear_host
 end
 
+# Asks for user input for user name
+# And creates new user instance
 def get_user
   dd= Artii::Base.new :font => 'invita'
   puts
@@ -38,7 +43,7 @@ def get_user
   new_user
 end
 
-
+# Main menu for user to start game, view leaderboard, or exit
 def menu(user)
   system "clear"
   aa = Artii::Base.new :font => 'small'
