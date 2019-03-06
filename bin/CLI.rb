@@ -33,6 +33,7 @@ class CLI
 
 
   def self.welcome_message
+    system('clear')
     puts "Welcome to the Show Randomizer!"
     puts "Here, you can select your favorite shows"
     puts "and generate playlists of random episodes"
@@ -68,14 +69,13 @@ class CLI
       @user = user_profile
     end
 
-    self.main_menu(@user)
+    self.main_menu#(@user)
   end
 
 
 
-  def self.main_menu(user)
-    puts
-    puts
+  def self.main_menu#(user)
+    system('clear')
     puts "Welcome #{@user.name}!"   # check this interpolation once User class is built
     puts "Please select an option below:"
     puts
@@ -106,20 +106,21 @@ class CLI
       self.user_select
 
     elsif user_input == "0"
+      system('clear')
       puts "Thank you! Goodbye!"
       puts
       exit
 
     else
       puts "Invalid input. Please try again:"
-      self.main_menu(self.user)
+      self.main_menu#(self.user)
     end
   end
 
 
 
   def self.search_shows_by_title
-    puts
+    system('clear')
     puts "Enter show title:"
     @title_search = STDIN.gets.chomp
     url = API_URL + "search?q=" + @title_search
@@ -206,20 +207,70 @@ class CLI
   # 4. Back to main menu
 
   def self.display_found_show_details(show_hash)
+    system('clear')
     puts
     puts "You have selected:"
     puts "=================="
     puts "Title: #{show_hash["name"]}"
     puts "Genre: #{show_hash["genres"][0]}"   # currently, only grabs first genre listed (in array)
     puts "Air Date: #{show_hash["start_date"]}"
+    puts "Description: \n#{show_hash["description"]}"
     puts
     puts "What would you like to do?"
-    puts "1. Show description"
-    puts "2. Add to Favorites"
-    puts "3. Search for another title"
-    puts "4. Back to main menu"
+#    puts "1. Show description"
+    puts "1. Add to Favorites"
+    puts "2. Search for another title"
+    puts "3. Back to main menu"
+    puts "0. Exit"
     user_input = STDIN.gets.chomp
+    self.what_would_you_like_to_do(user_input, show_hash)
   end
 
+
+  def self.what_would_you_like_to_do(user_input, show_hash)
+    if user_input == "1"
+      self.add_to_favorites(show_hash)
+      # puts "UNDER CONSTRUCTION"
+      # self.display_found_show_details(show_hash)
+    elsif user_input == "2"
+      self.search_shows_by_title
+    elsif user_input == "3"
+      self.main_menu
+    elsif user_input == "0"
+      system('clear')
+      puts "Thank you! Goodbye!"
+      exit
+    else
+      puts "Please enter a valid option"
+      self.display_found_show_details(show_hash)
+    end
+  end
+
+   def self.add_to_favorites(show_hash)
+     favorite_show = Favorite.find_by(user_id: @user.id, show_id: show_hash["id"])
+
+     if favorite_show == nil
+       Favorite.new(user_id: @user.id, show_id: show_hash["id"])
+       puts "#{show_hash["name"]} has been added to your favorites!"
+       self.display_found_show_details(show_hash)
+     else
+       puts "#{show_hash["name"]} is already in your favorites!"
+       self.display_found_show_details(show_hash)
+     end
+   end
+  #
+  #
+  #   user_profile = User.find_by(name: user_input) #=> returns User instance
+  #
+  #   if user_profile == nil
+  #     # create a new User row with :name = user_input
+  #     @user = User.create(name: user_input)
+  #
+  #   else
+  #     @user = user_profile
+  #   end
+  #
+  #   self.main_menu#(@user)
+  #   end
 
 end
