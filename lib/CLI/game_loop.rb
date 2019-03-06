@@ -3,6 +3,8 @@ $game_session = nil
 def start_game(user)
   initiate_game(user)
   question_loop
+  end_message
+  play_again?(user)
 end
 
 def clear_all
@@ -70,6 +72,23 @@ def check_answer(quest, answer_hash, user_input)
     game_session_id: $game_session.id,
     correctness: correctness
   )
+end
+
+def end_message
+  puts "Thanks for playing!"
+  puts "You got #{$game_session.get_correct_questions.length} questions correct and earned #{$game_session.total_score} points!!"
+  puts
+end
+
+def play_again?(user)
+  puts "Would you like to play again? (yes/no)"
+  user_input = gets.chomp
+  if user_input == "yes"
+    start_game(user)
+  else
+    puts "Goodbye!"
+    return
+  end
 end
 
 def game_show_print(question)
