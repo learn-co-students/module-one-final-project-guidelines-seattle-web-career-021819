@@ -22,12 +22,11 @@ end
 
 def question_loop
   Question.all.each do |quest|
-    puts quest.question
     answer_hash = shuffle_and_print_answers(quest)
     puts
-    puts"Enter your answer:"
+
+    puts "Enter your answer:"
     user_input = gets.chomp
-    #take letter or text?
     check_answer(quest, answer_hash, user_input)
   end
 end
@@ -41,14 +40,17 @@ def shuffle_and_print_answers(question)
     question.incorrect3
   ].shuffle
 
-  hash = {}
+  answers_hash = {}
   letter = "A"
   answers.each do |answer|
-    puts "#{letter}. #{answer}"
-    hash[letter] = answer
+    answers_hash[letter] = answer
     letter = letter.next
   end
-  return hash
+
+  puts question.question.center(100)
+  puts
+  puts print_answers(answers_hash)
+  return answers_hash
 end
 
 def check_answer(quest, answer_hash, user_input)
@@ -72,6 +74,10 @@ def check_answer(quest, answer_hash, user_input)
   )
 end
 
-def game_show_print(question)
-
+def print_answers(answers)
+  Terminal::Table.new do |t|
+    t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
+    t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
+    t.style = {:all_separators => true, :width => 100}
+  end
 end
