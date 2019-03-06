@@ -29,10 +29,20 @@ def question_loop
     puts
 
     puts "Enter your answer:"
-    user_input = gets.chomp
+    # user_input = gets.chomp
+    user_input = get_answer
     check_answer(quest, answer_hash, user_input)
     sleep(3)
     system "clear"
+  end
+end
+
+def get_answer
+  user_input = gets.chomp
+  if user_input.empty?
+    get_answer
+  else
+    user_input
   end
 end
 
