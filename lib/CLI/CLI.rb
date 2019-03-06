@@ -26,22 +26,27 @@ def welcome
   puts bb.asciify "Alex Trebear"
   sleep(2)
   system "clear"
+  bear_host
 end
 
 def get_user
-  puts "What's your name?"
+  dd= Artii::Base.new :font => 'invita'
+  puts
+  puts dd.asciify("What's your name?")
   new_name = gets.chomp
   puts
+  system "clear"
   new_user = User.create(name: new_name)
   new_user
 end
 
 
 def menu(user)
-  puts "What would you like to do?"
+  aa = Artii::Base.new :font => 'small'
+  puts aa.asciify("What would you like to do?")
   puts
-  puts "1. Play a new game"
-  puts "2. Exit"
+  puts aa.asciify("1. Play a new game")
+  puts aa.asciify("2. Exit")
   user_input = gets.chomp
   if user_input == "1"
     start_game(user)
