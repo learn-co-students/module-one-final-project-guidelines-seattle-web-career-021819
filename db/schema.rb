@@ -14,10 +14,7 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "game_sessions", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "game_id"
-  end
-
-  create_table "games", force: :cascade do |t|
+    t.integer "total_score"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -26,7 +23,9 @@ ActiveRecord::Schema.define(version: 5) do
     t.string  "incorrect1"
     t.string  "incorrect2"
     t.string  "incorrect3"
+    t.string  "difficulty"
     t.integer "score"
+    t.boolean "used"
   end
 
   create_table "user_guesses", force: :cascade do |t|

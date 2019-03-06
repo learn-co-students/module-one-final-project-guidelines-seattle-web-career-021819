@@ -1,7 +1,7 @@
-
+$TEST_MODE = true
 
 def play_game
-  welcome
+  welcome if !$TEST_MODE
   current_user = get_user
   menu(current_user)
 end
@@ -53,6 +53,6 @@ def menu(user)
     #new_game_session = GameSession.new(user_id: user.id)
   else
     puts "Thanks for playing!"
-    return nil
+    return
   end
 end

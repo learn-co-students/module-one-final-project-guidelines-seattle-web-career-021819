@@ -1,4 +1,5 @@
 $game_session = nil
+$MAX_QUESTIONS = 10
 
 def start_game(user)
   initiate_game(user)
@@ -10,29 +11,38 @@ end
 def clear_all
   GameSession.delete_all
   UserGuess.delete_all
-  Question.delete_all
+  #Question.delete_all
 end
 
 def initiate_game(user)
   clear_all
   $game_session = GameSession.create(user_id: user.id)
-
-  TriviaApi.get_questions.each do |question|
-    Question.create(question)
-  end
 end
 
 def question_loop
   system "clear"
+  counter = 0
+
   Question.all.each do |quest|
+    return if counter == $MAX_QUESTIONS
+
+    # Skip question if not the right difficulty for current round
+    if (counter < 5 && quest.difficulty != "easy" ||
+        (5...7).include?(counter) && quest.difficulty != "medium" ||
+        counter > 7 && quest.difficulty != "hard")
+      next
+    end
+
+    counter += 1
     answer_hash = shuffle_and_print_answers(quest)
     puts
 
+    puts "(#{quest.difficulty.capitalize}, $#{quest.score})"
     puts "Enter your answer:"
     # user_input = gets.chomp
     user_input = get_answer
     check_answer(quest, answer_hash, user_input)
-    sleep(3)
+    #sleep(3)
     system "clear"
   end
 end
@@ -78,7 +88,7 @@ def check_answer(quest, answer_hash, user_input)
   puts
 
   if correctness
-    puts "Correct!".colorize(:green)
+    puts "Pawesome!".colorize(:green)
     puts
   else
     puts "Bearly missed it.".colorize(:red)
@@ -132,14 +142,15 @@ end
 
 def end_message
   puts "Thanks for playing!"
-  puts "You got #{$game_session.get_correct_questions.length} questions correct and earned #{$game_session.total_score} points!!"
+  print "You got #{$game_session.get_correct_questions.length} questions correct "
+  print "with total earnings of $#{$game_session.total_score}!!"
   puts
 end
 
 def play_again?(user)
   puts "Would you like to play again? (yes/no)"
   user_input = gets.chomp
-  if user_input == "yes"
+  if user_input.start_with?("y")
     start_game(user)
   else
     puts "Goodbye!"

@@ -7,7 +7,9 @@ class GameSession < ActiveRecord::Base
   end
 
   def total_score
-    self.get_correct_questions.inject(0){|sum, guess| sum + guess.question.score}
+    total = self.get_correct_questions.inject(0){|sum, guess| sum+guess.question.score}
+    self.update(total_score: total)
+    total
   end
 
   def guess_record
