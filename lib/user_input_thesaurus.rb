@@ -29,35 +29,35 @@ user_syn = ["u", "us", "user", "users"]
 
 # ==== Main Menu ==== #
 main_menu_1_words = search_syn += title_syn
-# || main_menu_1_words.include?(user_input)
+# || main_menu_1_words.include?(user_input.downcase)
 
 main_menu_2_words = shows_syn += current_syn += list_syn += favorite_syn
-# || main_menu_2_words.include?(user_input)
+# || main_menu_2_words.include?(user_input.downcase)
 
 main_menu_3_words = generate_syn += playlist_syn
-# || main_menu_3_words.include?(user_input)
+# || main_menu_3_words.include?(user_input.downcase)
 
 main_menu_4_words = select_syn += different_syn
-# || main_menu_4_words.include?(user_input)
+# || main_menu_4_words.include?(user_input.downcase)
 
 # 5) NEW OPTION?? - Print all user names
 main_menu_5_words = print_syn += all_syn += user_syn
-# || main_menu_5_words.include?(user_input)
+# || main_menu_5_words.include?(user_input.downcase)
 
 main_menu_0_words = quit_syn
-# || main_menu_0_words.include?(user_input)
+# || main_menu_0_words.include?(user_input.downcase)
 
 
 
 # ==== Display_Found_Show_Details Menu ==== #
 display_menu_1_words = add_syn += favorite_syn
-# || display_menu_1_words.include?(user_input)
+# || display_menu_1_words.include?(user_input.downcase)
 
 display_menu_2_words = search_syn += another_syn += title_syn
-# || display_menu_2_words.include?(user_input)
+# || display_menu_2_words.include?(user_input.downcase)
 
 display_menu_3_words = back_syn += main_syn
-# || display_menu_3_words.include?(user_input)
+# || display_menu_3_words.include?(user_input.downcase)
 
 display_menu_0_words = quit_syn
-# || display_menu_0_words.include?(user_input)
+# || display_menu_0_words.include?(user_input.downcase)
