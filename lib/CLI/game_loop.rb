@@ -175,15 +175,3 @@ def end_message
   sleep(3)
   puts
 end
-
-# Asks for user input to play again
-# def play_again?(user)
-#   puts "Would you like to play again? (yes/no)"
-#   user_input = gets.chomp
-#   if user_input.start_with?("y")
-#     start_game(user)
-#   else
-#     puts "Goodbye!"
-#     return
-#   end
-# end
