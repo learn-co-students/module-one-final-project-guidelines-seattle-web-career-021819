@@ -17,11 +17,11 @@ end
 arr
 end
 
-def print_recipe_names(anything)
-  anything.each_with_index do |recipe, i|
+def print_recipe_names(recipe_array)
+  recipe_array.each_with_index do |recipe, i|
     title = recipe["title"].strip
     if title.length > 0
-      puts "#{i+1}. #{title}" 
+      puts "#{i+1}. #{title}"
     end
  end
 

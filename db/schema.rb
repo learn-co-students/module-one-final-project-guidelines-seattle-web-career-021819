@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "title"
   end
 
-  create_table "recommended_dishes", force: :cascade do |t|
+  create_table "user_recipes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "recipe_id"
   end
