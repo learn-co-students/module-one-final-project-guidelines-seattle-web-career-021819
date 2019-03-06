@@ -20,17 +20,30 @@ def welcome
       puts "Invalid input!"
     end
   end
+  menu
 end
 
 def menu
+  puts "Please pick a number:"
   puts "0. exit"
-  puts "1. search for a recipe"
+  puts "1. search for a recipe by ingredient"
   puts "2. view favorite recipes"
   puts "3. view most popular recipes"
+  choice = gets.chomp
+  menu_selection(choice)
 end
 
-def get_ingredient_from_user
-  puts "please enter an ingredient"
-  ingredient = gets.chomp.downcase
-  # use gets to capture the user's input. This method should return that input, downcased.
+def menu_selection(choice)
+  if choice == "0" || "exit"
+
+  elsif choice == "1" || "search"
+    # search for a recipe by ingredient
+    get_ingredient_from_user
+  elsif choice == "2"
+    # view user's favorite recipes
+  elsif choice == "3"
+    # view most popular recipes
+  else
+    puts "Invalid input!"
+  end
 end
