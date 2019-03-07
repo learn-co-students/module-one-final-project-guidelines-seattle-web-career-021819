@@ -53,7 +53,7 @@ def user_profile_menu(user)
     5. Change real name
     6. Return to main menu
 
-    0. Quit
+    0. Quit program
     "
   user_input = STDIN.gets.chomp
 
@@ -61,25 +61,25 @@ def user_profile_menu(user)
   if user_input == "1" || thesaurus.profile_menu_1_words.include?(user_input.downcase)
     print_list_of_favorites(user, "profile_menu")
 
-  elsif user_input == "2"
+  elsif user_input == "2" || thesaurus.profile_menu_2_words.include?(user_input.downcase)
     print_list_of_favorites(user, "profile_remove_menu")
     # "main_menu" argument is a workaround to load show-removing menu
 
-  elsif user_input == "3"
+  elsif user_input == "3" || thesaurus.profile_menu_3_words.include?(user_input.downcase)
     # view additional statistics:
       # list of Show start dates, + most frequent years?
       # others??
 
-  elsif user_input == "4"
+  elsif user_input == "4" || thesaurus.profile_menu_4_words.include?(user_input.downcase)
     change_user_name_menu(user)
 
-  elsif user_input == "5"
+  elsif user_input == "5" || thesaurus.profile_menu_5_words.include?(user_input.downcase)
     change_real_name_menu(user)
 
-  elsif user_input == "6"
+  elsif user_input == "6" || thesaurus.profile_menu_6_words.include?(user_input.downcase)
     CLI.main_menu
 
-  elsif user_input == "0"
+  elsif user_input == "0" || thesaurus.profile_menu_0_words.include?(user_input.downcase)
     CLI.goodbye_message
 
   else

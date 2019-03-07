@@ -73,9 +73,9 @@ Please select an option below:
 5. Print all user names
 6. View your user profile
 
-0. Quit"
-    # puts "5. View your user profile"
+0. Quit program"
 
+    puts
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -215,7 +215,8 @@ What would you like to do?
 1. Add to Favorites
 2. Search for another title
 3. Back to main menu
-0. Quit"
+
+0. Quit program"
 
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)

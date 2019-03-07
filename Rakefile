@@ -19,5 +19,6 @@ task :reset do
   User.destroy_all
   Favorite.destroy_all
   Show.destroy_all
+  Playlist.destroy_all
   Rake::Task["db:seed"].invoke
 end

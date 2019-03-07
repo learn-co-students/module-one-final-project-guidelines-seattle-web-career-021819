@@ -44,7 +44,8 @@ def print_list_of_favorites(user, menu)
   else
     favorites_array.each do |favorite_instance|
       show =  Show.find_by(api_id: favorite_instance.show_id)
-      show_array << "id. #{show.api_id} - #{show.name}            (add to playlists: #{favorite_instance.playlist_on_off.upcase})"
+      show_string = "id. #{show.api_id} - #{show.name}".ljust(48) + "(add to playlists: #{favorite_instance.playlist_on_off.upcase})"
+      show_array << show_string
     end
     system('clear')
     puts @menu_message
