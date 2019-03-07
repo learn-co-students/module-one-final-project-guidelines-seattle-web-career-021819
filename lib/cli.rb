@@ -77,11 +77,10 @@ class CLI
 
 
     def self.easy_game
-      puts "hello"
+      puts "#{Round.question}"
         Game.create_game
-        var = Round.create_round
-        binding.pry
-        puts "#{Round.question}"
+        Round.create_round
+
         Round.choices { |choice| puts "#{choice}" }
 
     end
