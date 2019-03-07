@@ -49,6 +49,7 @@ def print_list_of_favorites(user)
   puts "Press enter to return to main menu or enter a show to remove from favorites"
   user_input = STDIN.gets.chomp
   if user_input.strip == ""
+    @menu_message = nil
     CLI.main_menu
   elsif show_array.include?(user_input)
     delete_show_from_favorites(user_input, user)
