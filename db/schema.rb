@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 10) do
 
-
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "show_id"
