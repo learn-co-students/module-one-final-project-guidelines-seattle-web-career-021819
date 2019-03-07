@@ -1,16 +1,12 @@
-GAME_OF_THRONES_URL = "https://anapioficeandfire.com/api/"
-
 class CLI
 
-
 	def self.run
-	 puts "Running CLI..."
+		puts "Running CLI..."
 
-	is_running = true
+		is_running = true
 		while is_running
 			self.main_menu
 			input= STDIN.gets.chomp
-			#echo what the user types
 			if input == "0"
 				is_running = false
 			elsif input == "1"
@@ -178,26 +174,4 @@ class CLI
       end
       STDIN.gets.chomp
   end
-end
-########MIGHT USE LATER##################
-# 	puts "Browse top characters:"
-#
-# 	json = get_json(GAME_OF_THRONES_URL)
-# 	facts = ["characters"]["name"]
-# 	facts = facts.map do |facts|
-# 		facts["name"]
-# 	end
-#
-# end
-
-########## HELPER METHODS ############
-
-	def self.get_json(url)
-        response = RestClient.get(url)
-        json = JSON.parse(response.body)
-    end
-
-    def uri_escape(term)
-    	term.gsub(' ', '%20')
-    end
 end
