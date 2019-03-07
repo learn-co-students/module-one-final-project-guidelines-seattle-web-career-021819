@@ -1,6 +1,31 @@
+require_relative '../config/environment'
+
 class CLI
     def self.run
-        puts "\nwelcome!"
+        puts "
+
+
+            /
+          #/
+          ##
+          ##
+          ##
+          ## /###     /###     /###     ######  ##   ####
+          ##/ ###  / / ###  / / ###  / /#######  ##    ###  /
+          ##   ###/ /   ###/ /   ###/ /      ##  ##     ###/
+          ##    ## ##    ## ##    ##         /   ##      ##
+          ##    ## ##    ## ##    ##        /    ##      ##
+          ##    ## ##    ## ##    ##       ###   ##      ##
+          ##    ## ##    ## ##    ##        ###  ##      ##
+          ##    /# ##    ## ##    ##         ### ##      ##
+           ####/    ######   ######           ##  #########
+            ###      ####     ####            ##    #### ###
+                                              /           ###
+                                             /     #####   ###
+                                            /    /#######  /#
+                                           /    /      ###/
+
+".green
 
 
 
@@ -26,17 +51,17 @@ class CLI
     end
 
     def self.get_user
-      puts "\nWhat's your name?"
+      puts "\nWelcome! \nWho may I ask is playing today?".red
       input = STDIN.gets.chomp
       new_user = User.create_user(input)
       new_user
     end
 
     def self.main_menu
-        puts "\nHi, #{get_user.name.upcase}! would you like to guess some cocktail names based solely on their ingredients?"
-        puts "\n[0] Nope. exit"
-        puts "\n[1] Sure, but lets play on easy mode"
-        puts "\n[2] I consider myself a connisuer.  Let's play on hard mode."
+        puts "\nHi, #{get_user.name.upcase}! would you like to guess some cocktail names based solely on their ingredients?".red
+        puts "\n[0] Nope. exit".red
+        puts "\n[1] Sure, but lets play on easy mode".red
+        puts "\n[2] I consider myself a connisuer.  Let's play on hard mode.".red
     end
 
     def self.easy_game

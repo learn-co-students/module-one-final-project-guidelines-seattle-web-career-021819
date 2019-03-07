@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   @@current_user = ""
 
   def self.create_user(user_name)
-    puts "Hello, #{user_name.capitalize}!"
     @@current_user = self.find_or_create_by(name: user_name.downcase, total_points: nil, win_lose_record: nil)
   end
 
