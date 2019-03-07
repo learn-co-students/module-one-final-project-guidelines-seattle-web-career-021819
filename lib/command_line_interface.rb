@@ -49,8 +49,6 @@ def main_menu
   elsif user_input == "2"
     svd = user_saved_recipes
     puts svd
-    return main_menu
-
 
   elsif user_input == "3"
     exit
@@ -120,7 +118,6 @@ def user_saved_recipes
   puts ""
   saved_recipes
 end
-
 
 
 #User inputs their ingredient of choice
