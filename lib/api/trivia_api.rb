@@ -51,6 +51,7 @@ class TriviaApi
     question["correct_answer"] &&
     question["incorrect_answers"] &&
     question["incorrect_answers"].size == 3 &&
+    self.decode_string(question["correct_answer"]).length < 40 &&
     self.decode_string(question["incorrect_answers"][0]).length < 40 &&
     self.decode_string(question["incorrect_answers"][1]).length < 40 &&
     self.decode_string(question["incorrect_answers"][2]).length < 40
