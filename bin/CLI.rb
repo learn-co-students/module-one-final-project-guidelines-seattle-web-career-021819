@@ -98,6 +98,8 @@ Please select an option below:
     elsif user_input == "5" || @thesaurus.main_menu_5_words.include?(user_input.downcase)
       list_all_users("main_menu")
     elsif user_input == "6" || @thesaurus.main_menu_6_words.include?(user_input.downcase)
+      puts
+      puts "Profile loading, please wait..."
       user_profile_menu(@user)
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
       goodbye_message

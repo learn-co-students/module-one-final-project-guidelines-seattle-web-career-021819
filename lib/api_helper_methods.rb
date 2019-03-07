@@ -45,7 +45,6 @@ def print_list_of_favorites(user, menu)
     favorites_array.each do |favorite_instance|
       show =  Show.find_by(api_id: favorite_instance.show_id)
       show_array << "id. #{show.api_id} - #{show.name}            (add to playlists: #{favorite_instance.playlist_on_off.upcase})"
-      # binding.pry
     end
     system('clear')
     puts @menu_message
@@ -56,11 +55,6 @@ def print_list_of_favorites(user, menu)
   end
   puts
 
-  # BELOW: (added 3/6/19)
-  # Isa added functionality for different times when
-  # Favorites list could be viewed - now, from the new
-  # user profile menu, users can switch playlist adding on/off
-  # for specific shows on their list
   if menu == "main_menu"
     puts "Press enter to return to main menu or enter a show ID to remove from favorites"
     user_input = STDIN.gets.chomp
@@ -80,42 +74,43 @@ def print_list_of_favorites(user, menu)
   elsif menu == "profile_menu"
     puts "Enter a show's id number to turn adding episodes to playlists on or off."
     puts "Press enter when ready to return to your profile menu."
-    user_input = STDIN.gets.chomp
+    user_input = STDIN.gets.chomp[0..5] #program crashes with integer strings longer than ~6 digits?!?
     if user_input.strip == ""
       @menu_message = nil
+      puts
+      puts "Profile loading, please wait..."
       user_profile_menu(user)
 
     else
-      # better Enumerator than .each to refactor with?
-      # possible to stop iterating once a match is
-      # found? (similar to Until, using xx == true)
-      show_array.each do |show_name|
-        if show_name.include?(user_input)
-          favorite = Favorite.where(show_id: user_input, user_id: user.id)[0]
+      favorite = Favorite.where(show_id: user_input, user_id: user.id)[0]
 
-          if favorite == nil
-            @menu_message = "Please enter a valid show id"
-            print_list_of_favorites(user, "profile_menu")
+      if favorite == nil
+        @menu_message = "Please enter a valid show id"
+        print_list_of_favorites(user, "profile_menu")
 
-          elsif favorite.playlist_on_off == "on"
-            favorite.playlist_on_off = "off"
-            favorite.save
-          elsif favorite.playlist_on_off == "off"
-            favorite.playlist_on_off = "on"
-            favorite.save
+      else
+        show_array.each do |show_name|
+          if show_name.include?(user_input)
+
+            if favorite.playlist_on_off == "on"
+              favorite.playlist_on_off = "off"
+              favorite.save
+              @menu_message = nil
+              print_list_of_favorites(user, "profile_menu")
+            elsif favorite.playlist_on_off == "off"
+              favorite.playlist_on_off = "on"
+              favorite.save
+              @menu_message = nil
+              print_list_of_favorites(user, "profile_menu")
+            end
+
           end
-          @menu_message = nil
-          print_list_of_favorites(user, "profile_menu")
-
-        else
-          @menu_message = "Please enter a valid show id"
-          print_list_of_favorites(user, "profile_menu")
 
         end
-      end
+        @menu_message = "Please enter a valid show id"
+        print_list_of_favorites(user, "profile_menu")
 
-      @menu_message = "Please enter a valid show ID"
-      print_list_of_favorites(user, "profile_menu")
+      end
     end
   end
 
@@ -146,6 +141,17 @@ def fetch_episodes_for_playlist(user)
   end
   add_playlist_to_table(all_episodes_array, user)
 end
+
+
+def count_episodes_from_favorites(user)
+  all_episodes_array = []
+  favorites_array = fetch_list_of_favorites(user)
+  favorites_array.each do |favorite_instance|
+    all_episodes_array += fetch_episodes_by_id(favorite_instance.show_id)
+  end
+  all_episodes_array.count
+end
+
 
 
 
