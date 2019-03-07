@@ -3,27 +3,27 @@ GAME_OF_THRONES_URL = "https://anapioficeandfire.com/api/"
 class CLI
 
 
-def self.run
- puts "Running CLI..."
+	def self.run
+	 puts "Running CLI..."
 
-is_running = true
-	while is_running
-		self.main_menu
-		input= STDIN.gets.chomp
-		#echo what the user types
-		if input == "0"
-		is_running = false
-		elsif input == "1"
-			self.character
-		elsif input == "2"
-			self.book
-		elsif input == "3"
-			self.house
-		else
-			puts "Invalid input."
+	is_running = true
+		while is_running
+			self.main_menu
+			input= STDIN.gets.chomp
+			#echo what the user types
+			if input == "0"
+				is_running = false
+			elsif input == "1"
+				self.character
+			elsif input == "2"
+				self.book
+			elsif input == "3"
+				self.house
+			else
+				puts "Invalid input."
+			end
 		end
 	end
-end
 
 	def self.main_menu
 		puts "\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -37,22 +37,29 @@ end
 
 	def self.character
 		is_running = true
-		puts "========================================================"
-  		puts "Think you know how many characters are in G.O.T? (yes/no)"
-  		puts "========================================================"
-      	input = STDIN.gets.chomp
-	    if input.starts_with? "y" || input == "yes"
-	      puts "Give me your best guess.."
-	    else
-	      puts "Ok, please put 0 to return to Main menu"
-        end
-	    input = STDIN.gets.chomp
-	    if input == "2021"
-	      puts "Congratulations, you are officially a G.O.T NERD"
-	    else
-	      puts "Nice try, the correct Answer is #{Character.all.map do |house_character|
-													house_character.name
-													end.uniq.count}"
+		is_running2 = true
+		while is_running2
+			puts "========================================================"
+	  		puts "Think you know how many characters are in G.O.T? (yes/no)"
+	  		puts "========================================================"
+	      	input = STDIN.gets.chomp
+		    if input.starts_with? "y" || input == "yes"
+		      	puts "Give me your best guess.."
+		      	input = STDIN.gets.chomp
+			    if input == "2021"
+			      	puts "Congratulations, you are officially a G.O.T NERD"
+			    else
+			      	puts "Nice try, the correct Answer is #{Character.all.map do |house_character|
+															house_character.name
+															end.uniq.count}"
+					is_running2 = false
+				end
+		    elsif input.starts_with? "n" || input == "no"
+		      	puts "Ok, onward to the characters info so you can NERD UP!"
+		      	is_running2 = false
+		  	else
+		  		puts "Invalid input"
+	        end
 		end
 		while is_running == true
 			puts "==========================================================================="
@@ -63,7 +70,6 @@ end
 			puts
 			found_character = Character.find_by(name: input)
 			if found_character != nil
-
 				brethren = found_character.house.characters.map do |house_character|
 					if house_character.name != input
 					house_character.name
@@ -80,12 +86,13 @@ end
 			else
 				puts "Nobody matches that name"
 				puts "Please enter a valid name"
-			end
+			end	
 		end
 	end
 
 	def self.book
-		puts "\n\n\n\n\n\n\n\n\n\n\n\n"
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 		BookArt.display
 		is_running = true
 		while is_running == true
