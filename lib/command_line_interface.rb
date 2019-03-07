@@ -2,7 +2,7 @@ $curr_user = nil
 
 def welcome_message
   puts "------------------------------------------------------"
-  puts "Welcome to Recipe Generator! Do you have an account?"
+  puts "Welcome to Recipe Generator! Do you have an account? (yes/no)"
   puts "------------------------------------------------------"
 
   user_input = STDIN.gets.chomp.downcase
@@ -27,7 +27,9 @@ def main_menu
 
   #The main menu the user can choose from
   puts ""
-  puts "Welcome to Recipe Generator! Please enter a number to select an option: "
+  puts "MAIN MENU"
+  puts ""
+  puts "Please enter a number to select an option: "
   puts ""
   puts "-----------------------------------------------"
   puts "1. Search for New Recipes"
@@ -41,11 +43,13 @@ def main_menu
   if user_input == "1"
     user_input2
     svd = user_saved_recipes
-
     puts svd
+    return main_menu
 
   elsif user_input == "2"
-    user_saved_recipes
+    svd = user_saved_recipes
+    puts svd
+    return main_menu
 
 
   elsif user_input == "3"
@@ -86,7 +90,7 @@ def recipe_list
 end
 
 
-#from Chris:
+#from Chris - user chooses the recipe they want by number and it is added to their recipe list
 def user_input2
    arr = []
    arr << recipe_list
