@@ -10,7 +10,11 @@ def welcome_message
   if user_input == "yes"
     puts "Nice to have you back. What's your name?"
     user_name = STDIN.gets.chomp.downcase
+    if User.exists?(name: user_name)
     $curr_user = User.find_by(name: user_name)
+    else
+      add_new_user
+    end
   else
     puts ""
     puts "Nice to have you!"
@@ -36,11 +40,13 @@ def main_menu
 
   if user_input == "1"
     user_input2
+    svd = user_saved_recipes
+
+    puts svd
 
   elsif user_input == "2"
     user_saved_recipes
-    # r = user_input2
-    # save_to_user_recipe(r)
+
 
   elsif user_input == "3"
     exit
@@ -70,7 +76,13 @@ def add_new_user
 def recipe_list
   i = get_ingredient_from_user
   array = get_recipes_from_api(i)
-  print_recipe_names(array)
+  if array.length == 0
+    puts "" 
+    puts "Sorry, that recipe is not available."
+    return main_menu
+  else
+    print_recipe_names(array)
+  end
 end
 
 
@@ -84,7 +96,7 @@ def user_input2
    puts "Please input the number of which recipe you like:"
    desired_recipe_num = STDIN.gets.chomp
    users_choice = new_array[desired_recipe_num.to_i-1]
-   create_recipe(users_choice)
+   create_recipe(users_choice[2..-1].strip)
 end
 
 #creates a new recipe instance and associates it with current user - yay!
@@ -94,19 +106,17 @@ def create_recipe(title)
   UserRecipe.create(user_id: $curr_user.id, recipe_id: r.id)
 end
 
-#IN PROGRESS: trying to output all recipes that user has saved
+#Outputs all recipes that user has saved
 def user_saved_recipes
-  recipe_array = []
-  ur = UserRecipe.where(user_id: $curr_user.id)
+  user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
+  saved_recipes = user_recipes.map {|ur| ur.recipe.title}
+  puts ""
+  puts "YUMMY!"
+  puts "Here are all of your saved recipes:"
+  puts ""
+  saved_recipes
+end
 
-  # ur.each do |x|
-  #   if x.recipe_id == Recipe.all.id
-  #     recipe_array << Recipe.name
-  #     puts recipe_array
-    # else
-
-      puts "You have no saved recipes."
-    end
 
 
 #User inputs their ingredient of choice

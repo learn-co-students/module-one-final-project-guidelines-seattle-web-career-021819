@@ -14,7 +14,7 @@ def get_recipes_from_api(user_ingredient)
         if recipe["ingredients"].include?(user_ingredient)
           arr << recipe
       end
-    end
+  end
 end
 
 #Uses the output of get_recipes_from_api, which is an array of recipes, and makes them into a nice ordered list for the user to choose from
