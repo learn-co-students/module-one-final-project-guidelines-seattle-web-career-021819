@@ -66,14 +66,14 @@ Welcome #{@user.name}!
 Please select an option below:
 
 
-1. [Search] shows by title
-2. Show current list of [favorite] shows
-3. Generate [playlist]!
-4. Select different [user]
+1. Search shows by title
+2. Show current list of favorite shows
+3. Generate playlist!
+4. Select different user
 5. Print all user names
 6. View your user profile
 
-0. [Q]uit"
+0. Quit"
     # puts "5. View your user profile"
 
     user_input = STDIN.gets.chomp
