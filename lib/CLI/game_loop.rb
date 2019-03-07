@@ -103,7 +103,7 @@ def print_question(question, is_correct = nil)
       :bg_fill => false
     puts
   end
-  puts question.question.center($GAME_WIDTH)
+  puts WordWrap.ww question.question.center($GAME_WIDTH), 85
 end
 
 # Shuffles the possible answers and prints them
