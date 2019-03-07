@@ -68,7 +68,7 @@ end
 		while is_running == true
 			BookArt.display
 			puts "========================================================"
-			puts "\nHere is a list of Game of Thrown books.\n\n"
+			puts "\nHere is a list of Game of Thrones books.\n\n"
 			puts "Books: "
 				book_list = Book.all[0..2]
 				book_list << Book.all[4]
@@ -77,49 +77,34 @@ end
 					puts "#{i+1}. #{book.name}."
 				end
 			puts "\nGraphic Novels and Satellite stories: "
-				other_list = Book.all[5,6]
+				other_list = []
 				other_list << Book.all[3]
+				other_list << Book.all[5]
+				other_list << Book.all[6]
+				other_list << Book.all[8]
+				other_list << Book.all[9]
+				other_list << Book.all[10]
 				other_list.each_with_index do |book, i|
-					puts "#{i+1}. #{book.name}."
+					puts "#{i+6}. #{book.name}."
 				end
+				book_list << other_list
+				book_list = book_list.flatten
 			puts "\nEnter a book number to see what a loon George R.R. Martin is, or push 0 to return to main menu"
 			input = STDIN.gets.chomp
 			if input == "0"
 				is_running = false
-			elsif input == "1"
-				puts "#{book_list[0].name} has #{book_list[0].characters.count} characters in it."
-			elsif input == "2"
-				puts "#{book_list[1].name} has #{book_list[1].characters.count} characters in it."
-			elsif input == "3"
-				puts "#{book_list[2].name} has #{book_list[2].characters.count} characters in it."
-			elsif input == "4"
-				puts "#{book_list[3].name} has #{book_list[3].characters.count} characters in it."
-			elsif input == "5"				
-				puts "#{book_list[4].name} has #{book_list[4].characters.count} characters in it."
+			elsif 0 < input.to_i && input.to_i < 13
+				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters in it."
 			else
 				puts "Invalid input"
 			end
-			STDIN.gets.chomp
+			puts "\n\n\n\n\n\n\n"
 		end
 	end
 
 	def self.house
 		
 	end
-
-
-
-
-########MIGHT USE LATER##################
-# 	puts "Browse top characters:"
-#
-# 	json = get_json(GAME_OF_THRONES_URL)
-# 	facts = ["characters"]["name"]
-# 	facts = facts.map do |facts|
-# 		facts["name"]
-# 	end
-#
-# end
 
 ########## HELPER METHODS ############
 
