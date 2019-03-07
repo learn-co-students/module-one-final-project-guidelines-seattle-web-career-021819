@@ -1,5 +1,4 @@
 require_relative '../config/environment'
-
-
-
-puts "HELLO WORLD"
+$TEST_MODE = false
+$GAME_WIDTH = 85
+play_game
