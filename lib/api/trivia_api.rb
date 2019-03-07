@@ -5,13 +5,14 @@ class TriviaApi
     api_url =
       "#{TRIVIA_API}" +
       "amount=#{amount}" +
+      "&category=#{category}" +
       "&difficulty=#{difficulty}" +
       "&type=#{type}"
     response = RestClient.get(api_url)
     json = JSON.parse(response.body)
   end
 
-  def self.get_questions(amount: "10", category: "", difficulty: "easy", type: "multiple")
+  def self.get_questions(amount: "10", category: 9, difficulty: "easy", type: "multiple")
     data = self.get_json(
       amount: amount,
       category: category,
