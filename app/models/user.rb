@@ -11,7 +11,13 @@ class User < ActiveRecord::Base
     @@current_user
   end
 
-  def self.game_points
+  def self.save_game
+    binding.pry
+    array = Game.all.select { |round| round.game_id == @@new_game.id}
+    correct_num = array.map { |xx| xx.correct? }.inject(:+)
+    points = correct_num * 10
+    @@new_game.update(number_correct: correct_num, number_incorrect: Game.count(:incorrect?), game_points: points)
+    puts "you scored #{points} on this game!"
 
   end
 

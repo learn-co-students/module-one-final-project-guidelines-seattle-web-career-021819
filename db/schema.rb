@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 5) do
   end
 
   create_table "rounds", force: :cascade do |t|
-    t.boolean "correct?"
-    t.boolean "incorrect?"
+    t.integer "correct?"
+    t.integer "incorrect?"
     t.integer "recipe_id"
     t.integer "game_id"
   end
