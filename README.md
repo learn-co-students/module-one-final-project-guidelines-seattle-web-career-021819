@@ -16,6 +16,17 @@ Data provided by [EpisoDate.com](https://www.episodate.com/)
 
 ### Demo
 
+### Contributing
+Contributions are welcome in all shapes and forms, especially bug fixes and feature additions.
+To contribute, please fork the repository and create a separate branch that you can then commit and push.
+Thank you!
+
+### Next Steps
+- [ ] User Profile page showing statistics
+  - List of start dates for user's favorite shows
+  - Which network does a user favorite the most?
+  - How many playlists has a user created?
+  - What shows are most favorited?
 
 ### Credits
 A project by [Isa Levine](https://github.com/isalevine) and [Yutaro Tsuji](https://github.com/ytsuji27)

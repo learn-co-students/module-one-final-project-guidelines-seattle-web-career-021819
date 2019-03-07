@@ -56,8 +56,8 @@ NOTE: Usernames are case sensitive"
 
 ## ========== USER MAIN MENU (DISPLAY)========== ##
   def self.main_menu
-    @menu_message = nil
     system('clear')
+    puts @menu_message
     puts "
 Welcome #{@user.name}!
 Please select an option below:
@@ -67,7 +67,7 @@ Please select an option below:
 3. Generate playlist!
 4. Select different user
 
-0. [Q]uit"
+0. Quit"
     # puts "4. Show user statistics"
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
@@ -77,12 +77,16 @@ Please select an option below:
 ## ========== USER MAIN MENU (BACKEND)========== ##
   def self.route_user_input(user_input)
     if user_input == "1" || @thesaurus.main_menu_1_words.include?(user_input.downcase)
+      @menu_message = nil
       self.search_shows_by_title
     elsif user_input == "2" || @thesaurus.main_menu_2_words.include?(user_input.downcase)
+      @menu_message = nil
       print_list_of_favorites(@user)
     elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
+      @menu_message = nil
       fetch_episodes_for_playlist(@user)
     elsif user_input == "4" || @thesaurus.main_menu_4_words.include?(user_input.downcase)
+      @menu_message = nil
       self.user_select
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
       system('clear')
@@ -91,7 +95,7 @@ Please select an option below:
       puts
       exit
     else
-      puts "Invalid input. Please try again:"
+      @menu_message = "Invalid input. Please try again:"
       self.main_menu
     end
   end
@@ -99,6 +103,7 @@ Please select an option below:
 
 ## ========== OPTION 1. FROM USER MAIN MENU ========== ##
   def self.search_shows_by_title
+    @menu_message = nil
     system('clear')
     puts "Enter show title to search:"
     @title_search = STDIN.gets.chomp
@@ -202,6 +207,7 @@ What would you like to do?
     elsif user_input == "2" || @thesaurus.display_menu_2_words.include?(user_input.downcase)
       self.search_shows_by_title
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
+      @menu_message = nil
       self.main_menu
     elsif user_input == "0" || @thesaurus.display_menu_0_words.include?(user_input.downcase)
       system('clear')
