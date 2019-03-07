@@ -16,8 +16,11 @@ class Round < ActiveRecord::Base
     i = rand(Recipe.all.length)
     question = Recipe.all[i].questions
     answer = Recipe.all[i].drink
-    incorrect = Recipe.all[i].incorrect
+    choices = Recipe.all[i].incorrect.split(",")
+    xx = rand(choices.length+1)
+    choices.insert(xx, answer)
     id = Recipe.all[i].id.to_i
+    binding.pry
     @@current_round.update(recipe_id: id)
   end
 
