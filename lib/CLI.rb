@@ -3,29 +3,30 @@ GAME_OF_THRONES_URL = "https://anapioficeandfire.com/api/"
 class CLI
 
 
-def self.run
- puts "Running CLI..."
+	def self.run
+	 puts "Running CLI..."
 
-is_running = true
-	while is_running
-		self.main_menu
-		input= STDIN.gets.chomp
-		#echo what the user types
-		if input == "0"
-		is_running = false
-		elsif input == "1"
-			self.character
-		elsif input == "2"
-			self.book
-		elsif input == "3"
-			self.house
-		else
-			puts "Invalid input."
+	is_running = true
+		while is_running
+			self.main_menu
+			input= STDIN.gets.chomp
+			#echo what the user types
+			if input == "0"
+				is_running = false
+			elsif input == "1"
+				self.character
+			elsif input == "2"
+				self.book
+			elsif input == "3"
+				self.house
+			else
+				puts "Invalid input."
+			end
 		end
 	end
-end
 
 	def self.main_menu
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n"
 		Dragon.display
 		puts "Which category would you like to choose?"
 		puts "0. exit"
@@ -36,17 +37,43 @@ end
 
 	def self.character
 		is_running = true
+		is_running2 = true
+		while is_running2
+			puts "========================================================"
+	  		puts "Think you know how many characters are in G.O.T? (yes/no)"
+	  		puts "========================================================"
+	      	input = STDIN.gets.chomp
+		    if input.starts_with? "y" || input == "yes"
+		      	puts "Give me your best guess.."
+		      	input = STDIN.gets.chomp
+			    if input == "2021"
+			      	puts "Congratulations, you are officially a G.O.T NERD"
+			    else
+			      	puts "Nice try, the correct Answer is #{Character.all.map do |house_character|
+															house_character.name
+															end.uniq.count}"
+					is_running2 = false
+				end
+		    elsif input.starts_with? "n" || input == "no"
+		      	puts "Ok, onward to the characters info so you can NERD UP!"
+		      	is_running2 = false
+		  	else
+		  		puts "Invalid input"
+	        end
+		end
 		while is_running == true
+			puts "==========================================================================="
 			puts "Enter a name for the Character to lookup or enter 0 to return to main menu."
-			puts "Names are case sensitive."
+			puts "==========================================================================="
 			input = STDIN.gets.chomp
 			puts
 			puts
 			found_character = Character.find_by(name: input)
 			if found_character != nil
-
 				brethren = found_character.house.characters.map do |house_character|
+					if house_character.name != input
 					house_character.name
+					end
 				end.uniq
 				puts brethren
 				puts "\n\n"
@@ -60,16 +87,25 @@ end
 			else
 				puts "Nobody matches that name"
 				puts "Please enter a valid name"
-			end
+			end	
 		end
 	end
 
 	def self.book
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		BookArt.display
 		is_running = true
 		while is_running == true
+<<<<<<< HEAD
 			BookArt.display
 			puts "========================================================"
 			puts "\nHere is a list of Game of Thrown books.\n\n"
+=======
+			puts "\n========================================"
+			puts "Here is a list of Game of Thrones books."
+			puts "========================================\n\n"
+>>>>>>> d82b3bbf217c923d8f98185f4b588c05274b8261
 			puts "Books: "
 				book_list = Book.all[0..2]
 				book_list << Book.all[4]
@@ -87,6 +123,7 @@ end
 			input = STDIN.gets.chomp
 			if input == "0"
 				is_running = false
+<<<<<<< HEAD
 			elsif input == "1"
 				puts "#{book_list[0].name} has #{book_list[0].characters.count} characters in it."
 			elsif input == "2"
@@ -101,14 +138,28 @@ end
 				puts "Invalid input"
 			end
 			STDIN.gets.chomp
+=======
+			elsif 0 < input.to_i && input.to_i < 12
+				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters in it."
+			else	
+				puts "Invalid input"
+			end
+>>>>>>> d82b3bbf217c923d8f98185f4b588c05274b8261
 		end
 	end
 
 	def self.house
+<<<<<<< HEAD
     HouseArt.display
     is_running = true
 
 		while is_running == true
+=======
+    	is_running = true
+    	HouseArt.display
+		while is_running == true
+    	puts "========================================================"
+>>>>>>> d82b3bbf217c923d8f98185f4b588c05274b8261
       puts "Think you know how many Houses are in G.O.T? (yes/no)"
       puts "If no press 0 to return to main menu"
       input = STDIN.gets.chomp
@@ -124,6 +175,7 @@ end
         puts "================================================="
       else
         puts "Nice try, the correct Answer is #{House.count}"
+<<<<<<< HEAD
       	puts "=============================================="
       end
     end
@@ -148,6 +200,18 @@ end
           puts slogan
       end
       STDIN.gets.chomp
+=======
+	    end
+    puts "Enter a house name to find out their Coat of Arms"
+      input = STDIN.gets.chomp
+      puts
+      puts
+    found_house = House.find_by(name: input)
+    if found_house != nil
+    slogan = found_house.coat_of_arms
+    puts slogan
+    end
+>>>>>>> d82b3bbf217c923d8f98185f4b588c05274b8261
   end
 end
 ########MIGHT USE LATER##################
