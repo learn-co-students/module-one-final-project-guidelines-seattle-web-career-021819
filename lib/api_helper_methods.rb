@@ -32,7 +32,14 @@ def print_list_of_favorites(user, menu)
   favorites_array = fetch_list_of_favorites(user)
   if favorites_array.count == 0
     system('clear')
-    puts "You have no favorites yet!"
+    puts @menu_message
+    puts
+    puts "You have no favorites!"
+    puts
+    puts "Press enter to return to main menu and start adding shows!"
+    STDIN.gets.chomp
+    @menu_message = nil
+    CLI.main_menu
   else
     favorites_array.each do |favorite_instance|
       show =  Show.find_by(api_id: favorite_instance.show_id)
@@ -47,22 +54,24 @@ def print_list_of_favorites(user, menu)
   end
   puts
 
-
   # BELOW: (added 3/6/19)
   # Isa added functionality for different times when
   # Favorites list could be viewed - now, from the new
   # user profile menu, users can switch playlist adding on/off
   # for specific shows on their list
   if menu == "main_menu"
-    puts "Press enter to return to main menu or enter a show to remove from favorites"
+    puts "Press enter to return to main menu or enter a show ID to remove from favorites"
     user_input = STDIN.gets.chomp
+    selection = show_array.select do |show|
+      show.include?(user_input)
+    end
     if user_input.strip == ""
       @menu_message = nil
       CLI.main_menu
-    elsif show_array.include?(user_input)
+    elsif selection.count == 1
       delete_show_from_favorites(user_input, user)
     else
-      @menu_message = "Please enter a valid show name"
+      @menu_message = "Please enter a valid show ID"
       print_list_of_favorites(user, "main_menu")
     end
 
@@ -89,7 +98,7 @@ def print_list_of_favorites(user, menu)
           end
         end
       end
-      @menu_message = "Please enter a valid show name"
+      @menu_message = "Please enter a valid show ID"
       print_list_of_favorites(user, "profile_menu")
     end
   end
@@ -99,10 +108,16 @@ end
 
 
 def delete_show_from_favorites(user_input, user)
-  selected_show_api = Show.find_by(name: user_input).api_id
-  Favorite.where(user_id: @user.id, show_id: selected_show_api).destroy_all
-  @menu_message = "#{user_input} has been removed from your Favorites"
-  print_list_of_favorites(@user)
+  selected_show = Show.find_by(api_id: user_input)
+  menu = "main_menu"
+  if selected_show == nil
+    @menu_message = "Please enter a valid show ID"
+    print_list_of_favorites(user, menu)
+  else
+    Favorite.where(user_id: @user.id, show_id: selected_show.api_id).destroy_all
+    @menu_message = "#{selected_show.name} has been removed from your Favorites"
+    print_list_of_favorites(user,menu)
+  end
 end
 
 

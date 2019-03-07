@@ -88,7 +88,7 @@ Please select an option below:
       self.search_shows_by_title
     elsif user_input == "2" || @thesaurus.main_menu_2_words.include?(user_input.downcase)
        @menu_message = nil
-      print_list_of_favorites(@user, "main_menu")
+      print_list_of_favorites(@user, "main_menu")     #<~~ Goes to Line 29 - api_helper_method.rb
     elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
       @menu_message = nil
       fetch_episodes_for_playlist(@user)
