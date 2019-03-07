@@ -20,7 +20,7 @@ def main_menu
 
   elsif user_input == "2"
     is_user_new
-    recipe_list
+    user_input2
 
   elsif user_input == "3"
     view_saved_recipes
@@ -38,7 +38,7 @@ end
 #Add new user name to database and prompt for different name if it already exists
 def add_new_user
   puts ""
-  puts "Welcome! Please enter a new account name:"
+  puts "Please enter a new account name:"
   puts ""
   user_name = STDIN.gets.chomp.downcase
   if User.exists?(name: "#{user_name}")
@@ -65,23 +65,25 @@ def is_user_new
     if User.exists?(name: "#{current_name}")
        User.find_by_name("#{current_name}")
     else
+      puts ""
+      puts "Hi new user!"
       add_new_user
     end
 end
 
 #from Chris:
-# def user_input2
-#  arr = []
-#  puts “Please enter your account name:”
-#  user_name = STDIN.gets.chomp.downcase
-#  arr << recipe_list
-#  new_array = arr.flatten
-#  puts new_array
-#  puts “Please input the number of which recipe you like:”
-#  desired_recipe_num = STDIN.gets.chomp
-#  users_choice = new_array[desired_recipe_num.to_i-1]
-#  puts users_choice
-# end
+def user_input2
+ arr = []
+ arr << recipe_list
+ new_array = arr.flatten
+ puts new_array
+ puts ""
+ puts "Please input the number of which recipe you like:"
+ desired_recipe_num = STDIN.gets.chomp
+ users_choice = new_array[desired_recipe_num.to_i-1]
+ Recipe.create(title: "#{users_choice}")
+ puts users_choice
+end
 
 #User inputs their ingredient of choice
 def get_ingredient_from_user
