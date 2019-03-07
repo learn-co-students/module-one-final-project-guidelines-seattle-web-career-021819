@@ -82,6 +82,7 @@ def print_list_of_favorites(user, menu)
       user_profile_menu(user)
 
     else
+
       favorite = Favorite.where(show_id: user_input, user_id: user.id)[0]
 
       if favorite == nil
@@ -91,7 +92,6 @@ def print_list_of_favorites(user, menu)
       else
         show_array.each do |show_name|
           if show_name.include?(user_input)
-
             if favorite.playlist_on_off == "on"
               favorite.playlist_on_off = "off"
               favorite.save
@@ -103,17 +103,13 @@ def print_list_of_favorites(user, menu)
               @menu_message = nil
               print_list_of_favorites(user, "profile_menu")
             end
-
           end
-
         end
         @menu_message = "Please enter a valid show id"
         print_list_of_favorites(user, "profile_menu")
-
       end
     end
   end
-
 end
 
 
@@ -135,8 +131,8 @@ end
 ## ========== OPTION 3. FROM USER MAIN MENU ========== ##
 def fetch_episodes_for_playlist(user)
   all_episodes_array = []
-  favorites_array = fetch_list_of_favorites(user)
-  favorites_array.each do |favorite_instance|
+  favorites_on_array = Favorite.where(user_id: user.id, playlist_on_off: "on")
+  favorites_on_array.each do |favorite_instance|
     all_episodes_array += fetch_episodes_by_id(favorite_instance.show_id)
   end
   add_playlist_to_table(all_episodes_array, user)
@@ -157,16 +153,6 @@ end
 
 def fetch_list_of_favorites(user)
   favorites_array = Favorite.where(user_id: user.id)
-end
-
-
-def filter_by_playlist_on_off(favorites_array)
-  # if breaks, try:
-  # array_output = ...
-  favorites_array.select do |favorite_instance|
-    favorite_instance.user_id == "on"
-  end
-  # ... return array_output
 end
 
 
@@ -192,10 +178,12 @@ def add_playlist_to_table(array, user)
     "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
   end
   playlist_instances = Playlist.where("user_id = ?", user.id)
-  if playlist_instances == []
+  binding.pry
+  if playlist_instances.count == 0
     playlist_number = 1
   else
-    playlist_number = playlist_instances.group("playlist_num").keys.last += 1
+    playlist_number = playlist_instances.group("playlist_num").count.keys.count
+    playlist_number += 1
   end
   i = 1
   episode_array.each do |episode|
@@ -216,6 +204,8 @@ def print_new_playlist(episode_array)
   puts "Playlist created!"
   puts "-----------------"
   puts episode_array
+  puts
+  puts "Estimated runtime: "
   puts
   puts "Press enter to return to the main menu"
   STDIN.gets.chomp
