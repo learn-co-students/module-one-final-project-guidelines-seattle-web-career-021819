@@ -86,6 +86,7 @@ Please select an option below:
       self.user_select
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
       system('clear')
+      Ascii.goodbye_art
       puts "Thank you! Goodbye!"
       puts
       exit
@@ -204,7 +205,9 @@ What would you like to do?
       self.main_menu
     elsif user_input == "0" || @thesaurus.display_menu_0_words.include?(user_input.downcase)
       system('clear')
+      Ascii.goodbye_art
       puts "Thank you! Goodbye!"
+      puts
       exit
     else
       @menu_message = "Please enter a valid option"
