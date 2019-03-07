@@ -156,21 +156,26 @@ end
 
 # Colors the correct answer in green and wrong guess in red
 def print_colorized_answers(answers, guess, correct)
-  colorized_ans = answers.map do |letter, answer|
-    if answer == answers[guess]
-      "#{letter}. #{answer}".colorize(:red)
-    elsif answer == correct
-      "#{letter}. #{answer}".colorize(:green)
+  colorized_ans = answers.map do |letter, curr_answer|
+    #binding.pry
+    if curr_answer == correct
+      "#{letter}. #{curr_answer}".colorize(:green)
+    elsif answers[guess] == curr_answer
+      "#{letter}. #{curr_answer}".colorize(:red)
     else
-      "#{letter}. #{answer}"
+      "#{letter}. #{curr_answer}"
     end
   end
-end
 
-def print_answers(answers)
   Terminal::Table.new do |t|
-    t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
-    t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
+    t.add_row [
+      colorized_ans[0],
+      colorized_ans[1]
+    ]
+    t.add_row [
+      colorized_ans[2],
+      colorized_ans[3]
+    ]
     t.style = {:all_separators => true, :width => $GAME_WIDTH}
   end
 end
