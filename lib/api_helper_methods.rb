@@ -46,11 +46,10 @@ def print_list_of_favorites(user)
   puts
   puts "Press enter to return to main menu or enter a show to remove from favorites"
   user_input = STDIN.gets.chomp
-  binding.pry
-  if user_input == nil
+  if user_input.strip == ""
     CLI.main_menu
   else
-    delete_show_from_favorites(user, favorites_array)
+    # delete_show_from_favorites(user, favorites_array)
   end
 #    Favorite.where(user_id: self.id, show_id: )
 end

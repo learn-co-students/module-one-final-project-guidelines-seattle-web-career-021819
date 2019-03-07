@@ -7,10 +7,11 @@ API_URL = "https://www.episodate.com/api/"
 
 
 class CLI
-  attr_accessor :user, :title_search, :menu_message
+  attr_accessor :user, :title_search, :menu_message, :thesaurus
 
 
   def self.run
+    @thesaurus = Thesaurus.new
     self.welcome_message
   end
 
@@ -76,15 +77,15 @@ Please select an option below:
 
 ## ========== USER MAIN MENU (BACKEND)========== ##
   def self.route_user_input(user_input)
-    if user_input == "1" || user_input.downcase.include?("search")
+    if user_input == "1" || @thesaurus.main_menu_1_words.include?(user_input.downcase)
       self.search_shows_by_title
-    elsif user_input == "2" || user_input.downcase.include?("favorite")
+    elsif user_input == "2" || @thesaurus.main_menu_2_words.include?(user_input.downcase)
       print_list_of_favorites(@user)
-    elsif user_input == "3" || user_input.downcase.include?("playlist")
+    elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
       fetch_episodes_for_playlist(@user)
-    elsif user_input == "4" || user_input.downcase.include?("user")
+    elsif user_input == "4" || @thesaurus.main_menu_4_words.include?(user_input.downcase)
       self.user_select
-    elsif user_input == "0" || user_input.downcase.include?("q")
+    elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
       system('clear')
       puts "Thank you! Goodbye!"
       puts
@@ -198,13 +199,13 @@ What would you like to do?
 
 ## ========== SHOW DETAILS PAGE (BACKEND) ========== ##
   def self.what_would_you_like_to_do(user_input, show_hash)
-    if user_input == "1" || user_input.downcase.include?("add")
+    if user_input == "1" || @thesaurus.display_menu_1_words.include?(user_input.downcase)
       self.add_to_favorites(show_hash)
-    elsif user_input == "2" || user_input.downcase.include?("search")
+    elsif user_input == "2" || @thesaurus.display_menu_2_words.include?(user_input.downcase)
       self.search_shows_by_title
-    elsif user_input == "3" || user_input.downcase.include?("back")
+    elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
       self.main_menu
-    elsif user_input == "0" || user_input.downcase.include?("q")
+    elsif user_input == "0" || @thesaurus.display_menu_0_words.include?(user_input.downcase)
       system('clear')
       puts "Thank you! Goodbye!"
       exit
