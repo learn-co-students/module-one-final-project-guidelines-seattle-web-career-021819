@@ -125,12 +125,14 @@ end
       input = STDIN.gets.chomp
       puts
       puts
-    found_house = House.where(name: input)
+    found_house = House.find_by(name: input)
     if found_house != nil
-
+# binding.pry
     slogan = found_house.coat_of_arms
     puts slogan
     end
+
+
   end
 end
 ########MIGHT USE LATER##################
