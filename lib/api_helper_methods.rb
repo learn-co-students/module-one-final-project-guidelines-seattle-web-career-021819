@@ -48,11 +48,25 @@ def print_list_of_favorites(user)
   user_input = STDIN.gets.chomp
   if user_input.strip == ""
     CLI.main_menu
-  else
-    # delete_show_from_favorites(user, favorites_array)
+
+  # else
+  #   delete_show_from_favorites(user_input, user, favorites_array)
+
   end
-#    Favorite.where(user_id: self.id, show_id: )
 end
+
+
+
+# def delete_show_from_favorites(user_input, user, favorites_array)
+
+#    Favorite.where(user_id: @user.id, show_id: selected_show_api)
+
+# @user = #<User:XXXX id: 4, name: "Yutaro">
+
+# selected_show_api = Show.find_by(name: user_input).api_id
+## will return show API id that user specified
+
+# Favorite.where(user_id: @user.id, show_id: selected_show_api).destroy_all
 
 
 
@@ -122,11 +136,6 @@ end
 
 
 
-
-# ============================
-# Isa - 3-6-18 afternoon, solo
-# ============================
-
 # plug into:
 # CLI, #47 - self.user_select (add option to see list of users - will need to check if user_input == "")
 # CLI, #78 - self.main_menu (add option to see list of users)
@@ -134,6 +143,7 @@ def list_all_users
   puts User.pluck(:name)
 end
 # after printing list, re-prompt to enter User name
+
 
 ## ========== OPTION 1. FROM SHOW DETAILS (cont.) ========== ##
 ## ==========    referenced in add_to_favorites   ========== ##
