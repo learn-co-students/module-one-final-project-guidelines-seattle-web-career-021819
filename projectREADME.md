@@ -1,6 +1,8 @@
 #Module 1 Final Project
 By Josh Loran and Sofia Jonsson
 
+![alt text](lib/art/Game_of_Thrones_title_card.jpg)
+
 ##Welcome
 
 For our final project we have built a database sourced from the Game of Thrones "Ice and Fire" API. We have provided instructions below for you to run the application on your local computer.
