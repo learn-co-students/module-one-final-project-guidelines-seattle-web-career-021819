@@ -15,7 +15,7 @@ def main_menu
   user_input = STDIN.gets.chomp.downcase
 
   if user_input == "1"
-    add_new_user
+    u = add_new_user
     recipe_list
 
   elsif user_input == "2"
@@ -24,6 +24,8 @@ def main_menu
 
   elsif user_input == "3"
     view_saved_recipes
+    r = user_input2
+    save_to_user_recipe(u, r)
 
   elsif user_input == "4"
     exit
@@ -43,7 +45,7 @@ def add_new_user
   user_name = STDIN.gets.chomp.downcase
   if User.exists?(name: "#{user_name}")
     puts "Oopsie! That user name is not available, please choose another name."
-    add_new_user
+    user
   else
   User.create(name: "#{user_name}")
   end
@@ -73,16 +75,15 @@ end
 
 #from Chris:
 def user_input2
- arr = []
- arr << recipe_list
- new_array = arr.flatten
- puts new_array
- puts ""
- puts "Please input the number of which recipe you like:"
- desired_recipe_num = STDIN.gets.chomp
- users_choice = new_array[desired_recipe_num.to_i-1]
- Recipe.create(title: "#{users_choice}")
- puts users_choice
+   arr = []
+   arr << recipe_list
+   new_array = arr.flatten
+   puts new_array
+   puts ""
+   puts "Please input the number of which recipe you like:"
+   desired_recipe_num = STDIN.gets.chomp
+   users_choice = new_array[desired_recipe_num.to_i-1]
+   Recipe.create(title: "#{users_choice}")
 end
 
 #User inputs their ingredient of choice
@@ -117,4 +118,8 @@ def view_saved_recipes
     else
       add_new_user
   end
+end
+
+def save_to_user_recipe(u, r)
+  UserRecipe.create(user_id: u.id, recipe_id: r.id)
 end
