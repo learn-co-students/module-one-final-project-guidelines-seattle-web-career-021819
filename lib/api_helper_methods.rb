@@ -185,18 +185,21 @@ def add_playlist_to_table(array, user)
   episode_array = random_array.map do |episode_hash|
     "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
   end
-  # Playlist.create(user_id: user.id,
-  #   episode_1: episode_array[0],
-  #   episode_2: episode_array[1],
-  #   episode_3: episode_array[2],
-  #   episode_4: episode_array[3],
-  #   episode_5: episode_array[4],
-  #   episode_6: episode_array[5],
-  #   episode_7: episode_array[6],
-  #   episode_8: episode_array[7],
-  #   episode_9: episode_array[8],
-  #   episode_10: episode_array[9]
-  # )
+  playlist_instances = Playlist.where("user_id = ?", user.id)
+  if playlist_instances == []
+    playlist_number = 1
+  else
+    playlist_number = playlist_instances.group("playlist_num").keys.last += 1
+  end
+  i = 1
+  episode_array.each do |episode|
+    Playlist.create(user_id: user.id,
+      playlist_num: playlist_number,
+      ep_order: i,
+      ep_desc: episode
+    )
+    i += 1
+  end
   print_new_playlist(episode_array)
 end
 

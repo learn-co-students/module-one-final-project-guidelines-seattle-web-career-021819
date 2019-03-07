@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 9) do
+
+ActiveRecord::Schema.define(version: 10) do
+
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -20,19 +22,12 @@ ActiveRecord::Schema.define(version: 9) do
 
   create_table "playlists", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "episode_1"
-    t.string   "episode_2"
-    t.string   "episode_3"
-    t.string   "episode_4"
-    t.string   "episode_5"
-    t.string   "episode_6"
-    t.string   "episode_7"
-    t.string   "episode_8"
-    t.string   "episode_9"
-    t.string   "episode_10"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "total_runtime"
+    t.integer  "playlist_num"
+    t.integer  "ep_order"
+    t.string   "ep_desc"
   end
 
   create_table "shows", force: :cascade do |t|
