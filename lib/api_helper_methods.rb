@@ -29,6 +29,7 @@ end
 ## ========== OPTION 2. FROM USER MAIN MENU ========== ##
 def print_list_of_favorites(user, menu)
   show_array = []
+  favorites_array = []
   favorites_array = fetch_list_of_favorites(user)
   if favorites_array.count == 0
     system('clear')
@@ -37,6 +38,7 @@ def print_list_of_favorites(user, menu)
     favorites_array.each do |favorite_instance|
       show =  Show.find_by(api_id: favorite_instance.show_id)
       show_array << "id. #{show.api_id} - #{show.name}            (add to playlists: #{favorite_instance.playlist_on_off.upcase})"
+      # binding.pry
     end
     system('clear')
     puts @menu_message
@@ -71,6 +73,7 @@ def print_list_of_favorites(user, menu)
     puts "Press enter when ready to return to your profile menu."
     user_input = STDIN.gets.chomp
     if user_input.strip == ""
+      @menu_message = nil
       user_profile_menu(user)
 
     else
@@ -79,18 +82,29 @@ def print_list_of_favorites(user, menu)
       # found? (similar to Until, using xx == true)
       show_array.each do |show_name|
         if show_name.include?(user_input)
-          favorite =  Favorite.find_by(show_id: user_input)
-          if favorite.playlist_on_off == "on"
+          favorite = Favorite.where(show_id: user_input, user_id: user.id)[0]
+
+          if favorite == nil
+            @menu_message = "Please enter a valid show id"
+            print_list_of_favorites(user, "profile_menu")
+
+          elsif favorite.playlist_on_off == "on"
             favorite.playlist_on_off = "off"
             favorite.save
           elsif favorite.playlist_on_off == "off"
             favorite.playlist_on_off = "on"
             favorite.save
           end
+          @menu_message = nil
+          print_list_of_favorites(user, "profile_menu")
+
+        else
+          @menu_message = "Please enter a valid show id"
+          print_list_of_favorites(user, "profile_menu")
+
         end
       end
-      @menu_message = "Please enter a valid show name"
-      print_list_of_favorites(user, "profile_menu")
+
     end
   end
 
