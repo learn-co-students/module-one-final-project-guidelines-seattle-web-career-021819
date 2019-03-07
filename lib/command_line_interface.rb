@@ -1,6 +1,9 @@
 $curr_user = nil
 
 def welcome_message
+
+  a = Artii::Base.new :font => 'slant'
+  puts a.asciify('Recipe Time!')
   puts "------------------------------------------------------"
   puts "Welcome to Recipe Generator! Do you have an account? (yes/no)"
   puts "------------------------------------------------------"
