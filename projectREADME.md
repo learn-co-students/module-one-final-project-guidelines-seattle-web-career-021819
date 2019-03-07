@@ -15,9 +15,10 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 
 
 ##Install Instructions
-1. Clone the repository to your local computer
-2. In the parent directory of the cloned repository run 'bundle install' to install the required Ruby gems
-3. Run ruby bin/run.db to start the application
+1. Clone the repository using your favorite clone method, or typing "git clone git@github.com:WTFCodingPotato/module-one-final-project-guidelines-seattle-web-career-021819.git" into your terminal
+2. Still in terminal type, "cd module-one-final-project-guidelines-seattle-web-career-021819"
+3. Type "bundle install"
+4. Type "rake run" to start the program
 
 ***insert photo of bundle install***
 

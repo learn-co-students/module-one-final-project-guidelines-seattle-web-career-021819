@@ -48,14 +48,16 @@ class CLI
 		      	input = STDIN.gets.chomp
 			    if input == "2021"
 			      	puts "Congratulations, you are officially a G.O.T NERD"
+			      	is_running2 = false
 			    else
 			      	puts "Nice try, the correct Answer is #{Character.all.map do |house_character|
 															house_character.name
 															end.uniq.count}"
+					puts "Onward to the characters so you can NERD UP!!"
 					is_running2 = false
 				end
 		    elsif input.starts_with? "n" || input == "no"
-		      	puts "Ok, onward to the characters info so you can NERD UP!"
+		      	puts "Ok, onward to the characters info so you can NERD UP!!"
 		      	is_running2 = false
 		  	else
 		  		puts "Invalid input"
