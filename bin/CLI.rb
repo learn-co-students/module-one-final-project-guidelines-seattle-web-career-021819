@@ -66,14 +66,14 @@ Welcome #{@user.name}!
 Please select an option below:
 
 
-1. [Search] shows by title
-2. Show current list of [favorite] shows
-3. Generate [playlist]!
-4. Select different [user]
+1. Search shows by title
+2. Show current list of favorite shows
+3. Generate playlist!
+4. Select different user
 5. Print all user names
 6. View your user profile
 
-0. [Q]uit"
+0. Quit"
     # puts "5. View your user profile"
 
     user_input = STDIN.gets.chomp
@@ -88,7 +88,7 @@ Please select an option below:
       self.search_shows_by_title
     elsif user_input == "2" || @thesaurus.main_menu_2_words.include?(user_input.downcase)
        @menu_message = nil
-      print_list_of_favorites(@user, "main_menu")
+      print_list_of_favorites(@user, "main_menu")     #<~~ Goes to Line 29 - api_helper_method.rb
     elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
       @menu_message = nil
       fetch_episodes_for_playlist(@user)

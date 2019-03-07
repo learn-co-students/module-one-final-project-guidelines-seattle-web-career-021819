@@ -27,6 +27,7 @@ Thank you!
   - Which network does a user favorite the most?
   - How many playlists has a user created?
   - What shows are most favorited?
+  - Upload profile pic and convert to ASCII art
 
 ### Credits
 A project by [Isa Levine](https://github.com/isalevine) and [Yutaro Tsuji](https://github.com/ytsuji27)
