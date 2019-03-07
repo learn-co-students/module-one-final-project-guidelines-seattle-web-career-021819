@@ -131,48 +131,66 @@ class CLI
 
 
 	def self.house
-    HouseArt.display
-    is_running = true
-	while is_running == true
-      puts "Think you know how many Houses are in G.O.T? (yes/no)"
-      puts "If no press 0 to return to main menu"
-      input = STDIN.gets.chomp
-      if input == "0"
-        is_running = false
-      elsif input.starts_with? "y" || input == "yes"
-        puts "Give me your best guess.."
-        puts "========================="
+		HouseArt.display
+		is_running = true
+		is_running2 = true
+ 		while is_running
+			puts "========================================================"
+	  		puts "Think you know how many houses are in G.O.T? (yes/no)"
+	  		puts "========================================================"
+	      	input = STDIN.gets.chomp
+		    if input.starts_with? "y" || input == "yes"
+		      	puts "Give me your best guess.."
+		      	input = STDIN.gets.chomp
+			    if input == "443"
+			      	puts "Congratulations, you are officially a G.O.T NERD"
+			      	is_running = false
+			    else
+			      	puts "Nice try, the correct Answer is #{House.all.count}"
+					puts "Onward to the characters so you can NERD UP!!"
+					is_running = false
+				end
+		    elsif input.starts_with? "n" || input == "no"
+		      	puts "Ok, onward to the houses info so you can NERD UP!!"
+		      	is_running = false
+		  	else
+		  		puts "Invalid input"
+	        end
+		end
+   		while is_running2
+		    puts "\n\n\n\n\n\n\n"
+	        puts "Enter a house name to find out their Coat of Arms, or press 0 to return to main menu"
+	        puts "=================================================="
+	        puts "Suggested Searches:"
+	        puts "================="
+	        puts
+	        puts "House Targaryen of King's Landing"
+	        puts
+	        puts "House Stark of Winterfell"
+	        puts
+	        puts "House Lannister of Casterly Rock"
+	        puts
+	        input = STDIN.gets.chomp
+	        puts
+	        puts
+	        found_house = House.find_by(name: input)
+	        if found_house != nil
+	        	slogan = found_house.coat_of_arms
+	        	puts slogan
+	        elsif input == "0"
+      			is_running2 = false
+      		else 
+      			puts "invalid input"
+      		end
+ 		end
+	end
+end
 
-      input = STDIN.gets.chomp
-      if input == "443"
-        puts "Congratulations, you are officially a G.O.T NERD!"
-        puts "================================================="
-      else
-        puts "Nice try, the correct Answer is #{House.count}"
-      	puts "=============================================="
-      end
-    end
-    puts "\n\n\n\n\n\n\n"
-        puts "Enter a house name to find out their Coat of Arms"
-        puts "=================================================="
-        puts "Suggested Searches:"
-          puts "================="
-        puts
-        puts "House Targaryen of King's Landing"
-        puts
-        puts "House Stark of Winterfell"
-        puts
-        puts "House Lannister of Casterly Rock"
-        puts
-        input = STDIN.gets.chomp
-        puts
-        puts
-        found_house = House.find_by(name: input)
-          if found_house != nil
-            slogan = found_house.coat_of_arms
-          puts slogan
-      end
-      STDIN.gets.chomp
-  end
-end
-end
+
+	       #  end
+	       #  puts "Cool huh? Look up another house or press 0 to return to main menu"
+      		# input = STDIN.gets.chomp
+      		# if input == 0
+      		# 	is_running2 = false
+      		# end
+
