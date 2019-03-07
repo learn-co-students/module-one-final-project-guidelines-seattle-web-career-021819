@@ -175,3 +175,4 @@ class CLI
       STDIN.gets.chomp
   end
 end
+end
