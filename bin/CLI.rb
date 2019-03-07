@@ -73,9 +73,9 @@ Please select an option below:
 5. Print all user names
 6. View your user profile
 
-0. Quit"
-    # puts "5. View your user profile"
+0. Quit program"
 
+    puts
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -214,10 +214,11 @@ Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/
     puts
     puts "
 What would you like to do?
-1. View list of seasons/episodes
-2. Add to Favorites
+1. Add to Favorites
+2. View list of seasons/episodes
 3. Search for another title
 4. Back to main menu
+
 0. Quit"
 
     user_input = STDIN.gets.chomp
