@@ -10,16 +10,16 @@ end
 # Gratuitous ASCII art introduction
 def welcome
   system "clear"
-  aa = Artii::Base.new :font => 'big'
-  bb = Artii::Base.new :font => 'univers'
-  cc = Artii::Base.new :font => 'epic'
-  puts aa.asciify('Welcome to')
+  aa = Artii::Base.new :font => 'univers'
+  bb = Artii::Base.new :font => 'doh'
+  cc = Artii::Base.new :font => 'larry3d'
+  puts bb.asciify('Welcome to')
   sleep(2)
   system "clear"
   puts aa.asciify("Who Wants To Be A")
   sleep(1)
   puts bb.asciify("Millionbear").center(100)
-  puts cc.asciify("$$$").center(100)
+  puts cc.asciify("$$$$$$$$$$$$$$$$$$$$$$$").center(100)
   sleep(2)
   system "clear"
   puts aa.asciify "With your host"
