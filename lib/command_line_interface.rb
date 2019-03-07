@@ -154,6 +154,7 @@ def user_delete_recipes
  if recipe_to_be_deleted == nil
    puts "Sorry I couldnt find it"
  else
-   recipe_to_be_deleted.delete
+   user_recipe = UserRecipe.find_by(recipe_id: recipe_to_be_deleted.id)
+   user_recipe.delete
  end
 end
