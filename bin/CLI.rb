@@ -19,8 +19,8 @@ class CLI
 ## ========== WELCOME PAGE (TOP) ========== ##
   def self.welcome_message
     system('clear')
-    puts "
-Welcome to the Show Randomizer!
+    Ascii.welcome_page_ascii
+    puts "Welcome to the Show Randomizer!
 -------------------------------
 Here, you can select your favorite shows
 and generate playlists of random episodes
@@ -32,7 +32,6 @@ from your favorites!"
 
 ## ========== WELCOME PAGE (BOTTOM) ========== ##
   def self.user_select
-    puts
     puts "
 Please enter a user name:
 NOTE: Usernames are case sensitive"
@@ -63,10 +62,10 @@ NOTE: Usernames are case sensitive"
 Welcome #{@user.name}!
 Please select an option below:
 
-1. [Search] shows by title
-2. Show current list of [favorite] shows
-3. Generate [playlist]!
-4. Select different [user]
+1. Search shows by title
+2. Show current list of favorite shows
+3. Generate playlist!
+4. Select different user
 
 0. [Q]uit"
     # puts "4. Show user statistics"
@@ -172,7 +171,6 @@ Please select an option below:
   def self.display_found_show_details(show_hash)
     system('clear')
     puts @menu_message
-    puts
     puts "
 You have selected:
 ==================
@@ -185,13 +183,12 @@ Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/
     # currently only displays first genre (in array)
     # .gsub stuff: Scrub HTML tags from description
     puts
-    puts
     puts "
 What would you like to do?
-1. [Add] to Favorites
-2. [Search] for another title
-3. [Back] to main menu
-0. [Q]uit"
+1. Add to Favorites
+2. Search for another title
+3. Back to main menu
+0. Quit"
 
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)
