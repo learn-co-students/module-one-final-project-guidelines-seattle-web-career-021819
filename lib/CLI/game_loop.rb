@@ -59,8 +59,7 @@ def question_loop
 
     answer_hash = shuffle_and_print_answers(curr_question)
     curr_question.update(used: true)
-
-    puts "(#{curr_question.difficulty.capitalize}, $#{curr_question.score})"
+    puts "(Current bear-bucks: #{$game_session.current_total_score})"
     print "Enter your answer: "
     # user_input = gets.chomp
     user_input = get_answer
