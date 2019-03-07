@@ -104,8 +104,7 @@ Please select an option below:
       puts "Profile loading, please wait..."
       user_profile_menu(@user)
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
-      goodbye_message
-
+      self.goodbye_message
     else
       @menu_message = "Invalid input. Please try again:"
       self.main_menu
@@ -219,8 +218,9 @@ What would you like to do?
 3. Search for another title
 4. Back to main menu
 
-0. Quit"
+0. Quit program
 
+"
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)
   end
@@ -230,19 +230,14 @@ What would you like to do?
     if user_input == "1" || @thesaurus.display_menu_1_words.include?(user_input.downcase)
       self.add_to_favorites(show_hash)
     elsif user_input == "2" || @thesaurus.display_menu_2_words.include?(user_input.downcase)
-      self.search_shows_by_title
+      display_seasons(show_hash)
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
+      self.search_shows_by_title
+    elsif user_input == "4" || @thesaurus.display_menu_4_words.include?(user_input.downcase)
       @menu_message = nil
       self.main_menu
     elsif user_input == "0" || @thesaurus.display_menu_0_words.include?(user_input.downcase)
-      system('clear')
-      Ascii.goodbye_art
-      puts "Thank you! Goodbye!"
-      puts
-      exit
-    #SECRET MENU (EXPERIMENTAL)
-    elsif user_input == "seasons"
-      display_seasons(show_hash)
+      self.goodbye_message
     else
       @menu_message = "Please enter a valid option"
       self.display_found_show_details(show_hash)

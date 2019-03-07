@@ -12,6 +12,7 @@ class Thesaurus
   :display_menu_1_words,
   :display_menu_2_words,
   :display_menu_3_words,
+  :display_menu_4_words,
   :display_menu_0_words,
 
   :profile_menu_1_words,
@@ -31,6 +32,7 @@ class Thesaurus
     change_syn = ["c", "ch", "cha", "chan", "change", "changes"]
     current_syn = ["c", "cu", "cur", "current"]
     different_syn = ["d", "di", "dif", "diff", "different"]
+    episode_syn = ["e", "ep", "epi", "epis", "episode", "episodes"]
     favorite_syn = ["f", "fa", "fav", "favs", "fave", "faves", "favorite", "favorites"]
     from_syn = ["f", "fr", "fro", "from"]
     generate_syn = ["g", "ge", "gen", "generate"]
@@ -48,6 +50,7 @@ class Thesaurus
     remove_syn = ["r", "re", "rv", "rem", "remove", "removes"]
     return_syn = ["r", "re", "ret", "return", "returns"]
     search_syn = ["s", "se", "search", "find"]
+    season_syn = ["s", "se", "sea", "seas", "season", "seasons"]
     see_syn = ["s", "se", "see", "sees"]
     select_syn = ["s", "se", "sel", "select"]
     shows_syn = ["s", "h", "sh", "show", "shows"]
@@ -72,7 +75,6 @@ class Thesaurus
 
     @main_menu_4_words = select_syn += different_syn += user_syn
 
-    # 5) NEW OPTION?? - Print all user names
     @main_menu_5_words = print_syn += all_syn += name_syn
 
     @main_menu_6_words = view_syn += your_syn += profile_syn
@@ -84,9 +86,11 @@ class Thesaurus
     # ==== Display_Found_Show_Details Menu ==== #
     @display_menu_1_words = add_syn += favorite_syn
 
-    @display_menu_2_words = search_syn += another_syn += title_syn
+    @display_menu_2_words = view_syn += list_syn += season_syn += episode_syn
 
-    @display_menu_3_words = back_syn += main_syn
+    @display_menu_3_words = search_syn += another_syn += title_syn
+
+    @display_menu_4_words = back_syn += main_syn
 
     @display_menu_0_words = quit_syn
 
