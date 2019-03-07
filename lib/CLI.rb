@@ -40,7 +40,7 @@ end
 			puts "Enter a name for the Character to lookup or enter 0 to return to main menu."
 			puts "Names are case sensitive."
 			input = STDIN.gets.chomp
-			puts 
+			puts
 			puts
 			found_character = Character.find_by(name: input)
 			if found_character != nil
@@ -95,6 +95,16 @@ end
 				is_running = false
 			elsif 0 < input.to_i && input.to_i < 13
 				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters in it."
+			elsif input == "1"
+				puts "#{book_list[0].name} has #{book_list[0].characters.count} characters in it."
+			elsif input == "2"
+				puts "#{book_list[1].name} has #{book_list[1].characters.count} characters in it."
+			elsif input == "3"
+				puts "#{book_list[2].name} has #{book_list[2].characters.count} characters in it."
+			elsif input == "4"
+				puts "#{book_list[3].name} has #{book_list[3].characters.count} characters in it."
+			elsif input == "5"
+				puts "#{book_list[4].name} has #{book_list[4].characters.count} characters in it."
 			else
 				puts "Invalid input"
 			end
@@ -103,8 +113,46 @@ end
 	end
 
 	def self.house
-		
-	end
+
+    	is_running = true
+    	HouseArt.display
+		while is_running == true
+    		puts "========================================================"
+      		puts "Think you know how many Houses are in G.O.T? (yes/no)"
+	      	input = STDIN.gets.chomp
+		    if input.starts_with? "y" || input == "yes"
+		      puts "Give me your best guess.."
+		    else
+		      puts "Ok, please put 0 to return to Main menu"
+	        end
+		      input = STDIN.gets.chomp
+  	        if input == "443"
+		      puts "Congratulations, you are officially a G.O.T NERD"
+		    else
+		      puts "Nice try, the correct Answer is #{House.count}"
+			end
+	    puts "Enter a house name to find out their Coat of Arms"
+      	input = STDIN.gets.chomp
+      	puts
+      	puts
+    	found_house = House.where(name: input)
+	    if found_house != nil
+
+	    slogan = found_house.coat_of_arms
+	    puts slogan
+	    end
+  end
+end
+########MIGHT USE LATER##################
+# 	puts "Browse top characters:"
+#
+# 	json = get_json(GAME_OF_THRONES_URL)
+# 	facts = ["characters"]["name"]
+# 	facts = facts.map do |facts|
+# 		facts["name"]
+# 	end
+#
+# end
 
 ########## HELPER METHODS ############
 
