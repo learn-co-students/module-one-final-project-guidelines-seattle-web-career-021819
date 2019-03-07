@@ -10,32 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 6) do
-
-  create_table "games", force: :cascade do |t|
-    t.integer "number_correct"
-    t.integer "number_incorrect"
-    t.integer "user_id"
-    t.integer "game_points"
-  end
-
-  create_table "recipes", force: :cascade do |t|
-    t.string "drink"
-    t.string "instructions"
-    t.string "ingredients"
-  end
-
-  create_table "rounds", force: :cascade do |t|
-    t.boolean "correct?"
-    t.boolean "incorrect?"
-    t.integer "recipe_id"
-    t.integer "game_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string  "name"
-    t.integer "total_points"
-    t.string  "win_lose_record"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
