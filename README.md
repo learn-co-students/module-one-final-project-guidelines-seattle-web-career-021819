@@ -1,24 +1,22 @@
-# RECIPE-TIME!™
+RECIPE TIME - Recipe Generator App
 
-Feeling hungry? Ever had the desire to have a vast, customizable list of recipes
-at your very fingertips? Well, wonder no more, RECIPE-TIME!™ is here.
-As part of the Flatiron app ecosystem, RECIPE-TIME!™ uses a cutting edge, TOP-SECRET
-API data collection protocol that allow you to access and collect literally
-thousands upon thousands of different recipes. Be hungry no more, RECIPE-TIME!™
-is ready to serve you :)
+This is our final project for Flatiron School, Module One. Below details of the application and instructions for how to run it on your computer.
+
+Recipe Time is a Command Line database app that allows users to:
+1. Create an account
+2. Search for new recipes based off of an ingredient they input
+3. Save recipes to their account
+4. Delete recipes from their saved recipe list
+
+Feeling hungry? Ever had the desire to have a vast, customizable list of recipes at your very fingertips?
+Be hungry no more, Recipe Time is ready to serve you :)
 
 
-INSTRUCTIONS FOR INSTALLATION AND USE
+Installation Instructions
 -------------------------------------
 
-1.CLONE OR DOWNLOAD RECIPE-TIME!™ FROM THE FOLLOWING LINK:
-https://github.com/adriennemiller/module-one-final-project-guidelines-seattle-web-career-021819
+1. Clone the repository to your computer
+2. Run bundle install to install the required Gems
+3. Run ruby bin/run.db to enter the app
 
-2.THROUGH THE TERMINAL ENTER INTO THE DIRECTORY CONTAINING THE RECIPE-TIME!™ FILE
-AND RUN THE FOLLOWING COMMANDS:
-
-* bundle install
-
-* ruby bin/run.rb
-
-3.CONGRATULATIONS RECIPE-TIME!™ IS READY TO USE, BON APPÉTIT!
+Bon Appétit!
