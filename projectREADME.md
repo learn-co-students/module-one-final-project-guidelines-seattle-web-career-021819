@@ -21,7 +21,7 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 4. Type "rake run" to start the program
 
 ***insert photo of bundle install***
-
+![alt text](lib/art/Bundle_install.png)
 
 ##Link to Licensing
 
