@@ -219,11 +219,13 @@ def add_playlist_to_table(array, user)
     "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
   end
   playlist_instances = Playlist.where("user_id = ?", user.id)
+
   if playlist_instances.count == 0
     playlist_number = 1
   else
     playlist_number = playlist_instances.group("playlist_num").count.keys.count
     playlist_number += 1
+
   end
   i = 1
   episode_array.each do |episode|
