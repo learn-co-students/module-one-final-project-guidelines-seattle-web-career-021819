@@ -147,22 +147,25 @@ end
 
 
 def add_playlist_to_table(array, user)
-  random_array = array.sample(10)
+  system('clear')
+  puts "How many episodes would you like in your playlist?"
+  ep_num = STDIN.gets.chomp.to_i
+  random_array = array.sample(ep_num)
   episode_array = random_array.map do |episode_hash|
     "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
   end
-  Playlist.create(user_id: user.id,
-    episode_1: episode_array[0],
-    episode_2: episode_array[1],
-    episode_3: episode_array[2],
-    episode_4: episode_array[3],
-    episode_5: episode_array[4],
-    episode_6: episode_array[5],
-    episode_7: episode_array[6],
-    episode_8: episode_array[7],
-    episode_9: episode_array[8],
-    episode_10: episode_array[9]
-  )
+  # Playlist.create(user_id: user.id,
+  #   episode_1: episode_array[0],
+  #   episode_2: episode_array[1],
+  #   episode_3: episode_array[2],
+  #   episode_4: episode_array[3],
+  #   episode_5: episode_array[4],
+  #   episode_6: episode_array[5],
+  #   episode_7: episode_array[6],
+  #   episode_8: episode_array[7],
+  #   episode_9: episode_array[8],
+  #   episode_10: episode_array[9]
+  # )
   print_new_playlist(episode_array)
 end
 
