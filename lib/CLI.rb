@@ -26,6 +26,7 @@ is_running = true
 end
 
 	def self.main_menu
+		Dragon.display
 		puts "Which category would you like to choose?"
 		puts "0. exit"
 		puts "1. characters"
@@ -34,19 +35,31 @@ end
 	end
 
 	def self.character
-		puts "Enter a name for the Character to lookup:"
-		id = STDIN.gets.chomp
-		found_character = Character.find_by(name: id)
-		if found_character != nil
-			puts found_character.name
-			puts found_character.house.name
-			name_array = found_character.house.characters.map do |house_character|
-				house_character.name
-			end.uniq
-			puts name_array
-		else
-			puts "Nobody matches that name"
-			puts "Please enter a valid name"
+		is_running = true
+		while is_running == true
+			puts "Enter a name for the Character to lookup or enter 0 to return to main menu."
+			puts "Names are case sensitive."
+			input = STDIN.gets.chomp
+			puts 
+			puts
+			found_character = Character.find_by(name: input)
+			if found_character != nil
+
+				brethren = found_character.house.characters.map do |house_character|
+					house_character.name
+				end.uniq
+				puts brethren
+				puts "\n\n"
+				puts "#{found_character.name} has allegience with #{found_character.house.name}."
+				puts "---------------------------------------------------------------"
+				puts "Above are #{found_character.name}'s house brethren"
+				puts "\n\n\n\n\n\n\n\n\n\n"
+			elsif input == "0"
+				is_running = false
+			else
+				puts "Nobody matches that name"
+				puts "Please enter a valid name"
+			end
 		end
 
 
