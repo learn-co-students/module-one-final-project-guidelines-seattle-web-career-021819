@@ -158,9 +158,9 @@ end
 def print_colorized_answers(answers, guess, correct)
   colorized_ans = answers.map do |letter, answer|
     if answer == answers[guess]
-      "#{letter}. #{answer}".colorize(:green)
-    elsif answer == correct
       "#{letter}. #{answer}".colorize(:red)
+    elsif answer == correct
+      "#{letter}. #{answer}".colorize(:green)
     else
       "#{letter}. #{answer}"
     end
