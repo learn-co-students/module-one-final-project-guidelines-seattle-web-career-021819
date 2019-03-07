@@ -1,3 +1,24 @@
+$curr_user = nil
+
+def welcome_message
+  puts "------------------------------------------------------"
+  puts "Welcome to Recipe Generator! Do you have an account?"
+  puts "------------------------------------------------------"
+
+  user_input = STDIN.gets.chomp.downcase
+
+  if user_input == "yes"
+    puts "Nice to have you back. What's your name?"
+    user_name = STDIN.gets.chomp.downcase
+    $curr_user = User.find_by(name: user_name)
+  else
+    puts ""
+    puts "Nice to have you!"
+    add_new_user
+  end
+end
+
+
 def main_menu
 
   #The main menu the user can choose from
@@ -5,34 +26,28 @@ def main_menu
   puts "Welcome to Recipe Generator! Please enter a number to select an option: "
   puts ""
   puts "-----------------------------------------------"
-  puts "1. Create New Account"
-  puts "2. Search For Recipes"
-  puts "3. View My Recipes"
-  puts "4. Exit"
+  puts "1. Search for New Recipes"
+  puts "2. View My Recipes"
+  puts "3. Exit"
   puts "-----------------------------------------------"
 
   #User chooses an option from the menu
   user_input = STDIN.gets.chomp.downcase
 
   if user_input == "1"
-    u = add_new_user
-    recipe_list
-
-  elsif user_input == "2"
-    is_user_new
     user_input2
 
-  elsif user_input == "3"
-    view_saved_recipes
-    r = user_input2
-    save_to_user_recipe(u, r)
+  elsif user_input == "2"
+    user_saved_recipes
+    # r = user_input2
+    # save_to_user_recipe(r)
 
-  elsif user_input == "4"
+  elsif user_input == "3"
     exit
 
   else
     puts ""
-    puts "Invalid entry, please enter a number 1 through 4 to make a selection."
+    puts "Invalid entry, please enter a number 1 through 3 to make a selection."
     main_menu
   end
 end
@@ -43,13 +58,13 @@ def add_new_user
   puts "Please enter a new account name:"
   puts ""
   user_name = STDIN.gets.chomp.downcase
-  if User.exists?(name: "#{user_name}")
+  while User.exists?(name: user_name)
     puts "Oopsie! That user name is not available, please choose another name."
-    user
-  else
-  User.create(name: "#{user_name}")
+    user_name = STDIN.gets.chomp.downcase
   end
-end
+  $curr_user = User.create(name: user_name)
+  end
+
 
 #Utilizes methods in api_communicator file to print a nice ordered list of recipes
 def recipe_list
@@ -58,20 +73,6 @@ def recipe_list
   print_recipe_names(array)
 end
 
-#Checks to see if user name is already in use, prompts to add new user name if it is, otherwise lets them move forward
-def is_user_new
-  puts ""
-  puts "Please enter your account name:"
-  puts ""
-  current_name = STDIN.gets.chomp.downcase
-    if User.exists?(name: "#{current_name}")
-       User.find_by_name("#{current_name}")
-    else
-      puts ""
-      puts "Hi new user!"
-      add_new_user
-    end
-end
 
 #from Chris:
 def user_input2
@@ -83,8 +84,30 @@ def user_input2
    puts "Please input the number of which recipe you like:"
    desired_recipe_num = STDIN.gets.chomp
    users_choice = new_array[desired_recipe_num.to_i-1]
-   Recipe.create(title: "#{users_choice}")
+   create_recipe(users_choice)
 end
+
+#creates a new recipe instance and associates it with current user - yay!
+def create_recipe(title)
+  recipe_array = []
+  r = Recipe.create(title: title)
+  UserRecipe.create(user_id: $curr_user.id, recipe_id: r.id)
+end
+
+#IN PROGRESS: trying to output all recipes that user has saved
+def user_saved_recipes
+  recipe_array = []
+  ur = UserRecipe.where(user_id: $curr_user.id)
+
+  # ur.each do |x|
+  #   if x.recipe_id == Recipe.all.id
+  #     recipe_array << Recipe.name
+  #     puts recipe_array
+    # else
+
+      puts "You have no saved recipes."
+    end
+
 
 #User inputs their ingredient of choice
 def get_ingredient_from_user
@@ -92,34 +115,4 @@ def get_ingredient_from_user
   puts "Please enter your favorite ingredient:"
   puts ""
   favorite_ingredient = STDIN.gets.chomp.downcase
-end
-
-
-#IN PROGRESS: figuring out how to save user's recipe choice:
-def save_user_recipe
-  puts ""
-  puts "Please enter the number of the recipe you'd like to save:"
-  puts ""
-  recipe_number = STDIN.gets.chomp.downcase
-end
-
-
-#For option 3 - If user exists, pulls up their saved recipes, otherwise they go to add_new_user
-def view_saved_recipes
-  puts ""
-  puts "Please enter your account name to view your saved recipes:"
-  puts ""
-  user_name = STDIN.gets.chomp.downcase
-    if User.exists?(name: "#{user_name}")
-      saved_user = User.find_by(name: "#{user_name}")
-      puts ""
-      puts "Hi there, #{saved_user.name.capitalize}, here are your saved recipes:"
-      puts ""
-    else
-      add_new_user
-  end
-end
-
-def save_to_user_recipe(u, r)
-  UserRecipe.create(user_id: u.id, recipe_id: r.id)
 end

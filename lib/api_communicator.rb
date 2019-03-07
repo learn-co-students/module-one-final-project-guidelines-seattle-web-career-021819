@@ -28,22 +28,3 @@ def print_recipe_names(recipe_array)
     end
   arr
 end
-
-
-
-# IN PROGRESS: This method will let the user save a recipe or go back to the main menu
-# def save_recipe
-#   puts
-#   puts "Here are some recipes to try!"
-#   puts "Select a number of a recipe you'd like to save or press 'b' to go back to the main menu"
-#   user_input = STDIN.gets.chomp.downcase
-#   if user_input == 1 #number from list of Recipes
-#     puts "hi"
-#     #add recipe to the recipe lsit and associate with id
-#   elsif user_input == "b"
-#     main_menu
-#   else
-#     puts "Please enter a valid respone."
-#     print_recipe_names(array)
-#   end
-# end
