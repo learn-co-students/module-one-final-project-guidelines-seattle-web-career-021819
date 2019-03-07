@@ -1,5 +1,12 @@
 def user_profile_menu(user)
 
+  # possible to refactor to use the CLI.thesaurus,
+  # instead of instantiating a new one EACH TIME
+  # the user_profile_menu is loaded??
+  thesaurus = Thesaurus.new
+
+  system('clear')
+
   puts "
 #{user.name}'s User Profile
 ===============================================
@@ -33,7 +40,7 @@ def user_profile_menu(user)
   user_input = STDIN.gets.chomp
 
   # remember to add in Thesaurus synonyms as || conditionals!
-  if user_input == "1"
+  if user_input == "1" || thesaurus.profile_menu_1_words.include?(user_input.downcase)
     print_list_of_favorites(user, "profile_menu")
 
   elsif user_input == "2"
@@ -46,10 +53,10 @@ def user_profile_menu(user)
       # others??
 
   elsif user_input == "4"
-    # change user name
+    change_user_name_menu(user)
 
   elsif user_input == "5"
-    # change real name
+    change_real_name_menu(user)
 
   elsif user_input == "6"
     CLI.main_menu
@@ -62,6 +69,70 @@ def user_profile_menu(user)
 
   end
 
+end
 
 
+
+# NEED TO ADD: menu_message? - see Yutaro!
+# (from CLI, or new variable?)
+def change_user_name_menu(user)
+  system('clear')
+
+  puts "
+(NOTE: Usernames are case sensitive)
+Please enter a new user name, or
+press enter to keep current name:
+"
+  user_input = STDIN.gets.chomp
+  if user_input.strip == ""
+    user_profile_menu(user)
+
+  else
+    check_if_user_name_exists(user, user_input)
+  end
+end
+
+def check_if_user_name_exists(user, user_input)
+  user_name_check = User.find_by(name: user_input)
+  if user_name_check == nil
+    user.name = user_input
+    user.save
+    puts "User name updated! Press enter to return to your profile:"
+    STDIN.gets.chomp
+    user_profile_menu(user)
+  else
+    puts "User name already taken. Press enter to try again:"
+    STDIN.gets.chomp
+    user_profile_menu(user)
+  end
+  #failsafe - return to main menu - DEBUG/REMOVE??
+  CLI.main_menu
+end
+
+
+
+
+def change_real_name_menu(user)
+  system('clear')
+
+  puts "
+Please enter a new real name, or
+press enter to keep current name:
+"
+  user_input = STDIN.gets.chomp
+  if user_input.strip == ""
+    user_profile_menu(user)
+
+  else
+    change_user_real_name(user, user_input)
+  end
+end
+
+
+def change_user_real_name(user, user_input)
+  user.name = user_input
+  user.save
+  puts "User name updated! Press enter to return to your profile:"
+  STDIN.gets.chomp
+  user_profile_menu(user)
 end
