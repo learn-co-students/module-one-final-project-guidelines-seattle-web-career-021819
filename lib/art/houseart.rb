@@ -52,7 +52,7 @@ L \   _.-""   |8888_.-"  _." J J J  '.    +88888888:
 
 ------------------------------------------------
   HOUSE
-end
+	end
 end
 
 # Thank you for visiting https://asciiart.website/

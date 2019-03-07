@@ -64,9 +64,9 @@ end
 	end
 
 	def self.book
-
 		is_running = true
 		while is_running == true
+			BookArt.display
 			puts "========================================================"
 			puts "\nHere is a list of Game of Thrown books.\n\n"
 			puts "Books: "
@@ -82,12 +82,24 @@ end
 				other_list.each_with_index do |book, i|
 					puts "#{i+1}. #{book.name}."
 				end
-			puts "\nEnter 0 to return to main menu"
+			puts "\nEnter a book number to see what a loon George R.R. Martin is, or push 0 to return to main menu"
 			input = STDIN.gets.chomp
 			if input == "0"
 				is_running = false
+			elsif input == "1"
+				puts "#{book_list[0].name} has #{book_list[0].characters.count} characters in it."
+			elsif input == "2"
+				puts "#{book_list[1].name} has #{book_list[1].characters.count} characters in it."
+			elsif input == "3"
+				puts "#{book_list[2].name} has #{book_list[2].characters.count} characters in it."
+			elsif input == "4"
+				puts "#{book_list[3].name} has #{book_list[3].characters.count} characters in it."
+			elsif input == "5"				
+				puts "#{book_list[4].name} has #{book_list[4].characters.count} characters in it."
+			else
+				puts "Invalid input"
 			end
-			
+			STDIN.gets.chomp
 		end
 	end
 
