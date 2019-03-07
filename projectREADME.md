@@ -24,8 +24,6 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 
 ![alt text](lib/art/Bundle_install.png)
 
-##Link to Licensing
-
 ###Recognitions
 
 This API uses several frameworks and libraries, with the most important ones being listed below:
