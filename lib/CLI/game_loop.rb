@@ -79,12 +79,28 @@ def get_answer
 end
 
 # Print host and question
-def print_question(question)
-  Catpix::print_image "lib/cli/img/bear#{(1..5).to_a.sample}.png",
-    :center_x => true,
-    :resolution => "low",
-    :bg_fill => false
-  puts
+def print_question(question, is_correct = nil)
+  if is_correct != nil
+    if is_correct
+      Catpix::print_image "lib/cli/img/bear5.png",
+        :center_x => true,
+        :resolution => "low",
+        :bg_fill => false
+      puts
+    else
+      Catpix::print_image "lib/cli/img/bear4.png",
+        :center_x => true,
+        :resolution => "low",
+        :bg_fill => false
+      puts
+    end
+  else
+    Catpix::print_image "lib/cli/img/bear#{(1..3).to_a.sample}.png",
+      :center_x => true,
+      :resolution => "low",
+      :bg_fill => false
+    puts
+  end
   puts question.question.center($GAME_WIDTH)
 end
 
@@ -115,7 +131,7 @@ def check_answer(question, answer_hash, user_input)
   #track points in game_session. store correctness?
   correctness = answer_hash[user_input.upcase] == question.correct
   system "clear"
-  print_question(question)
+  print_question(question, correctness)
   print_colorized_answers(answer_hash, user_input.upcase, question.correct)
   puts
 
@@ -130,12 +146,12 @@ def check_answer(question, answer_hash, user_input)
     "Not this time, Goldilocks.",
     "You can still claw your way back."
   ]
-  #
-  # if correctness
-  #   puts correct_msg.sample.colorize(:green)
-  # else
-  #   puts wrong_msg.sample.colorize(:red)
-  # end
+
+  if correctness
+    print correct_msg.sample.colorize(:green)
+  else
+    print wrong_msg.sample.colorize(:red)
+  end
 
   UserGuess.create(
     question_id: question.id,
