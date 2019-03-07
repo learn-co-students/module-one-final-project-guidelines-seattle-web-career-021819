@@ -39,6 +39,11 @@ class Round < ActiveRecord::Base
     @@current_round.update(recipe_id: id)
   end
 
+  def self.play_game
+    puts "#{self.question}"
+    self.choices {|choice| puts "#{choice}"}
+  end
+
   def self.save_round(user_answer)
     if user_answer.downcase == @@answer.downcase
       round = @@current_round.update(correct?: true)
