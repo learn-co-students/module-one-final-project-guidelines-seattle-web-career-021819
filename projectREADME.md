@@ -22,7 +22,6 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 3. Type "bundle install"
 4. Type "rake run" to start the program
 
-***insert photo of bundle install***
 ![alt text](lib/art/Bundle_install.png)
 
 ##Link to Licensing
@@ -34,6 +33,8 @@ This API uses several frameworks and libraries, with the most important ones bei
 ASP.NET Core - The API is built on top of this awesome framework by Microsoft.
 Azure - The API has been hosted on Azure from the very first day and it's been a smooth ride ever since.
 Dapper - This micro ORM has been invaluable since we switched from Entity Framework. (Information sourced from API website)
+
+Thank you to Christopher Johnson and his website https://asciiart.website/ as well as ASCII artists: Tua Xiong, hrr, and "unknown" 
 
 ###Copyright
 
