@@ -53,7 +53,7 @@ end
 				puts "#{found_character.name} has allegience with #{found_character.house.name}."
 				puts "---------------------------------------------------------------"
 				puts "Above are #{found_character.name}'s house brethren"
-				puts "\n\n\n\n\n\n\n\n\n\n"
+				puts "\n\n\n\n\n\n\n"
 			elsif input == "0"
 				is_running = false
 			else
@@ -64,21 +64,35 @@ end
 	end
 
 	def self.book
+
 		is_running = true
 		while is_running == true
-			puts "Here is a list of books and graphic novels: "
+			puts "========================================================"
+			puts "\nHere is a list of Game of Thrown books.\n\n"
 			puts "Books: "
-				
-			puts "Graphic Novels: "
+				book_list = Book.all[0..2]
+				book_list << Book.all[4]
+				book_list << Book.all[7]
+				book_list.each_with_index do |book, i|
+					puts "#{i+1}. #{book.name}."
+				end
+			puts "\nGraphic Novels and Satellite stories: "
+				other_list = Book.all[5,6]
+				other_list << Book.all[3]
+				other_list.each_with_index do |book, i|
+					puts "#{i+1}. #{book.name}."
+				end
+			puts "\nEnter 0 to return to main menu"
 			input = STDIN.gets.chomp
-			puts 
-			puts
-			found_character = Character.find_by(name: input)
+			if input == "0"
+				is_running = false
+			end
 			
 		end
 	end
 
 	def self.house
+		
 	end
 
 
