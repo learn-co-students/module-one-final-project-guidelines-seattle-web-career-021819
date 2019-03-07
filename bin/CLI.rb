@@ -196,6 +196,7 @@ Please select an option below:
 
 ## ========== SHOW DETAILS PAGE (DISPLAY)========== ##
   def self.display_found_show_details(show_hash)
+    seasons = season_list(show_hash)
     system('clear')
     puts @menu_message
     puts "
@@ -205,6 +206,7 @@ Title: #{show_hash["name"]}
 Genre: #{show_hash["genres"][0]}
 Air Date: #{show_hash["start_date"]}
 Network: #{show_hash["network"]}
+Seasons: #{seasons.count}
 
 Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/?>/, '').gsub(/\<\/b>/, '').gsub(/<i\s*\/?>/, '').gsub(/\<\/i>/, '')
     # currently only displays first genre (in array)
@@ -213,10 +215,11 @@ Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/
     puts "
 What would you like to do?
 1. Add to Favorites
-2. Search for another title
-3. Back to main menu
+2. View list of seasons/episodes
+3. Search for another title
+4. Back to main menu
 
-0. Quit program"
+0. Quit"
 
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)
@@ -237,6 +240,9 @@ What would you like to do?
       puts "Thank you! Goodbye!"
       puts
       exit
+    #SECRET MENU (EXPERIMENTAL)
+    elsif user_input == "seasons"
+      display_seasons(show_hash)
     else
       @menu_message = "Please enter a valid option"
       self.display_found_show_details(show_hash)
@@ -260,6 +266,17 @@ What would you like to do?
   end
 
 
+
+  def self.season_list(show_hash)
+    season_array = []
+    show_hash["episodes"].each do |episode|
+      season_array << "Season #{episode["season"]}"
+    end
+    season_array.uniq
+  end
+
+
+
   #   user_profile = User.find_by(name: user_input) #=> returns User instance
   #
   #   if user_profile == nil
@@ -276,27 +293,46 @@ What would you like to do?
 ## ================ FOR DEVELOPMENT ============= ##
   # this method is only for development - use it to test the outputs for the
   # season_list and title_list arrays below
-  def self.episode_menu(episode_array)
+
+
+  def self.display_episode_list(user_input, show_hash)
+    episode_array = []
+    show_hash["episodes"].each do |episode|
+      if episode["season"] == user_input.to_i
+        new_string = "Episode #{episode['episode']}. #{episode['name']}"
+        episode_array << new_string
+      end
+    end
+    system('clear')
+    puts "Season #{user_input}"
+    puts "===================="
+    puts episode_array
     puts
-    puts "List of Seasons:"
-    puts "================"
-    puts self.season_list(episode_array)
-    puts
-    puts "Please enter a season number:"
-    user_input = STDIN.gets.chomp
-    # should printing the episode list happen in a different method??
-    season_num = user_input.downcase.tr("season", "").strip.to_i
-    puts
-    puts self.title_list(episode_array, season_num)
+    puts "Press enter to go back"
+    STDIN.gets.chomp
+    display_seasons(show_hash)
   end
 
 
 
-  # creates an array of formatted "Season #" strings - can be printed as a list
-  def self.season_list(episode_array)
-    episode_array.map do |episode_hash|
-      "Season #{episode_hash["season"]}"
-    end.uniq
+
+
+  def self.display_seasons(show_hash)
+    system('clear')
+    seasons = season_list(show_hash)
+    puts "List of Seasons:"
+    puts "================"
+    puts seasons
+    puts
+    puts "Please enter a season number to view list of episodes"
+    puts "or Enter to go back"
+    user_input = STDIN.gets.chomp
+    if user_input == ""
+      display_found_show_details(show_hash)
+    else
+      display_episode_list(user_input, show_hash)
+  #  display_found_show_details(show_hash)
+    end
   end
 
 
@@ -312,5 +348,9 @@ What would you like to do?
     title_array
   end
 
+# show_hash["episodes"] <== array of episode hashes
+# new_array = show_hash["episodes"].select do |episode|
+#  episode["season"] = #1
+# end
 
 end
