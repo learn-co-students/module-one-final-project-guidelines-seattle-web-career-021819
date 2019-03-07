@@ -37,7 +37,8 @@ is_running = true
     puts "-----------------------------------------------"
     puts "1. Search for New Recipes"
     puts "2. View My Recipes"
-    puts "3. Exit"
+    puts "3. Delete Recipe"
+    puts "4. Exit"
     puts "-----------------------------------------------"
 
     #User chooses an option from the menu
@@ -54,11 +55,16 @@ is_running = true
       puts svd
 
     elsif user_input == "3"
+      svd = user_saved_recipes
+      puts svd
+      user_delete_recipes
+
+    elsif user_input == "4"
       is_running = false
 
     else
       puts ""
-      puts "Invalid entry, please enter a number 1 through 3 to make a selection."
+      puts "Invalid entry, please enter a number 1 through 4 to make a selection."
     end
   end
 end
@@ -115,11 +121,15 @@ end
 def user_saved_recipes
   user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
   saved_recipes = user_recipes.map {|ur| ur.recipe.title}
+  # puts ""
+  # puts ""
+  puts ""
   puts ""
   puts "YUMMY!"
   puts "Here are all of your saved recipes:"
   puts ""
-  saved_recipes
+  puts saved_recipes
+
 end
 
 
@@ -132,12 +142,15 @@ def get_ingredient_from_user
 end
 
 def user_delete_recipes
-  arr = []
  user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
  saved_recipes = user_recipes.map {|ur| ur.recipe.title}
  puts ""
  puts "Please enter the name of the recipe you'd like to delete: "
- unwanted_recipe = STDIN.gets.chomp.downcase
+ unwanted_recipe = STDIN.gets.chomp
  recipe_to_be_deleted = Recipe.find_by(title: unwanted_recipe)
- recipe_to_be_deleted.delete
+ if recipe_to_be_deleted == nil
+   puts "Sorry I couldnt find it"
+ else
+   recipe_to_be_deleted.delete
+ end
 end
