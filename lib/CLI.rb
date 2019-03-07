@@ -26,6 +26,7 @@ is_running = true
 end
 
 	def self.main_menu
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n"
 		Dragon.display
 		puts "Which category would you like to choose?"
 		puts "0. exit"
@@ -36,9 +37,27 @@ end
 
 	def self.character
 		is_running = true
+		puts "========================================================"
+  		puts "Think you know how many characters are in G.O.T? (yes/no)"
+  		puts "========================================================"
+      	input = STDIN.gets.chomp
+	    if input.starts_with? "y" || input == "yes"
+	      puts "Give me your best guess.."
+	    else
+	      puts "Ok, please put 0 to return to Main menu"
+        end
+	    input = STDIN.gets.chomp
+	    if input == "2021"
+	      puts "Congratulations, you are officially a G.O.T NERD"
+	    else
+	      puts "Nice try, the correct Answer is #{Character.all.map do |house_character|
+													house_character.name
+													end.uniq.count}"
+		end
 		while is_running == true
+			puts "==========================================================================="
 			puts "Enter a name for the Character to lookup or enter 0 to return to main menu."
-			puts "Names are case sensitive."
+			puts "==========================================================================="
 			input = STDIN.gets.chomp
 			puts
 			puts
@@ -46,7 +65,9 @@ end
 			if found_character != nil
 
 				brethren = found_character.house.characters.map do |house_character|
+					if house_character.name != input
 					house_character.name
+					end
 				end.uniq
 				puts brethren
 				puts "\n\n"
@@ -64,11 +85,13 @@ end
 	end
 
 	def self.book
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n"
+		BookArt.display
 		is_running = true
 		while is_running == true
-			BookArt.display
-			puts "========================================================"
-			puts "\nHere is a list of Game of Thrones books.\n\n"
+			puts "\n========================================"
+			puts "Here is a list of Game of Thrones books."
+			puts "========================================\n\n"
 			puts "Books: "
 				book_list = Book.all[0..2]
 				book_list << Book.all[4]
@@ -93,22 +116,11 @@ end
 			input = STDIN.gets.chomp
 			if input == "0"
 				is_running = false
-			elsif 0 < input.to_i && input.to_i < 13
+			elsif 0 < input.to_i && input.to_i < 12
 				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters in it."
-			elsif input == "1"
-				puts "#{book_list[0].name} has #{book_list[0].characters.count} characters in it."
-			elsif input == "2"
-				puts "#{book_list[1].name} has #{book_list[1].characters.count} characters in it."
-			elsif input == "3"
-				puts "#{book_list[2].name} has #{book_list[2].characters.count} characters in it."
-			elsif input == "4"
-				puts "#{book_list[3].name} has #{book_list[3].characters.count} characters in it."
-			elsif input == "5"
-				puts "#{book_list[4].name} has #{book_list[4].characters.count} characters in it."
-			else
+			else	
 				puts "Invalid input"
 			end
-			puts "\n\n\n\n\n\n\n"
 		end
 	end
 
