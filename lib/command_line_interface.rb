@@ -127,3 +127,14 @@ def get_ingredient_from_user
   puts ""
   favorite_ingredient = STDIN.gets.chomp.downcase
 end
+
+def user_delete_recipes
+  arr = []
+ user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
+ saved_recipes = user_recipes.map {|ur| ur.recipe.title}
+ puts ""
+ puts "Please enter the name of the recipe you'd like to delete: "
+ unwanted_recipe = STDIN.gets.chomp.downcase
+ recipe_to_be_deleted = Recipe.find_by(title: unwanted_recipe)
+ recipe_to_be_deleted.delete
+end
