@@ -39,6 +39,11 @@ end
 		found_character = Character.find_by(name: id)
 		if found_character != nil
 			puts found_character.name
+			puts found_character.house.name
+			name_array = found_character.house.characters.map do |house_character|
+				house_character.name
+			end.uniq
+			puts name_array
 		else
 			puts "Nobody matches that name"
 			puts "Please enter a valid name"
