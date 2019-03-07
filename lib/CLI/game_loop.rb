@@ -207,7 +207,7 @@ end
 def end_message
   puts "Thanks for playing!"
   print "You got #{$game_session.get_correct_questions.length} questions correct "
-  print "with total earnings of $#{$game_session.total_score}!!"
+  print "with total earnings of $#{$game_session.current_total_score}!!"
   sleep(3)
   puts
 end
