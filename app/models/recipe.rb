@@ -2,10 +2,9 @@ require 'pry'
 class Recipe < ActiveRecord::Base
   has_many :rounds
 
-  @@current_recipe = ""
-
-  def self.current_recipe
-    @@current_recipe
+  def self.run_game
+    hello = Array.new(Recipe.all)
+    binding.pry
   end
 
 end
