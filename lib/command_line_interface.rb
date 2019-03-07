@@ -77,7 +77,7 @@ def recipe_list
   i = get_ingredient_from_user
   array = get_recipes_from_api(i)
   if array.length == 0
-    puts "" 
+    puts ""
     puts "Sorry, that recipe is not available."
     return main_menu
   else
@@ -125,4 +125,15 @@ def get_ingredient_from_user
   puts "Please enter your favorite ingredient:"
   puts ""
   favorite_ingredient = STDIN.gets.chomp.downcase
+end
+
+def user_delete_recipes
+  arr = []
+ user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
+ saved_recipes = user_recipes.map {|ur| ur.recipe.title}
+ puts ""
+ puts "Please enter the name of the recipe you'd like to delete: "
+ unwanted_recipe = STDIN.gets.chomp.downcase
+ recipe_to_be_deleted = Recipe.find_by(title: unwanted_recipe)
+ recipe_to_be_deleted.delete
 end
