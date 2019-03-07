@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 10) do
+
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 10) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "real_name"
   end
 
 end
