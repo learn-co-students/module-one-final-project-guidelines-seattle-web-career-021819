@@ -19,8 +19,8 @@ class CLI
 ## ========== WELCOME PAGE (TOP) ========== ##
   def self.welcome_message
     system('clear')
-    puts "
-Welcome to the Show Randomizer!
+    Ascii.welcome_page_ascii
+    puts "Welcome to the Show Randomizer!
 -------------------------------
 Here, you can select your favorite shows
 and generate playlists of random episodes
@@ -32,7 +32,6 @@ from your favorites!"
 
 ## ========== WELCOME PAGE (BOTTOM) ========== ##
   def self.user_select
-    puts
     puts "
 (NOTE: Usernames are case sensitive)
 Please enter a user name, or enter a blank name
@@ -60,11 +59,12 @@ to see a list of all users:
 
 ## ========== USER MAIN MENU (DISPLAY)========== ##
   def self.main_menu
-    @menu_message = nil
     system('clear')
+    puts @menu_message
     puts "
 Welcome #{@user.name}!
 Please select an option below:
+
 
 1. [Search] shows by title
 2. Show current list of [favorite] shows
@@ -75,6 +75,7 @@ Please select an option below:
 
 0. [Q]uit"
     # puts "5. View your user profile"
+
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -83,12 +84,16 @@ Please select an option below:
 ## ========== USER MAIN MENU (BACKEND)========== ##
   def self.route_user_input(user_input)
     if user_input == "1" || @thesaurus.main_menu_1_words.include?(user_input.downcase)
+      @menu_message = nil
       self.search_shows_by_title
     elsif user_input == "2" || @thesaurus.main_menu_2_words.include?(user_input.downcase)
+       @menu_message = nil
       print_list_of_favorites(@user, "main_menu")
     elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
+      @menu_message = nil
       fetch_episodes_for_playlist(@user)
     elsif user_input == "4" || @thesaurus.main_menu_4_words.include?(user_input.downcase)
+      @menu_message = nil
       self.user_select
     elsif user_input == "5" || @thesaurus.main_menu_5_words.include?(user_input.downcase)
       list_all_users("main_menu")
@@ -96,23 +101,26 @@ Please select an option below:
       user_profile_menu(@user)
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
       goodbye_message
+
     else
-      puts "Invalid input. Please try again:"
+      @menu_message = "Invalid input. Please try again:"
       self.main_menu
     end
   end
 
 
   def self.goodbye_message
-    system('clear')
-    puts "Thank you! Goodbye!"
-    puts
-    exit
+      system('clear')
+      Ascii.goodbye_art
+      puts "Thank you! Goodbye!"
+      puts
+      exit
   end
 
 
 ## ========== OPTION 1. FROM USER MAIN MENU ========== ##
   def self.search_shows_by_title
+    @menu_message = nil
     system('clear')
     puts "Enter show title to search:"
     @title_search = STDIN.gets.chomp
@@ -186,7 +194,6 @@ Please select an option below:
   def self.display_found_show_details(show_hash)
     system('clear')
     puts @menu_message
-    puts
     puts "
 You have selected:
 ==================
@@ -199,13 +206,12 @@ Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/
     # currently only displays first genre (in array)
     # .gsub stuff: Scrub HTML tags from description
     puts
-    puts
     puts "
 What would you like to do?
-1. [Add] to Favorites
-2. [Search] for another title
-3. [Back] to main menu
-0. [Q]uit"
+1. Add to Favorites
+2. Search for another title
+3. Back to main menu
+0. Quit"
 
     user_input = STDIN.gets.chomp
     self.what_would_you_like_to_do(user_input, show_hash)
@@ -218,10 +224,13 @@ What would you like to do?
     elsif user_input == "2" || @thesaurus.display_menu_2_words.include?(user_input.downcase)
       self.search_shows_by_title
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
+      @menu_message = nil
       self.main_menu
     elsif user_input == "0" || @thesaurus.display_menu_0_words.include?(user_input.downcase)
       system('clear')
+      Ascii.goodbye_art
       puts "Thank you! Goodbye!"
+      puts
       exit
     else
       @menu_message = "Please enter a valid option"

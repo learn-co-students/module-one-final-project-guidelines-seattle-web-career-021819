@@ -39,11 +39,14 @@ def print_list_of_favorites(user, menu)
       show_array << "id. #{show.api_id} - #{show.name}            (add to playlists: #{favorite_instance.playlist_on_off.upcase})"
     end
     system('clear')
+    puts @menu_message
+    puts
     puts "Here are your favorite shows!"
     puts "-----------------------------"
     puts show_array.sort
   end
   puts
+
 
   # BELOW: (added 3/6/19)
   # Isa added functionality for different times when
@@ -54,9 +57,13 @@ def print_list_of_favorites(user, menu)
     puts "Press enter to return to main menu or enter a show to remove from favorites"
     user_input = STDIN.gets.chomp
     if user_input.strip == ""
+      @menu_message = nil
       CLI.main_menu
-    # else
-    #   delete_show_from_favorites(user_input, user, favorites_array)
+    elsif show_array.include?(user_input)
+      delete_show_from_favorites(user_input, user)
+    else
+      @menu_message = "Please enter a valid show name"
+      print_list_of_favorites(user, "main_menu")
     end
 
   elsif menu == "profile_menu"
@@ -82,28 +89,21 @@ def print_list_of_favorites(user, menu)
           end
         end
       end
+      @menu_message = "Please enter a valid show name"
       print_list_of_favorites(user, "profile_menu")
     end
-
   end
 
 end
 
 
 
-# def delete_show_from_favorites(user_input, user, favorites_array)
-
-#    Favorite.where(user_id: @user.id, show_id: selected_show_api)
-
-# @user = #<User:XXXX id: 4, name: "Yutaro">
-
-# selected_show_api = Show.find_by(name: user_input).api_id
-## will return show API id that user specified
-
-# Favorite.where(user_id: @user.id, show_id: selected_show_api).destroy_all
-
-
-
+def delete_show_from_favorites(user_input, user)
+  selected_show_api = Show.find_by(name: user_input).api_id
+  Favorite.where(user_id: @user.id, show_id: selected_show_api).destroy_all
+  @menu_message = "#{user_input} has been removed from your Favorites"
+  print_list_of_favorites(@user)
+end
 
 
 ## ========== OPTION 3. FROM USER MAIN MENU ========== ##
@@ -171,6 +171,7 @@ end
 def print_new_playlist(episode_array)
   system('clear')
   puts "Playlist created!"
+  puts "-----------------"
   puts episode_array
   puts
   puts "Press enter to return to the main menu"
