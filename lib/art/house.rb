@@ -1,4 +1,4 @@
-class House
+class HouseArt
 
 ##############give credit to artist and website
 def self.display
@@ -52,6 +52,7 @@ L \   _.-""   |8888_.-"  _." J J J  '.    +88888888:
 
 ------------------------------------------------
   HOUSE
+end
 end
 
 # Thank you for visiting https://asciiart.website/

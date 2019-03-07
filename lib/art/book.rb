@@ -1,6 +1,6 @@
-class Book
-self.display
-  puts <<~BOOK
+class BookArt
+  self.display
+    puts <<~BOOK
   .-~~~~~~~~~-._       _.-~~~~~~~~~-.
 __.'              ~.   .~              `.__
 .'//                  \./                  \\`.
