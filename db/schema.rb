@@ -10,25 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 4) do
+ActiveRecord::Schema.define(version: 3) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
-    t.string "book_url"
   end
 
   create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.string "seasons"
-    t.string "character_url"
-    t.index [nil], name: "index_characters_on_book_id"
-    t.index [nil], name: "index_characters_on_house_id"
+    t.string  "name"
+    t.string  "seasons"
+    t.integer "book_id"
+    t.integer "house_id"
   end
 
   create_table "houses", force: :cascade do |t|
     t.string "name"
     t.string "coat_of_arms"
-    t.string "house_url"
   end
 
 end
