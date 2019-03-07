@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "games", force: :cascade do |t|
     t.integer "number_correct"
-    t.integer "number_incorrect"
     t.integer "user_id"
     t.integer "game_points"
   end
@@ -37,7 +36,6 @@ ActiveRecord::Schema.define(version: 5) do
   create_table "users", force: :cascade do |t|
     t.string  "name"
     t.integer "total_points"
-    t.string  "win_lose_record"
   end
 
 end

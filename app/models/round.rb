@@ -24,7 +24,7 @@ class Round < ActiveRecord::Base
   end
 
   def self.create_round
-    @@current_round = self.create(correct?: 0, incorrect?: 0, recipe_id: nil, game_id: Game.new_game.id)
+    @@current_round = self.create(game_id: Game.new_game.id, correct?: 0)
   end
 
   def self.get_questions_and_answers
