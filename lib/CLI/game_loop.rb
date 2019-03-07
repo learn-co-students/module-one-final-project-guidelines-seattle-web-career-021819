@@ -25,7 +25,7 @@ end
 
 # Question loop that fetches questions with increasing difficulty
 def question_loop
-  print "\e[8;30;#{$GAME_WIDTH}t"
+  print "\e[8;1000;#{$GAME_WIDTH}t"
   system "clear"
 
   $MAX_QUESTIONS.times do |index|
@@ -57,10 +57,9 @@ def question_loop
 
     answer_hash = shuffle_and_print_answers(curr_question)
     curr_question.update(used: true)
-    puts
 
     puts "(#{curr_question.difficulty.capitalize}, $#{curr_question.score})"
-    puts "Enter your answer:"
+    print "Enter your answer: "
     # user_input = gets.chomp
     user_input = get_answer
     check_answer(curr_question, answer_hash, user_input)
@@ -79,6 +78,32 @@ def get_answer
   end
 end
 
+# Print host and question
+def print_question(question, is_correct = nil)
+  if is_correct != nil
+    if is_correct
+      Catpix::print_image "lib/cli/img/bear5.png",
+        :center_x => true,
+        :resolution => "low",
+        :bg_fill => false
+      puts
+    else
+      Catpix::print_image "lib/cli/img/bear4.png",
+        :center_x => true,
+        :resolution => "low",
+        :bg_fill => false
+      puts
+    end
+  else
+    Catpix::print_image "lib/cli/img/bear#{(1..3).to_a.sample}.png",
+      :center_x => true,
+      :resolution => "low",
+      :bg_fill => false
+    puts
+  end
+  puts question.question.center($GAME_WIDTH)
+end
+
 # Shuffles the possible answers and prints them
 def shuffle_and_print_answers(question)
   answers = [
@@ -95,21 +120,19 @@ def shuffle_and_print_answers(question)
     letter = letter.next
   end
 
-  puts question.question.center($GAME_WIDTH)
-  puts
-  puts print_answers(answers_hash)
+  print_question(question)
+  print_answers(answers_hash)
   return answers_hash
 end
 
 
 # Compares user answer with one of the possible answers
-def check_answer(quest, answer_hash, user_input)
+def check_answer(question, answer_hash, user_input)
   #track points in game_session. store correctness?
-  correctness = answer_hash[user_input.upcase] == quest.correct
+  correctness = answer_hash[user_input.upcase] == question.correct
   system "clear"
-  puts quest.question.center($GAME_WIDTH)
-  puts
-  puts print_colorized_answers(answer_hash, user_input.upcase, quest.correct)
+  print_question(question, correctness)
+  print_colorized_answers(answer_hash, user_input.upcase, question.correct)
   puts
 
   correct_msg = [
@@ -125,15 +148,13 @@ def check_answer(quest, answer_hash, user_input)
   ]
 
   if correctness
-    puts correct_msg.sample.colorize(:green)
-    puts
+    print correct_msg.sample.colorize(:green)
   else
-    puts wrong_msg.sample.colorize(:red)
-    puts
+    print wrong_msg.sample.colorize(:red)
   end
 
   UserGuess.create(
-    question_id: quest.id,
+    question_id: question.id,
     game_session_id: $game_session.id,
     correctness: correctness
   )
@@ -147,11 +168,12 @@ end
 
 
 def print_answers(answers)
-  Terminal::Table.new do |t|
+  ans = Terminal::Table.new do |t|
     t.add_row ["A. #{answers["A"]}", "B. #{answers["B"]}"]
     t.add_row ["C. #{answers["C"]}", "D. #{answers["D"]}"]
     t.style = {:all_separators => true, :width => $GAME_WIDTH}
   end
+  puts ans
 end
 
 # Colors the correct answer in green and wrong guess in red
@@ -167,7 +189,7 @@ def print_colorized_answers(answers, guess, correct)
     end
   end
 
-  Terminal::Table.new do |t|
+  ans = Terminal::Table.new do |t|
     t.add_row [
       colorized_ans[0],
       colorized_ans[1]
@@ -178,6 +200,7 @@ def print_colorized_answers(answers, guess, correct)
     ]
     t.style = {:all_separators => true, :width => $GAME_WIDTH}
   end
+  puts ans
 end
 
 # Prints message after user quits
