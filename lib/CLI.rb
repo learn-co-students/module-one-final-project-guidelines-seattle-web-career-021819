@@ -61,32 +61,21 @@ end
 				puts "Please enter a valid name"
 			end
 		end
-
-
-
-		#print out name of the character
-		# ***NOT WORKING****
-		# name = json["name"]
-		# puts "Character: #{name}"
-
-		#prompt the user to see if we want to lookup the seasons of GOT
-		#they were featured in
-		# puts "Would you like to see the seasons #{name} was featured in? (yes/no)"
-
-		#if user says yes! print the array of seasons the character was featured
-		# choice = STDIN.gets.chomp
-		# if choice.starts_with? "y" || choice == "yes"
-		# 	json = self.get_json(json["homeworld"])
-		# 	tvSeries=json["tvSeries"]
-		# 	puts "Seasons featured: #{tvSeries}"
-		# 	puts
-		# end
 	end
 
-
-
 	def self.book
-
+		is_running = true
+		while is_running == true
+			puts "Here is a list of books and graphic novels: "
+			puts "Books: "
+				
+			puts "Graphic Novels: "
+			input = STDIN.gets.chomp
+			puts 
+			puts
+			found_character = Character.find_by(name: input)
+			
+		end
 	end
 
 	def self.house
