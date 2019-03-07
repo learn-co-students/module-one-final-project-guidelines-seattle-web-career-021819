@@ -25,38 +25,41 @@ end
 
 def main_menu
 
-  #The main menu the user can choose from
-  puts ""
-  puts "MAIN MENU"
-  puts ""
-  puts "Please enter a number to select an option: "
-  puts ""
-  puts "-----------------------------------------------"
-  puts "1. Search for New Recipes"
-  puts "2. View My Recipes"
-  puts "3. Exit"
-  puts "-----------------------------------------------"
+is_running = true
 
-  #User chooses an option from the menu
-  user_input = STDIN.gets.chomp.downcase
-
-  if user_input == "1"
-    user_input2
-    svd = user_saved_recipes
-    puts svd
-    return main_menu
-
-  elsif user_input == "2"
-    svd = user_saved_recipes
-    puts svd
-
-  elsif user_input == "3"
-    exit
-
-  else
+  while is_running
+    #The main menu the user can choose from
     puts ""
-    puts "Invalid entry, please enter a number 1 through 3 to make a selection."
-    main_menu
+    puts "MAIN MENU"
+    puts ""
+    puts "Please enter a number to select an option: "
+    puts ""
+    puts "-----------------------------------------------"
+    puts "1. Search for New Recipes"
+    puts "2. View My Recipes"
+    puts "3. Exit"
+    puts "-----------------------------------------------"
+
+    #User chooses an option from the menu
+    user_input = STDIN.gets.chomp.downcase
+
+    if user_input == "1"
+      user_input2
+      svd = user_saved_recipes
+      puts svd
+
+
+    elsif user_input == "2"
+      svd = user_saved_recipes
+      puts svd
+
+    elsif user_input == "3"
+      is_running = false
+
+    else
+      puts ""
+      puts "Invalid entry, please enter a number 1 through 3 to make a selection."
+    end
   end
 end
 
