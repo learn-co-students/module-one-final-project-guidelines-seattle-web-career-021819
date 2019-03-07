@@ -170,6 +170,32 @@ def filter_by_playlist_on_off(favorites_array)
 end
 
 
+# THE METHOD BELOW SHOULD BE fetch_runtime_of_all_episodes INSTEAD!!
+# def fetch_runtime_of_all_shows(user)
+#   runtime_counter = 0
+#   favorites_array = fetch_list_of_favorites(user)
+#   favorites_array.each do |favorite_instance|
+#     show = Show.find_by(api_id: favorite_instance.show_id)
+#     runtime_counter += show.runtime
+#   end
+#   runtime_counter
+# end
+
+
+
+def sum_runtime_from_all_episodes(user)
+  runtime_counter = 0
+  all_episodes_array = []
+  favorites_array = fetch_list_of_favorites(user)
+  favorites_array.each do |favorite_instance|
+    all_episodes_array += fetch_episodes_by_id(favorite_instance.show_id)
+  end
+  all_episodes_array.each do |episode_hash|
+    runtime_counter += episode_hash["runtime"]
+  end
+  runtime_counter
+end
+
 
 def fetch_episodes_by_id(num)
   url = API_URL + "show-details?q=" + num.to_s
@@ -177,6 +203,7 @@ def fetch_episodes_by_id(num)
   episode_array = show_info["episodes"] #=> array of hash-episodes
   episode_array.each do |episode_hash|
     episode_hash["show_name"] = show_info["name"]
+    episode_hash["runtime"] = show_info["runtime"]
   end
   episode_array
 end
@@ -192,10 +219,13 @@ def add_playlist_to_table(array, user)
     "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
   end
   playlist_instances = Playlist.where("user_id = ?", user.id)
-  if playlist_instances == []
+
+  if playlist_instances.count == 0
     playlist_number = 1
   else
-    playlist_number = playlist_instances.group("playlist_num").keys.last += 1
+    playlist_number = playlist_instances.group("playlist_num").count.keys.count
+    playlist_number += 1
+
   end
   i = 1
   episode_array.each do |episode|
@@ -249,6 +279,6 @@ end
 def add_show_to_table(show_hash)
   show = Show.find_by(api_id: show_hash["id"])
   if show == nil
-    Show.create(api_id: show_hash["id"], name: show_hash["name"], description: show_hash["description"], genre: show_hash["genres"][0], network: show_hash["network"], start_date: show_hash["start_date"])
+    Show.create(api_id: show_hash["id"], name: show_hash["name"], description: show_hash["description"], genre: show_hash["genres"][0], network: show_hash["network"], start_date: show_hash["start_date"], runtime: show_hash["runtime"])
   end
 end

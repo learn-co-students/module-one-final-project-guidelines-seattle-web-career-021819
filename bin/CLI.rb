@@ -91,6 +91,8 @@ Please select an option below:
       print_list_of_favorites(@user, "main_menu")     #<~~ Goes to Line 29 - api_helper_method.rb
     elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
       @menu_message = nil
+      puts
+      puts "Loading episodes, please wait..."
       fetch_episodes_for_playlist(@user)
     elsif user_input == "4" || @thesaurus.main_menu_4_words.include?(user_input.downcase)
       @menu_message = nil
