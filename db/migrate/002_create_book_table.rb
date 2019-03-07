@@ -4,7 +4,6 @@ class CreateBookTable < ActiveRecord::Migration[4.2]
 		create_table :books do |t|
 			t.string :name
 			t.string :characters
-			t.string :book_url
 		end
 	end
 end
