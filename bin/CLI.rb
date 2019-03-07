@@ -34,14 +34,17 @@ from your favorites!"
   def self.user_select
     puts
     puts "
-Please enter a user name:
-NOTE: Usernames are case sensitive"
-# add: ", or press Enter to see a list of users:" ???
+(NOTE: Usernames are case sensitive)
+Please enter a user name, or enter a blank name
+to see a list of all users:
+"
     user_input = STDIN.gets.chomp
-    # check if string is empty, or only spaces (try the string.strip! method)
-    self.create_or_load_profile(user_input)
+    if user_input.strip == ""
+      list_all_users("user_select_menu")
+    else
+      self.create_or_load_profile(user_input)
+    end
   end
-
 
 
   def self.create_or_load_profile(user_input)
@@ -67,9 +70,11 @@ Please select an option below:
 2. Show current list of [favorite] shows
 3. Generate [playlist]!
 4. Select different [user]
+5. Print all user names
+6. View your user profile
 
 0. [Q]uit"
-    # puts "4. Show user statistics"
+    # puts "5. View your user profile"
     user_input = STDIN.gets.chomp
     self.route_user_input(user_input)
   end
@@ -80,20 +85,29 @@ Please select an option below:
     if user_input == "1" || @thesaurus.main_menu_1_words.include?(user_input.downcase)
       self.search_shows_by_title
     elsif user_input == "2" || @thesaurus.main_menu_2_words.include?(user_input.downcase)
-      print_list_of_favorites(@user)
+      print_list_of_favorites(@user, "main_menu")
     elsif user_input == "3" || @thesaurus.main_menu_3_words.include?(user_input.downcase)
       fetch_episodes_for_playlist(@user)
     elsif user_input == "4" || @thesaurus.main_menu_4_words.include?(user_input.downcase)
       self.user_select
+    elsif user_input == "5" || @thesaurus.main_menu_5_words.include?(user_input.downcase)
+      list_all_users("main_menu")
+    elsif user_input == "6" || @thesaurus.main_menu_6_words.include?(user_input.downcase)
+      user_profile_menu(@user)
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
-      system('clear')
-      puts "Thank you! Goodbye!"
-      puts
-      exit
+      goodbye_message
     else
       puts "Invalid input. Please try again:"
       self.main_menu
     end
+  end
+
+
+  def self.goodbye_message
+    system('clear')
+    puts "Thank you! Goodbye!"
+    puts
+    exit
   end
 
 
@@ -221,7 +235,7 @@ What would you like to do?
    favorite_show = Favorite.find_by(user_id: @user.id, show_id: show_hash["id"])
 
    if favorite_show == nil
-     Favorite.create(user_id: @user.id, show_id: show_hash["id"])
+     Favorite.create(user_id: @user.id, show_id: show_hash["id"], playlist_on_off: "on")
      @menu_message = "#{show_hash["name"]} has been added to your favorites!"
      add_show_to_table(show_hash)
      self.display_found_show_details(show_hash)
