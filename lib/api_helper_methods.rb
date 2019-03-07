@@ -27,7 +27,7 @@ end
 
 
 ## ========== OPTION 2. FROM USER MAIN MENU ========== ##
-def print_list_of_favorites(user)
+def print_list_of_favorites(user, menu)
   show_array = []
   favorites_array = fetch_list_of_favorites(user)
   if favorites_array.count == 0
@@ -36,7 +36,7 @@ def print_list_of_favorites(user)
   else
     favorites_array.each do |favorite_instance|
       show =  Show.find_by(api_id: favorite_instance.show_id)
-      show_array << show.name
+      show_array << "id. #{show.api_id} - #{show.name}            (add to playlists: #{favorite_instance.playlist_on_off.upcase})"
     end
     system('clear')
     puts @menu_message
@@ -46,17 +46,54 @@ def print_list_of_favorites(user)
     puts show_array.sort
   end
   puts
-  puts "Press enter to return to main menu or enter a show to remove from favorites"
-  user_input = STDIN.gets.chomp
-  if user_input.strip == ""
-    @menu_message = nil
-    CLI.main_menu
-  elsif show_array.include?(user_input)
-    delete_show_from_favorites(user_input, user)
-  else
-    @menu_message = "Please enter a valid show name"
-    print_list_of_favorites(user)
+
+
+  # BELOW: (added 3/6/19)
+  # Isa added functionality for different times when
+  # Favorites list could be viewed - now, from the new
+  # user profile menu, users can switch playlist adding on/off
+  # for specific shows on their list
+  if menu == "main_menu"
+    puts "Press enter to return to main menu or enter a show to remove from favorites"
+    user_input = STDIN.gets.chomp
+    if user_input.strip == ""
+      @menu_message = nil
+      CLI.main_menu
+    elsif show_array.include?(user_input)
+      delete_show_from_favorites(user_input, user)
+    else
+      @menu_message = "Please enter a valid show name"
+      print_list_of_favorites(user, "main_menu")
+    end
+
+  elsif menu == "profile_menu"
+    puts "Enter a show's id number to turn adding episodes to playlists on or off."
+    puts "Press enter when ready to return to your profile menu."
+    user_input = STDIN.gets.chomp
+    if user_input.strip == ""
+      user_profile_menu(user)
+
+    else
+      # better Enumerator than .each to refactor with?
+      # possible to stop iterating once a match is
+      # found? (similar to Until, using xx == true)
+      show_array.each do |show_name|
+        if show_name.include?(user_input)
+          favorite =  Favorite.find_by(show_id: user_input)
+          if favorite.playlist_on_off == "on"
+            favorite.playlist_on_off = "off"
+            favorite.save
+          elsif favorite.playlist_on_off == "off"
+            favorite.playlist_on_off = "on"
+            favorite.save
+          end
+        end
+      end
+      @menu_message = "Please enter a valid show name"
+      print_list_of_favorites(user, "profile_menu")
+    end
   end
+
 end
 
 
@@ -83,6 +120,16 @@ end
 
 def fetch_list_of_favorites(user)
   favorites_array = Favorite.where(user_id: user.id)
+end
+
+
+def filter_by_playlist_on_off(favorites_array)
+  # if breaks, try:
+  # array_output = ...
+  favorites_array.select do |favorite_instance|
+    favorite_instance.user_id == "on"
+  end
+  # ... return array_output
 end
 
 
@@ -137,10 +184,21 @@ end
 # plug into:
 # CLI, #47 - self.user_select (add option to see list of users - will need to check if user_input == "")
 # CLI, #78 - self.main_menu (add option to see list of users)
-def list_all_users
+def list_all_users(menu)
+  puts "All users currently in the system:"
+  puts "=================================="
   puts User.pluck(:name)
+  puts
+  puts "Press enter to return to main menu."
+  STDIN.gets.chomp
+  if menu == "user_select_menu"
+    self.user_select
+  elsif menu == "main_menu"
+    self.main_menu
+  end
 end
-# after printing list, re-prompt to enter User name
+
+
 
 
 ## ========== OPTION 1. FROM SHOW DETAILS (cont.) ========== ##
