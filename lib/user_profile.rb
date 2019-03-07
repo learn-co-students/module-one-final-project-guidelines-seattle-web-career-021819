@@ -18,7 +18,8 @@ def user_profile_menu(user)
   # profile loading - Statistics variables
   total_favorite_shows = fetch_list_of_favorites(user).count
   total_episodes = count_episodes_from_favorites(user)
-
+  total_runtime = sum_runtime_from_all_episodes(user)
+  total_playlists = Playlist.where(user_id: user.id).group(:playlist_num).count.count
 
   # begin printing menu
   system('clear')
@@ -33,12 +34,12 @@ def user_profile_menu(user)
   ---------------------------------------------
   Number of favorite shows: #{total_favorite_shows}
     total episodes: #{total_episodes}
-    total runtime:
+    total runtime (estimate): #{total_runtime} minutes
     average episodes per show: #{(total_episodes.to_f / total_favorite_shows.to_f).round(10)}
-    most frequent network added:
+    most frequent network added: [UNDER CONSTRUCTION]
   ---------------------------------------------
-  Number of playlists created:
-    total runtime:
+  Number of playlists created: #{total_playlists}
+    total runtime (estimate): [UNDER CONSTRUCTION]
     most frequent show added: [UNDER CONSTRUCTION]
   ---------------------------------------------
 
