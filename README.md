@@ -20,7 +20,7 @@ Installation Instructions
 -------------------------------------
 
 1. Clone the repository to your computer
-2. Run bundle install to install the required Gems
-3. Run ruby bin/run.db to enter the app
+2. Run ```bundle install``` to install the required Gems
+3. Run ```ruby bin/run.db``` to enter the app
 
 Bon Appétit!
