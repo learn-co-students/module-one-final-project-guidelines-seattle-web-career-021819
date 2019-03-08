@@ -14,6 +14,7 @@ class CLI
         puts "
 
 
+
             /
           #/
           ##
@@ -33,19 +34,15 @@ class CLI
                                              /     #####   ###
                                             /    /#######  /#
                                            /    /      ###/
-
 ".green
 
 
         self.get_user
-
         self.main_menu
-
         is_running = false
         while is_running
-
-
         end
+
     end
 
 
@@ -55,7 +52,7 @@ class CLI
         puts "\n[0]".red.bold + " Nope. exit".cyan
         puts "\n[1]".green.bold + " Sure, but let's play on easy mode".cyan
         puts "\n[2]".green.bold + " I consider myself a connisuer.  Let's play on hard mode.".cyan
-
+        puts
         choice = STDIN.gets.chomp
         # exit
 
@@ -118,7 +115,7 @@ C H E E R S !!!      \\     .  .     /
                            /;;\\
                       ==============
       "
-      puts "\nWould you like to play again?".cyan
+      puts "\nWould you like to play again, #{@@input.upcase.bold}?".cyan
         puts "\n[0]".red + " GET ME OUT OF HERE! I'm thirsty.".cyan
         puts "\n[1]".green + " Hell yah! Pour me another.".cyan
         play_a = STDIN.gets.chomp

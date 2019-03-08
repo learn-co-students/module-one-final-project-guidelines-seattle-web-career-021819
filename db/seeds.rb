@@ -52,9 +52,9 @@ recipe_data = [
  },
  {
    "strDrink": "3-Mile Long Island Iced Tea",
-   "questions": "Gin-1/2 oz , Light Rum-1/2 oz , Tequila-1/2 oz , Triple Sec-1/2 oz , Vodka-1/2 oz , Coca-Cola , Sweet and Sour-1-2 dash , Bitters-1 wedge , Lemon , : Fill 14oz glass with ice and alcohol. Fill 2/3 glass with cola and remainder with sweet & sour. Top with dash of bitters and lemon wedge.",
+   "questions": "Gin-1/2 oz , Light Rum-1/2 oz , Tequila-1/2 oz , Triple Sec-1/2 oz , Vodka-1/2 oz , Coca-Cola, Sweet and Sour-1-2 dash , Bitters-1 wedge , Lemon , : Fill 14oz glass with ice and alcohol. Fill 2/3 glass with cola and remainder with sweet & sour. Top with dash of bitters and lemon wedge.",
    "strInstructions": "Fill 14oz glass with ice and alcohol. Fill 2/3 glass with cola and remainder with sweet & sour. Top with dash of bitters and lemon wedge.",
-   "strIngredients": "Gin-1/2 oz , Light Rum-1/2 oz , Tequila-1/2 oz , Triple Sec-1/2 oz , Vodka-1/2 oz , Coca-Cola , Sweet and Sour-1-2 dash , Bitters-1 wedge , Lemon ,",
+   "strIngredients": "Gin-1/2 oz , Light Rum-1/2 oz , Tequila-1/2 oz , Triple Sec-1/2 oz , Vodka-1/2 oz , Coca-Cola\n , Sweet and Sour-1-2 dash , Bitters-1 wedge , Lemon ,",
    "incorrect": "Lady Love Fizz, New York Lemonade, Sidecar"
  },
  {
@@ -73,9 +73,9 @@ recipe_data = [
  },
  {
    "strDrink": "501 Blue",
-   "questions": "Blue Curacao , Blueberry Schnapps , Vodka , Sour Mix , 7-Up: Mix equal amounts into a glass with ice.",
+   "questions": "Blue Curacao , Blueberry Schnapps, Vodka, Sour Mix , 7-Up: Mix equal amounts into a glass with ice.",
    "strInstructions": "Mix equal amounts into a glass with ice.",
-   "strIngredients": "Blue Curacao , Blueberry Schnapps , Vodka , Sour Mix , 7-Up",
+   "strIngredients": "Blue Curacao\n , Blueberry Schnapps\n , Vodka\n , Sour Mix\n , 7-Up",
    "incorrect": "Boomerang, After Five, Jewel Of The Nile"
  },
  {
@@ -129,9 +129,9 @@ recipe_data = [
  },
  {
    "strDrink": "A Piece of Ass",
-   "questions": "Amaretto-1 shot , Southern Comfort-1 shot , Ice Cubes , Sour Mix: Put ice in glass. Pour in shots. Fill with Sour Mix.",
+   "questions": "Amaretto-1 shot , Southern Comfort-1 shot , Ice Cubes, Sour Mix: Put ice in glass. Pour in shots. Fill with Sour Mix.",
    "strInstructions": "Put ice in glass. Pour in shots. Fill with Sour Mix.",
-   "strIngredients": "Amaretto-1 shot , Southern Comfort-1 shot , Ice Cubes , Sour Mix",
+   "strIngredients": "Amaretto-1 shot , Southern Comfort-1 shot , Ice Cubes\n , Sour Mix",
    "incorrect": "London Town, Monkey Gland, Atlantic Sun"
  },
  {
@@ -143,9 +143,9 @@ recipe_data = [
  },
  {
    "strDrink": "A True Amaretto Sour",
-   "questions": "Amaretto-1 jigger , Lemon Juice of 1/2 , Ice , Maraschino Cherry: Rub the rim of an old fashioned glass with lemon, and dip repeatedly into granulated sugar until it has a good \"frosted\" rim. Shake a jigger of Amaretto with the juice of 1/2 a lemon. Strain into glass and add ice. Garnish with a Marachino Cherry.",
+   "questions": "Amaretto-1 jigger , Lemon Juice of 1/2 , Ice, Maraschino Cherry: Rub the rim of an old fashioned glass with lemon, and dip repeatedly into granulated sugar until it has a good \"frosted\" rim. Shake a jigger of Amaretto with the juice of 1/2 a lemon. Strain into glass and add ice. Garnish with a Marachino Cherry.",
    "strInstructions": "Rub the rim of an old fashioned glass with lemon, and dip repeatedly into granulated sugar until it has a good \"frosted\" rim. Shake a jigger of Amaretto with the juice of 1/2 a lemon. Strain into glass and add ice. Garnish with a Marachino Cherry.",
-   "strIngredients": "Amaretto-1 jigger , Lemon Juice of 1/2 , Ice , Maraschino Cherry",
+   "strIngredients": "Amaretto-1 jigger , Lemon Juice of 1/2 , Ice\n , Maraschino Cherry",
    "incorrect": "Scotch Sour, Kool-Aid Shot, Karsk"
  },
  {
@@ -227,9 +227,9 @@ recipe_data = [
  },
  {
    "strDrink": "Absolut Evergreen",
-   "questions": "Absolut Citron-2/3 part , Pisang Ambon-1/3 part , Ice Cubes , Bitter Lemon: Mix, pour over ice and top up with Bitter Lemon.",
+   "questions": "Absolut Citron-2/3 part , Pisang Ambon-1/3 part , Ice Cubes, Bitter Lemon: Mix, pour over ice and top up with Bitter Lemon.",
    "strInstructions": "Mix, pour over ice and top up with Bitter Lemon.",
-   "strIngredients": "Absolut Citron-2/3 part , Pisang Ambon-1/3 part , Ice Cubes , Bitter Lemon",
+   "strIngredients": "Absolut Citron-2/3 part , Pisang Ambon-1/3 part , Ice Cubes\n , Bitter Lemon",
    "incorrect": "Dry Rob Roy, Imperial Fizz, Cuba Libre"
  },
  {
@@ -311,9 +311,9 @@ recipe_data = [
  },
  {
    "strDrink": "Adam Bomb",
-   "questions": "Rum-1 part , Vodka-1 part , Tequila-1 part , Triple Sec-1/2 part , Fruit , Ice , Salt-1-3 pint , Fruit Juice: Add ice to blender (or to glass if prefer on the rocks) then fruit, and fruite juice depending on personal prefference then add the Rum, Vodka, Tequila, and triple sec. blend till smooth, rim glass with sugar or salt and pour mixture in. garnish with lemon or lime slice.",
+   "questions": "Rum-1 part , Vodka-1 part , Tequila-1 part , Triple Sec-1/2 part , Fruit, Ice, Salt-1-3 pint , Fruit Juice: Add ice to blender (or to glass if prefer on the rocks) then fruit, and fruite juice depending on personal prefference then add the Rum, Vodka, Tequila, and triple sec. blend till smooth, rim glass with sugar or salt and pour mixture in. garnish with lemon or lime slice.",
    "strInstructions": "Add ice to blender (or to glass if prefer on the rocks) then fruit, and fruite juice depending on personal prefference then add the Rum, Vodka, Tequila, and triple sec. blend till smooth, rim glass with sugar or salt and pour mixture in. garnish with lemon or lime slice.",
-   "strIngredients": "Rum-1 part , Vodka-1 part , Tequila-1 part , Triple Sec-1/2 part , Fruit , Ice , Salt-1-3 pint , Fruit Juice",
+   "strIngredients": "Rum-1 part , Vodka-1 part , Tequila-1 part , Triple Sec-1/2 part , Fruit\n , Ice\n , Salt-1-3 pint , Fruit Juice",
    "incorrect": "Amaretto Stinger, Baby Eskimo, 3-Mile Long Island Iced Tea"
  },
  {
@@ -381,9 +381,9 @@ recipe_data = [
  },
  {
    "strDrink": "After Five",
-   "questions": "Peppermint Schnapps , Kahlua , Bailey's Irish Cream: 1. Pour Kahlua into shot glass to about 1/2 full. 2. Using a spoon(inverted), slowly pour in the Peppermint Schnapps until glass is about 3/4 full. Done correctly, the Schnapps will flow under the Kahlua for a clear layer. 3. Again using a spoon, but this time right side up, slowly top off the glass with a layer of Bailey's. Be careful to place the spoon right at the top of the Kahlua layer and to raise it as the glass fills up. Done correctly, this will provide a layer of Bailey's floating over the Kahlua. 4. Toss it down all at once for something like a Peppermint Pattie, WITH A BANG!!! NOTE: Best if all ingredients are chilled",
+   "questions": "Peppermint Schnapps, Kahlua, Bailey's Irish Cream: 1. Pour Kahlua into shot glass to about 1/2 full. 2. Using a spoon(inverted), slowly pour in the Peppermint Schnapps until glass is about 3/4 full. Done correctly, the Schnapps will flow under the Kahlua for a clear layer. 3. Again using a spoon, but this time right side up, slowly top off the glass with a layer of Bailey's. Be careful to place the spoon right at the top of the Kahlua layer and to raise it as the glass fills up. Done correctly, this will provide a layer of Bailey's floating over the Kahlua. 4. Toss it down all at once for something like a Peppermint Pattie, WITH A BANG!!! NOTE: Best if all ingredients are chilled",
    "strInstructions": "1. Pour Kahlua into shot glass to about 1/2 full. 2. Using a spoon(inverted), slowly pour in the Peppermint Schnapps until glass is about 3/4 full. Done correctly, the Schnapps will flow under the Kahlua for a clear layer. 3. Again using a spoon, but this time right side up, slowly top off the glass with a layer of Bailey's. Be careful to place the spoon right at the top of the Kahlua layer and to raise it as the glass fills up. Done correctly, this will provide a layer of Bailey's floating over the Kahlua. 4. Toss it down all at once for something like a Peppermint Pattie, WITH A BANG!!! NOTE: Best if all ingredients are chilled",
-   "strIngredients": "Peppermint Schnapps , Kahlua , Bailey's Irish Cream",
+   "strIngredients": "Peppermint Schnapps\n , Kahlua\n , Bailey's Irish Cream",
    "incorrect": "Damned if you do, Royal Fizz, Orgasm"
  },
  {
@@ -409,7 +409,7 @@ recipe_data = [
  },
  {
    "strDrink": "Afternoon",
-   "questions": "Kahlua-1/3 oz , Bailey's Irish Cream-1/3 oz , Frangelico-1.5, Coffee-1 1/3 oz hot , Cream  : Build into a suiting glass, with no ice. Cream on top if wanted. Served directly.",
+   "questions": "Kahlua-1/3 oz , Bailey's Irish Cream-1/3 oz , Frangelico-1.5, Coffee-1 1/3 oz hot , Cream: Build into a suiting glass, with no ice. Cream on top if wanted. Served directly.",
    "strInstructions": "Build into a suiting glass, with no ice. Cream on top if wanted. Served directly.",
    "strIngredients": "Kahlua-1/3 oz , Bailey's Irish Cream-1/3 oz , Frangelico-1.5, Coffee-1 1/3 oz hot , Cream",
    "incorrect": "Apple Grande, Kioki Coffee, Kir"
@@ -496,7 +496,7 @@ recipe_data = [
    "questions": "Amaretto-1/2 oz , Creme de Cacao-1/2 oz white , Light Cream-2 oz : Shake all ingredients with ice, strain into a cocktail glass, and serve.",
    "strInstructions": "Shake all ingredients with ice, strain into a cocktail glass, and serve.",
    "strIngredients": "Amaretto-1/2 oz , Creme de Cacao-1/2 oz white , Light Cream-2 oz",
-   "incorrect": "Champagne Cocktail, Avalon, Gin Swizzle"
+   "incorrect": "Champagne Cocktail, Avalon, Gin Swizzle\n"
  },
  {
    "strDrink": "Aloha Fruit punch",
@@ -584,9 +584,9 @@ recipe_data = [
  },
  {
    "strDrink": "Amaretto Sweet & Sour",
-   "questions": "Amaretto , Sweet and Sour , Midori Melon Liqueur, Pineapple Juice : Fill the blender with 3/4 ice. Add sweet & sour mix to the top of the ice. Add about 1\" of Pineapple juice, 1/2\" of melon liqeur, and 1/2 to 1/4\" of amaretto. Then blend the mix until it is of margaritta consistency or thinner.",
+   "questions": "Amaretto, Sweet and Sour, Midori Melon Liqueur, Pineapple Juice : Fill the blender with 3/4 ice. Add sweet & sour mix to the top of the ice. Add about 1\" of Pineapple juice, 1/2\" of melon liqeur, and 1/2 to 1/4\" of amaretto. Then blend the mix until it is of margaritta consistency or thinner.",
    "strInstructions": "Fill the blender with 3/4 ice. Add sweet & sour mix to the top of the ice. Add about 1\" of Pineapple juice, 1/2\" of melon liqeur, and 1/2 to 1/4\" of amaretto. Then blend the mix until it is of margaritta consistency or thinner.",
-   "strIngredients": "Amaretto , Sweet and Sour , Midori Melon Liqueur, Pineapple Juice",
+   "strIngredients": "Amaretto\n , Sweet and Sour\n , Midori Melon Liqueur, Pineapple Juice",
    "incorrect": "Zorbatini, Archbishop, Bora Bora"
  },
  {
@@ -780,9 +780,9 @@ recipe_data = [
  },
  {
    "strDrink": "Atomic Lokade",
-   "questions": "Lemonade-5 oz , Vodka-1 oz , Blue Curacao-1/2 oz , Triple Sec-1/2 oz , Sugar , Ice : In a shaker, place lemonade, vodka, blue Curacao, and triple sec together. Shake with ice and strain into glass. Add sugar to taste",
+   "questions": "Lemonade-5 oz , Vodka-1 oz , Blue Curacao-1/2 oz , Triple Sec-1/2 oz , Sugar, Ice : In a shaker, place lemonade, vodka, blue Curacao, and triple sec together. Shake with ice and strain into glass. Add sugar to taste",
    "strInstructions": "In a shaker, place lemonade, vodka, blue Curacao, and triple sec together. Shake with ice and strain into glass. Add sugar to taste",
-   "strIngredients": "Lemonade-5 oz , Vodka-1 oz , Blue Curacao-1/2 oz , Triple Sec-1/2 oz , Sugar , Ice",
+   "strIngredients": "Lemonade-5 oz , Vodka-1 oz , Blue Curacao-1/2 oz , Triple Sec-1/2 oz , Sugar\n , Ice",
    "incorrect": "Grass Skirt, H.D., Imperial Fizz"
  },
  {
@@ -808,7 +808,7 @@ recipe_data = [
  },
  {
    "strDrink": "Avalon",
-   "questions": "Vodka-3 parts, Pisang Ambon-1 part , Apple Juice-6 parts , Lemon Juice-1 1/2 part , Lemonade  : Fill a tall glass with ice. Layer the Finlandia Vodka, lemon and apple juices, Pisang Ambon, and top up with lemonade. Stir slightly and garnish with a spiralled cucumber skin and a red cherry. The cucumber provides zest and looks attractive. This drink, created by Timo Haimi, took first prize in the 1991 Finlandia Vodka Long Drink Competition.",
+   "questions": "Vodka-3 parts, Pisang Ambon-1 part , Apple Juice-6 parts , Lemon Juice-1 1/2 part , Lemonade: Fill a tall glass with ice. Layer the Finlandia Vodka, lemon and apple juices, Pisang Ambon, and top up with lemonade. Stir slightly and garnish with a spiralled cucumber skin and a red cherry. The cucumber provides zest and looks attractive. This drink, created by Timo Haimi, took first prize in the 1991 Finlandia Vodka Long Drink Competition.",
    "strInstructions": "Fill a tall glass with ice. Layer the Finlandia Vodka, lemon and apple juices, Pisang Ambon, and top up with lemonade. Stir slightly and garnish with a spiralled cucumber skin and a red cherry. The cucumber provides zest and looks attractive. This drink, created by Timo Haimi, took first prize in the 1991 Finlandia Vodka Long Drink Competition.",
    "strIngredients": "Vodka-3 parts, Pisang Ambon-1 part , Apple Juice-6 parts , Lemon Juice-1 1/2 part , Lemonade",
    "incorrect": "Butter Baby, Cuba Libra, Royal Gin Fizz"
@@ -899,7 +899,7 @@ recipe_data = [
  },
  {
    "strDrink": "Banana Strawberry Shake",
-   "questions": "Strawberries-1/2 lb frozen , Banana-1 frozen , Yoghurt-1 cup plain , Milk-1 cup , Honey- to taste  : Blend all together in a blender until smooth.",
+   "questions": "Strawberries-1/2 lb frozen , Banana-1 frozen , Yoghurt-1 cup plain , Milk-1 cup , Honey- to taste: Blend all together in a blender until smooth.",
    "strInstructions": "Blend all together in a blender until smooth.",
    "strIngredients": "Strawberries-1/2 lb frozen , Banana-1 frozen , Yoghurt-1 cup plain , Milk-1 cup , Honey- to taste",
    "incorrect": "Absolut Stress #2, Black & Tan, California Root Beer"
@@ -934,8 +934,8 @@ recipe_data = [
  },
  {
    "strDrink": "Bellini Martini",
-   "questions": "Ice Cubes - 8, Vodka-3 oz , Peach nectar-1.5 oz , Peach Schnapps-1.5 oz , Lemon Peel-1 : Add ice cubes to shaker.  Add vodka.  Add peach schnapps.  Add peach nectar.  Shake.  Strain into glass.  Add lemon twist peel.",
-   "strInstructions": "Add ice cubes to shaker.  Add vodka.  Add peach schnapps.  Add peach nectar.  Shake.  Strain into glass.  Add lemon twist peel.",
+   "questions": "Ice Cubes - 8, Vodka-3 oz , Peach nectar-1.5 oz , Peach Schnapps-1.5 oz , Lemon Peel-1 : Add ice cubes to shaker. Add vodka. Add peach schnapps. Add peach nectar. Shake. Strain into glass. Add lemon twist peel.",
+   "strInstructions": "Add ice cubes to shaker.\n \n Add vodka.\n \n Add peach schnapps.\n \n Add peach nectar.\n \n Shake.\n \n Strain into glass.\n \n Add lemon twist peel.",
    "strIngredients": "Ice Cubes - 8, Vodka-3 oz , Peach nectar-1.5 oz , Peach Schnapps-1.5 oz , Lemon Peel-1",
    "incorrect": "Amaretto Sour, Strawberry Lemonade, Snowball"
  },
@@ -983,9 +983,9 @@ recipe_data = [
  },
  {
    "strDrink": "Black Forest Shake",
-   "questions": "Ice Cubes , Chocolate Syrup , Cherry brandy , Vodka , Milk  : In a blender put ice cubes, chocolate syrup, cherry brandy, vodka, and milk. Blend very well.",
+   "questions": "Ice Cubes, Chocolate Syrup, Cherry brandy, Vodka, Milk: In a blender put ice cubes, chocolate syrup, cherry brandy, vodka, and milk. Blend very well.",
    "strInstructions": "In a blender put ice cubes, chocolate syrup, cherry brandy, vodka, and milk. Blend very well.",
-   "strIngredients": "Ice Cubes , Chocolate Syrup , Cherry brandy , Vodka , Milk",
+   "strIngredients": "Ice Cubes\n , Chocolate Syrup\n , Cherry brandy\n , Vodka\n , Milk",
    "incorrect": "Lone Tree Cocktail, Kir, Lone Tree Cooler"
  },
  {
@@ -1018,7 +1018,7 @@ recipe_data = [
  },
  {
    "strDrink": "Blind Russian",
-   "questions": "Bailey's Irish Cream-3/4 oz , Godiva Liqueur-3/4 oz , Kahlua-3/4 oz , Butterscotch Schnapps-1/2 oz , Milk- to fill  : Fill glass with ice. Add all liquers. Add milk. shake.",
+   "questions": "Bailey's Irish Cream-3/4 oz , Godiva Liqueur-3/4 oz , Kahlua-3/4 oz , Butterscotch Schnapps-1/2 oz , Milk- to fill: Fill glass with ice. Add all liquers. Add milk. shake.",
    "strInstructions": "Fill glass with ice. Add all liquers. Add milk. shake.",
    "strIngredients": "Bailey's Irish Cream-3/4 oz , Godiva Liqueur-3/4 oz , Kahlua-3/4 oz , Butterscotch Schnapps-1/2 oz , Milk- to fill",
    "incorrect": "Spanish Chocolate, Almeria, Caribbean Orange Liqueur"
@@ -1088,9 +1088,9 @@ recipe_data = [
  },
  {
    "strDrink": "Boozy Snickers Milkshake",
-   "questions": "Vanilla Ice-Cream-3 cups , Milk-1 cup , Godiva Liqueur-1/2 cup , Whipped Cream-for topping, caramel Sauce-4 tablespoons  , Chocolate Sauce-4 tablespoons  , Mini-Snickers Bars-15   : Place the snickers bars in a plastic bag and roll over them with a rolling pin until crushed. Add crushed snickers pieces, ice cream, milk, caramel sauce, chocolate sauce, and chocolate liquor to a blender. Blend until shake is thick and frothy. Pour into glasses and top with chocolate liquor and whip cream.",
+   "questions": "Vanilla Ice-Cream-3 cups , Milk-1 cup , Godiva Liqueur-1/2 cup , Whipped Cream-for topping, caramel Sauce-4 tablespoons, Chocolate Sauce-4 tablespoons, Mini-Snickers Bars-15: Place the snickers bars in a plastic bag and roll over them with a rolling pin until crushed. Add crushed snickers pieces, ice cream, milk, caramel sauce, chocolate sauce, and chocolate liquor to a blender. Blend until shake is thick and frothy. Pour into glasses and top with chocolate liquor and whip cream.",
    "strInstructions": "Place the snickers bars in a plastic bag and roll over them with a rolling pin until crushed. Add crushed snickers pieces, ice cream, milk, caramel sauce, chocolate sauce, and chocolate liquor to a blender. Blend until shake is thick and frothy. Pour into glasses and top with chocolate liquor and whip cream.",
-   "strIngredients": "Vanilla Ice-Cream-3 cups , Milk-1 cup , Godiva Liqueur-1/2 cup , Whipped Cream-for topping, caramel Sauce-4 tablespoons  , Chocolate Sauce-4 tablespoons  , Mini-Snickers Bars-15",
+   "strIngredients": "Vanilla Ice-Cream-3 cups , Milk-1 cup , Godiva Liqueur-1/2 cup , Whipped Cream-for topping, caramel Sauce-4 tablespoons\n \n , Chocolate Sauce-4 tablespoons\n \n , Mini-Snickers Bars-15",
    "incorrect": "Margarita, Cuba Libre, Quentin"
  },
  {
@@ -1200,9 +1200,9 @@ recipe_data = [
  },
  {
    "strDrink": "Bruce's Puce",
-   "questions": "Grenadine , Kahlua , Bailey's Irish Cream: In a regular-sized shot glass, layer, with a spoon or cherry, the grenadine , the Kahlua , then the Bailey's Irish cream in equal portions. It goes down really smooth ,and you don't even need a chaser. It tastes just like chocolate milk.(Really!)",
+   "questions": "Grenadine, Kahlua, Bailey's Irish Cream: In a regular-sized shot glass, layer, with a spoon or cherry, the grenadine , the Kahlua , then the Bailey's Irish cream in equal portions. It goes down really smooth ,and you don't even need a chaser. It tastes just like chocolate milk.(Really!)",
    "strInstructions": "In a regular-sized shot glass, layer, with a spoon or cherry, the grenadine , the Kahlua , then the Bailey's Irish cream in equal portions. It goes down really smooth ,and you don't even need a chaser. It tastes just like chocolate milk.(Really!)",
-   "strIngredients": "Grenadine , Kahlua , Bailey's Irish Cream",
+   "strIngredients": "Grenadine\n , Kahlua\n , Bailey's Irish Cream",
    "incorrect": "After Five, Banana Daiquiri, Grasshopper"
  },
  {
@@ -1242,9 +1242,9 @@ recipe_data = [
  },
  {
    "strDrink": "Cafe Savoy",
-   "questions": "Coffee , Milk-1/2 oz , Triple Sec-1/2 oz , Brandy: Fill mug almost to top with coffee.Add milk, triple sec and brandy. Stir.",
+   "questions": "Coffee, Milk-1/2 oz , Triple Sec-1/2 oz , Brandy: Fill mug almost to top with coffee.Add milk, triple sec and brandy. Stir.",
    "strInstructions": "Fill mug almost to top with coffee.Add milk, triple sec and brandy. Stir.",
-   "strIngredients": "Coffee , Milk-1/2 oz , Triple Sec-1/2 oz , Brandy",
+   "strIngredients": "Coffee\n , Milk-1/2 oz , Triple Sec-1/2 oz , Brandy",
    "incorrect": "English Highball, Orange Scented Hot Chocolate, Dark Caipirinha"
  },
  {
@@ -1263,7 +1263,7 @@ recipe_data = [
  },
  {
    "strDrink": "California Lemonade",
-   "questions": "Blended Whiskey-2 oz , Lemon-Juice of 1 , Lime-Juice of 1 , Powdered Sugar-1 tblsp , Grenadine-1/4 tsp , Carbonated Water  : Shake all ingredients (except carbonated water) with ice and strain into a collins glass over shaved ice. Fill with carbonated water and stir. Decorate with slices of orange and lemon. Add the cherry and serve with a straw.",
+   "questions": "Blended Whiskey-2 oz , Lemon-Juice of 1 , Lime-Juice of 1 , Powdered Sugar-1 tblsp , Grenadine-1/4 tsp , Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a collins glass over shaved ice. Fill with carbonated water and stir. Decorate with slices of orange and lemon. Add the cherry and serve with a straw.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a collins glass over shaved ice. Fill with carbonated water and stir. Decorate with slices of orange and lemon. Add the cherry and serve with a straw.",
    "strIngredients": "Blended Whiskey-2 oz , Lemon-Juice of 1 , Lime-Juice of 1 , Powdered Sugar-1 tblsp , Grenadine-1/4 tsp , Carbonated Water",
    "incorrect": "Adam & Eve, Hot Chocolate to Die for, London Town"
@@ -1273,7 +1273,7 @@ recipe_data = [
    "questions": "Kahlua-3/4 oz , Galliano-3/4 oz , Soda Water-Fill with : Put Kahlua and Galliano in highball glass fill with soda",
    "strInstructions": "Put Kahlua and Galliano in highball glass fill with soda",
    "strIngredients": "Kahlua-3/4 oz , Galliano-3/4 oz , Soda Water-Fill with",
-   "incorrect": "Vodka Fizz, Blind Russian, Smut"
+   "incorrect": "Vodka Fizz, Blind Russian, Smut\n"
  },
  {
    "strDrink": "Campari Beer",
@@ -1340,7 +1340,7 @@ recipe_data = [
  },
  {
    "strDrink": "Chicago Fizz",
-   "questions": "Light Rum-1 oz , Port-1 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Egg White-1, Carbonated Water  : Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
+   "questions": "Light Rum-1 oz , Port-1 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Egg White-1, Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strIngredients": "Light Rum-1 oz , Port-1 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Egg White-1, Carbonated Water",
    "incorrect": "Bacardi Cocktail, Port And Starboard, Jewel Of The Nile"
@@ -1424,7 +1424,7 @@ recipe_data = [
  },
  {
    "strDrink": "Coffee-Vodka",
-   "questions": "Water-2 cups , Sugar-2 cups white , Coffee-1/2 cup instant , Vanilla, Vodka-1 1/2 cup , Caramel Coloring  : Boil water and sugar until dissolved. Turn off heat. Slowly add dry instant coffee and continue Stiring. Add a chopped vanilla bean to the vodka, then combine the cooled sugar syrup and coffee solution with the vodka. Cover tightly and shake vigorously each day for 3 weeks. Strain and filter. Its also best to let the sugar mixture cool completely so the vodka won't evaporate when its added. If you like a smoother feel to the liqueur you can add about 1 teaspoon of glycerine to the finished product.",
+   "questions": "Water-2 cups , Sugar-2 cups white , Coffee-1/2 cup instant , Vanilla, Vodka-1 1/2 cup , Caramel Coloring: Boil water and sugar until dissolved. Turn off heat. Slowly add dry instant coffee and continue Stiring. Add a chopped vanilla bean to the vodka, then combine the cooled sugar syrup and coffee solution with the vodka. Cover tightly and shake vigorously each day for 3 weeks. Strain and filter. Its also best to let the sugar mixture cool completely so the vodka won't evaporate when its added. If you like a smoother feel to the liqueur you can add about 1 teaspoon of glycerine to the finished product.",
    "strInstructions": "Boil water and sugar until dissolved. Turn off heat. Slowly add dry instant coffee and continue Stiring. Add a chopped vanilla bean to the vodka, then combine the cooled sugar syrup and coffee solution with the vodka. Cover tightly and shake vigorously each day for 3 weeks. Strain and filter. Its also best to let the sugar mixture cool completely so the vodka won't evaporate when its added. If you like a smoother feel to the liqueur you can add about 1 teaspoon of glycerine to the finished product.",
    "strIngredients": "Water-2 cups , Sugar-2 cups white , Coffee-1/2 cup instant , Vanilla, Vodka-1 1/2 cup , Caramel Coloring",
    "incorrect": "Ace, Belgian Blue, Sazerac"
@@ -1466,7 +1466,7 @@ recipe_data = [
  },
  {
    "strDrink": "Cream Soda",
-   "questions": "SpIced Rum-1 oz , Ginger Ale  : Pour 1oz of Spiced Rum into a highball glass with ice. Fill with Ginger Ale.",
+   "questions": "SpIced Rum-1 oz , Ginger Ale: Pour 1oz of Spiced Rum into a highball glass with ice. Fill with Ginger Ale.",
    "strInstructions": "Pour 1oz of Spiced Rum into a highball glass with ice. Fill with Ginger Ale.",
    "strIngredients": "SpIced Rum-1 oz , Ginger Ale",
    "incorrect": "Raspberry Cooler, Midnight Mint, Barracuda"
@@ -1480,9 +1480,9 @@ recipe_data = [
  },
  {
    "strDrink": "Cuba Libra",
-   "questions": "Dark Rum-1-2 shot , Lime-Squeeze , Fill with Coca-Cola, Ice  , : Fill tall glass with ice cubes. Add rum. Rub cut edge of lime on rim of glass then squeeze juice into glass. Fill with Coca-Cola. Garnish with lime slice. Enjoy!",
+   "questions": "Dark Rum-1-2 shot , Lime-Squeeze , Fill with Coca-Cola, Ice: Fill tall glass with ice cubes. Add rum. Rub cut edge of lime on rim of glass then squeeze juice into glass. Fill with Coca-Cola. Garnish with lime slice. Enjoy!",
    "strInstructions": "Fill tall glass with ice cubes. Add rum. Rub cut edge of lime on rim of glass then squeeze juice into glass. Fill with Coca-Cola. Garnish with lime slice. Enjoy!",
-   "strIngredients": "Dark Rum-1-2 shot , Lime-Squeeze , Fill with Coca-Cola, Ice  ,",
+   "strIngredients": "Dark Rum-1-2 shot , Lime-Squeeze , Fill with Coca-Cola, Ice\n  ,",
    "incorrect": "Strawberry Daiquiri, Allies Cocktail, Quick F**K"
  },
  {
@@ -1515,8 +1515,8 @@ recipe_data = [
  },
  {
    "strDrink": "Dark Caipirinha",
-   "questions": "demerara Sugar-2 tsp , Lime-1, Cachaca-2 1/2 oz , : Muddle the sugar into the lime wedges in an old-fashioned glass.  Fill the glass with ice cubes.  Pour the cachaca into the glass.  Stir well.",
-   "strInstructions": "Muddle the sugar into the lime wedges in an old-fashioned glass.  Fill the glass with ice cubes.  Pour the cachaca into the glass.  Stir well.",
+   "questions": "demerara Sugar-2 tsp , Lime-1, Cachaca-2 1/2 oz , : Muddle the sugar into the lime wedges in an old-fashioned glass. Fill the glass with ice cubes. Pour the cachaca into the glass. Stir well.",
+   "strInstructions": "Muddle the sugar into the lime wedges in an old-fashioned glass.\n \n Fill the glass with ice cubes.\n \n Pour the cachaca into the glass.\n \n Stir well.",
    "strIngredients": "demerara Sugar-2 tsp , Lime-1, Cachaca-2 1/2 oz ,",
    "incorrect": "Amaretto Tea, Bubble Gum, Homemade Kahlua"
  },
@@ -1529,9 +1529,9 @@ recipe_data = [
  },
  {
    "strDrink": "Darkwood Sling",
-   "questions": "Cherry Heering-1 part , Soda water-1 part , Orange Juice-1 part , Ice Cubes  , : There are many good cherry liqueurs you can use, but I prefere Heering. Add one share of the liqueur. Then you add one share of Soda. For a sour sling use Tonic (most people prefer the drink without Tonic). Afterwards you fill the glass with Orange Juice and ice cubes.",
+   "questions": "Cherry Heering-1 part , Soda water-1 part , Orange Juice-1 part , Ice Cubes: There are many good cherry liqueurs you can use, but I prefere Heering. Add one share of the liqueur. Then you add one share of Soda. For a sour sling use Tonic (most people prefer the drink without Tonic). Afterwards you fill the glass with Orange Juice and ice cubes.",
    "strInstructions": "There are many good cherry liqueurs you can use, but I prefere Heering. Add one share of the liqueur. Then you add one share of Soda. For a sour sling use Tonic (most people prefer the drink without Tonic). Afterwards you fill the glass with Orange Juice and ice cubes.",
-   "strIngredients": "Cherry Heering-1 part , Soda water-1 part , Orange Juice-1 part , Ice Cubes  ,",
+   "strIngredients": "Cherry Heering-1 part , Soda water-1 part , Orange Juice-1 part , Ice Cubes\n  ,",
    "incorrect": "Bruce's Puce, Lord And Lady, Pina Colada"
  },
  {
@@ -1550,16 +1550,16 @@ recipe_data = [
  },
  {
    "strDrink": "Dirty Martini",
-   "questions": "Vodka-70ml/2fl oz, Dry Vermouth-1 tbsp, Olive Brine-2 tbsp, Lemon-1 wedge, Olive-1 : Pour the vodka, dry vermouth and olive brine into a cocktail shaker with a handful of ice and shake well.  Rub the rim of a martini glass with the wedge of lemon.  Strain the contents of the cocktail shaker into the glass and add the olive.  A dirty Martini contains a splash of olive brine or olive juice and is typically garnished with an olive.",
-   "strInstructions": "Pour the vodka, dry vermouth and olive brine into a cocktail shaker with a handful of ice and shake well.  Rub the rim of a martini glass with the wedge of lemon.  Strain the contents of the cocktail shaker into the glass and add the olive.  A dirty Martini contains a splash of olive brine or olive juice and is typically garnished with an olive.",
+   "questions": "Vodka-70ml/2fl oz, Dry Vermouth-1 tbsp, Olive Brine-2 tbsp, Lemon-1 wedge, Olive-1 : Pour the vodka, dry vermouth and olive brine into a cocktail shaker with a handful of ice and shake well. Rub the rim of a martini glass with the wedge of lemon. Strain the contents of the cocktail shaker into the glass and add the olive. A dirty Martini contains a splash of olive brine or olive juice and is typically garnished with an olive.",
+   "strInstructions": "Pour the vodka, dry vermouth and olive brine into a cocktail shaker with a handful of ice and shake well.\n \n Rub the rim of a martini glass with the wedge of lemon.\n \n Strain the contents of the cocktail shaker into the glass and add the olive.\n \n A dirty Martini contains a splash of olive brine or olive juice and is typically garnished with an olive.",
    "strIngredients": "Vodka-70ml/2fl oz, Dry Vermouth-1 tbsp, Olive Brine-2 tbsp, Lemon-1 wedge, Olive-1",
    "incorrect": "Wine Punch, Horse's Neck, Royal Fizz"
  },
  {
    "strDrink": "Dirty Nipple",
-   "questions": "Kahlua , Sambuca , Bailey's Irish Cream  , : This is a layered shot - the Bailey's must be on top",
+   "questions": "Kahlua, Sambuca, Bailey's Irish Cream: This is a layered shot - the Bailey's must be on top",
    "strInstructions": "This is a layered shot - the Bailey's must be on top",
-   "strIngredients": "Kahlua , Sambuca , Bailey's Irish Cream  ,",
+   "strIngredients": "Kahlua\n , Sambuca\n , Bailey's Irish Cream\n  ,",
    "incorrect": "Chicago Fizz, Caipirissima, Shark Attack"
  },
  {
@@ -1599,8 +1599,8 @@ recipe_data = [
  },
  {
    "strDrink": "Duchamp's Punch",
-   "questions": "Pisco- 2/3 oz, Lime Juice- 2/3 oz, Pineapple Syrup- 2/3 oz, St. Germain-2/3 oz, Angostura Bitters-2 Dashes, Pepper-Pinch, Lavender-2 sprigs : Shake all ingredients.  Double strain in a chilled double old fashioned glass with abig ice cube.  Garnish with a couple of lavender sprigs",
-   "strInstructions": "Shake all ingredients.  Double strain in a chilled double old fashioned glass with abig ice cube.  Garnish with a couple of lavender sprigs",
+   "questions": "Pisco- 2/3 oz, Lime Juice- 2/3 oz, Pineapple Syrup- 2/3 oz, St. Germain-2/3 oz, Angostura Bitters-2 Dashes, Pepper-Pinch, Lavender-2 sprigs : Shake all ingredients. Double strain in a chilled double old fashioned glass with abig ice cube. Garnish with a couple of lavender sprigs",
+   "strInstructions": "Shake all ingredients.\n \n Double strain in a chilled double old fashioned glass with abig ice cube.\n \n Garnish with a couple of lavender sprigs",
    "strIngredients": "Pisco- 2/3 oz, Lime Juice- 2/3 oz, Pineapple Syrup- 2/3 oz, St. Germain-2/3 oz, Angostura Bitters-2 Dashes, Pepper-Pinch, Lavender-2 sprigs",
    "incorrect": "Irish Coffee, Black and Brown, Cosmopolitan"
  },
@@ -1620,7 +1620,7 @@ recipe_data = [
  },
  {
    "strDrink": "Egg Nog - Healthy",
-   "questions": "Egg-1/2 cup , Sugar-3 tblsp , Condensed milk-13 oz skimmed , Milk-3/4 cup skimmed , Vanilla extract-1 tsp , Rum-1 tsp , Nutmeg  : Whip egg substitute and sugar together, combine with the two kinds of milk, vanilla, and rum. Mix well. Chill over night. Sprinkle with nutmeg. Makes 6 servings.",
+   "questions": "Egg-1/2 cup , Sugar-3 tblsp , Condensed milk-13 oz skimmed , Milk-3/4 cup skimmed , Vanilla extract-1 tsp , Rum-1 tsp , Nutmeg: Whip egg substitute and sugar together, combine with the two kinds of milk, vanilla, and rum. Mix well. Chill over night. Sprinkle with nutmeg. Makes 6 servings.",
    "strInstructions": "Whip egg substitute and sugar together, combine with the two kinds of milk, vanilla, and rum. Mix well. Chill over night. Sprinkle with nutmeg. Makes 6 servings.",
    "strIngredients": "Egg-1/2 cup , Sugar-3 tblsp , Condensed milk-13 oz skimmed , Milk-3/4 cup skimmed , Vanilla extract-1 tsp , Rum-1 tsp , Nutmeg",
    "incorrect": "Kiss me Quick, Cosmopolitan Martini, Absolut Summertime"
@@ -1634,9 +1634,9 @@ recipe_data = [
  },
  {
    "strDrink": "English Highball",
-   "questions": "Brandy-3/4 oz , Gin-3/4 oz , Sweet Vermouth-3/4 oz , Carbonated Water , Lemon Peel  : Pour brandy, gin, and sweet vermouth into a highball glass over ice cubes. Fill with carbonated water. Add the twist of lemon peel, stir, and serve. (Ginger Ale may be substituted for carbonated water, if preferred.)",
+   "questions": "Brandy-3/4 oz , Gin-3/4 oz , Sweet Vermouth-3/4 oz , Carbonated Water, Lemon Peel: Pour brandy, gin, and sweet vermouth into a highball glass over ice cubes. Fill with carbonated water. Add the twist of lemon peel, stir, and serve. (Ginger Ale may be substituted for carbonated water, if preferred.)",
    "strInstructions": "Pour brandy, gin, and sweet vermouth into a highball glass over ice cubes. Fill with carbonated water. Add the twist of lemon peel, stir, and serve. (Ginger Ale may be substituted for carbonated water, if preferred.)",
-   "strIngredients": "Brandy-3/4 oz , Gin-3/4 oz , Sweet Vermouth-3/4 oz , Carbonated Water , Lemon Peel",
+   "strIngredients": "Brandy-3/4 oz , Gin-3/4 oz , Sweet Vermouth-3/4 oz , Carbonated Water\n , Lemon Peel",
    "incorrect": "Fahrenheit 5000, Boozy Snickers Milkshake, Zipperhead"
  },
  {
@@ -1774,7 +1774,7 @@ recipe_data = [
  },
  {
    "strDrink": "Fruit Cooler",
-   "questions": "Apple Juice-1 can frozen , Strawberries-1 cup , Sugar-2 tblsp , Lemon-1, Apple-1, Soda Water-1 L , Ice  : Toss strawberries with sugar, and let sit overnight in refrigerator. Cut lemon, reserve two slices. Juice the rest. Mix together the lemon juice, strawberries, apple juice, and soda water. Add slices of lemon (decor, really). In glasses, put ice cubes, and a slice of apple. Pour drink in, and serve.",
+   "questions": "Apple Juice-1 can frozen , Strawberries-1 cup , Sugar-2 tblsp , Lemon-1, Apple-1, Soda Water-1 L , Ice: Toss strawberries with sugar, and let sit overnight in refrigerator. Cut lemon, reserve two slices. Juice the rest. Mix together the lemon juice, strawberries, apple juice, and soda water. Add slices of lemon (decor, really). In glasses, put ice cubes, and a slice of apple. Pour drink in, and serve.",
    "strInstructions": "Toss strawberries with sugar, and let sit overnight in refrigerator. Cut lemon, reserve two slices. Juice the rest. Mix together the lemon juice, strawberries, apple juice, and soda water. Add slices of lemon (decor, really). In glasses, put ice cubes, and a slice of apple. Pour drink in, and serve.",
    "strIngredients": "Apple Juice-1 can frozen , Strawberries-1 cup , Sugar-2 tblsp , Lemon-1, Apple-1, Soda Water-1 L , Ice",
    "incorrect": "Lassi - A South Indian Drink, Avalanche, Kool-Aid Shot"
@@ -1802,9 +1802,9 @@ recipe_data = [
  },
  {
    "strDrink": "GG",
-   "questions": "Galliano-2 1/2 shots , Ginger Ale , Ice , : Pour the Galliano liqueur over ice. Fill the remainder of the glass with ginger Ale and thats all there is to it. You now have a your very own GG.",
+   "questions": "Galliano-2 1/2 shots , Ginger Ale, Ice , : Pour the Galliano liqueur over ice. Fill the remainder of the glass with ginger Ale and thats all there is to it. You now have a your very own GG.",
    "strInstructions": "Pour the Galliano liqueur over ice. Fill the remainder of the glass with ginger Ale and thats all there is to it. You now have a your very own GG.",
-   "strIngredients": "Galliano-2 1/2 shots , Ginger Ale , Ice ,",
+   "strIngredients": "Galliano-2 1/2 shots , Ginger Ale\n , Ice ,",
    "incorrect": "Dark and Stormy, Veteran, Miami VIce"
  },
  {
@@ -1837,9 +1837,9 @@ recipe_data = [
  },
  {
    "strDrink": "Gin Cooler",
-   "questions": "Gin-2 oz , Carbonated water , Powdered Sugar , Orange Spiral , Lemon Peel  : Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice and add gin. Fill with carbonated water and stir. Add the lemon peel and the orange spiral so that the end of the orange spiral dangles over rim of glass.",
+   "questions": "Gin-2 oz , Carbonated water, Powdered Sugar, Orange Spiral, Lemon Peel: Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice and add gin. Fill with carbonated water and stir. Add the lemon peel and the orange spiral so that the end of the orange spiral dangles over rim of glass.",
    "strInstructions": "Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice and add gin. Fill with carbonated water and stir. Add the lemon peel and the orange spiral so that the end of the orange spiral dangles over rim of glass.",
-   "strIngredients": "Gin-2 oz , Carbonated water , Powdered Sugar , Orange Spiral , Lemon Peel",
+   "strIngredients": "Gin-2 oz , Carbonated water\n , Powdered Sugar\n , Orange Spiral\n , Lemon Peel",
    "incorrect": "Bleeding Surgeon, Rum Cooler, Affair"
  },
  {
@@ -1886,7 +1886,7 @@ recipe_data = [
  },
  {
    "strDrink": "Gin Squirt",
-   "questions": "Gin-1 1/2 oz , Grenadine-1 tsp , Powdered Sugar-1 tblsp , Pineapple-3 chunks , Strawberries-2, Carbonated Water  : Stir gin, grenadine, and powdered sugar with ice and strain into a highball glass over ice cubes. Fill with carbonated water and stir. Decorate with the Pineapple chunks and the strawberries and serve.",
+   "questions": "Gin-1 1/2 oz , Grenadine-1 tsp , Powdered Sugar-1 tblsp , Pineapple-3 chunks , Strawberries-2, Carbonated Water: Stir gin, grenadine, and powdered sugar with ice and strain into a highball glass over ice cubes. Fill with carbonated water and stir. Decorate with the Pineapple chunks and the strawberries and serve.",
    "strInstructions": "Stir gin, grenadine, and powdered sugar with ice and strain into a highball glass over ice cubes. Fill with carbonated water and stir. Decorate with the Pineapple chunks and the strawberries and serve.",
    "strIngredients": "Gin-1 1/2 oz , Grenadine-1 tsp , Powdered Sugar-1 tblsp , Pineapple-3 chunks , Strawberries-2, Carbonated Water",
    "incorrect": "Kir RoyAle, Tennesee Mud, Havana Cocktail"
@@ -1998,16 +1998,16 @@ recipe_data = [
  },
  {
    "strDrink": "H.D.",
-   "questions": "Whisky-1 1/3 oz , Bailey's Irish Cream-8 cl , Coffee  , : Mix the whisky and Baileys Cream in a beer-glass (at least 50 cl). Fill the rest of the glass with coffee.",
+   "questions": "Whisky-1 1/3 oz , Bailey's Irish Cream-8 cl , Coffee: Mix the whisky and Baileys Cream in a beer-glass (at least 50 cl). Fill the rest of the glass with coffee.",
    "strInstructions": "Mix the whisky and Baileys Cream in a beer-glass (at least 50 cl). Fill the rest of the glass with coffee.",
-   "strIngredients": "Whisky-1 1/3 oz , Bailey's Irish Cream-8 cl , Coffee  ,",
+   "strIngredients": "Whisky-1 1/3 oz , Bailey's Irish Cream-8 cl , Coffee\n  ,",
    "incorrect": "Kiss me Quick, Port Wine Flip, Limeade"
  },
  {
    "strDrink": "Happy Skipper",
-   "questions": "SpIced Rum-1 1/2/3 oz , Ginger Ale , Lime , Ice  , : Pour Captain Morgan's Spiced Rum over ice, fill glass to top with Ginger Ale. Garnish with lime. Tastes like a cream soda. Named for the Gilligan's Island reference (\"The Captain\" *in* \"Ginger\" is a Happy Skipper!)",
+   "questions": "SpIced Rum-1 1/2/3 oz , Ginger Ale, Lime, Ice: Pour Captain Morgan's Spiced Rum over ice, fill glass to top with Ginger Ale. Garnish with lime. Tastes like a cream soda. Named for the Gilligan's Island reference (\"The Captain\" *in* \"Ginger\" is a Happy Skipper!)",
    "strInstructions": "Pour Captain Morgan's Spiced Rum over ice, fill glass to top with Ginger Ale. Garnish with lime. Tastes like a cream soda. Named for the Gilligan's Island reference (\"The Captain\" *in* \"Ginger\" is a Happy Skipper!)",
-   "strIngredients": "SpIced Rum-1 1/2/3 oz , Ginger Ale , Lime , Ice  ,",
+   "strIngredients": "SpIced Rum-1 1/2/3 oz , Ginger Ale\n , Lime\n , Ice\n  ,",
    "incorrect": "747, Absolut limousine, Quaker's Cocktail"
  },
  {
@@ -2054,9 +2054,9 @@ recipe_data = [
  },
  {
    "strDrink": "Holloween Punch",
-   "questions": "Grape Juice , Carbonated Orange Soft Drink , Sherbet , : Take a bunch of grape juice and a bunch of fizzy stuff (club soda, ginger Ale, lemonlime, whatever). Mix them in a punch bowl. Take orange sherbet and lime sherbet. Scoop out scoops and float them in the punch, let them melt a little so that a nasty film spreads all over the top of the punch but there are still \"bubbles\" in it in the form of sherbet scoops. Looks horrible, tastes just fine.",
+   "questions": "Grape Juice Carbonated Orange Soft DrinkSherbet : Take a bunch of grape juice and a bunch of fizzy stuff (club soda, ginger Ale, lemonlime, whatever). Mix them in a punch bowl. Take orange sherbet and lime sherbet. Scoop out scoops and float them in the punch, let them melt a little so that a nasty film spreads all over the top of the punch but there are still \"bubbles\" in it in the form of sherbet scoops. Looks horrible, tastes just fine.",
    "strInstructions": "Take a bunch of grape juice and a bunch of fizzy stuff (club soda, ginger Ale, lemonlime, whatever). Mix them in a punch bowl. Take orange sherbet and lime sherbet. Scoop out scoops and float them in the punch, let them melt a little so that a nasty film spreads all over the top of the punch but there are still \"bubbles\" in it in the form of sherbet scoops. Looks horrible, tastes just fine.",
-   "strIngredients": "Grape Juice , Carbonated Orange Soft Drink , Sherbet ,",
+   "strIngredients": "Grape Juice\n , Carbonated Orange Soft Drink\n , Sherbet ,",
    "incorrect": "Gin Sour, Apple Karate, Sloe Gin Cocktail"
  },
  {
@@ -2089,9 +2089,9 @@ recipe_data = [
  },
  {
    "strDrink": "Ice Pick #1",
-   "questions": "Vodka-1 1/2 oz , Iced Tea-6 oz , Lemon Juice- to taste  , : Put Vodka in glass fill with iced tea. Stir in lemon to taste.",
+   "questions": "Vodka-1 1/2 oz , Iced Tea-6 oz , Lemon Juice- to taste: Put Vodka in glass fill with iced tea. Stir in lemon to taste.",
    "strInstructions": "Put Vodka in glass fill with iced tea. Stir in lemon to taste.",
-   "strIngredients": "Vodka-1 1/2 oz , Iced Tea-6 oz , Lemon Juice- to taste  ,",
+   "strIngredients": "Vodka-1 1/2 oz , Iced Tea-6 oz , Lemon Juice- to taste\n  ,",
    "incorrect": "Negroni, Adios Amigos Cocktail, Dirty Martini"
  },
  {
@@ -2117,7 +2117,7 @@ recipe_data = [
  },
  {
    "strDrink": "Imperial Fizz",
-   "questions": "Light Rum-1/2 oz , Blended Whiskey-1 1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Carbonated Water-  : Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
+   "questions": "Light Rum-1/2 oz , Blended Whiskey-1 1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strIngredients": "Light Rum-1/2 oz , Blended Whiskey-1 1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Carbonated Water-",
    "incorrect": "Boston Sour, Egg Nog #4, Irish Curdling Cow"
@@ -2194,21 +2194,21 @@ recipe_data = [
  },
  {
    "strDrink": "Jamaica Kiss",
-   "questions": "Coffee Liqueur-1 shot , Light Rum-1 shot Jamaican , Ice Cubes , Milk  , : Fill a tumbler with ice cubes. Add a shot of Tia Maria and a shot of Jamaican light rum. Fill the tumbler with milk. Blend until smooth and serve immediately.",
+   "questions": "Coffee Liqueur-1 shot , Light Rum-1 shot Jamaican , Ice Cubes, Milk: Fill a tumbler with ice cubes. Add a shot of Tia Maria and a shot of Jamaican light rum. Fill the tumbler with milk. Blend until smooth and serve immediately.",
    "strInstructions": "Fill a tumbler with ice cubes. Add a shot of Tia Maria and a shot of Jamaican light rum. Fill the tumbler with milk. Blend until smooth and serve immediately.",
-   "strIngredients": "Coffee Liqueur-1 shot , Light Rum-1 shot Jamaican , Ice Cubes , Milk  ,",
+   "strIngredients": "Coffee Liqueur-1 shot , Light Rum-1 shot Jamaican , Ice Cubes\n , Milk\n  ,",
    "incorrect": "Iced Coffee Fillip, Gin Daisy, Harvey Wallbanger"
  },
  {
    "strDrink": "Jamaican Coffee",
-   "questions": "Rum-1/6 glass , Coffee-1/6 glass strong black , Water-1/2 glass cold , Whipped Cream  , : Stir the rum, coffee and water together. Top with the whipped cream. Sprinkle with a pinch of well ground coffee and drink with a straw.",
+   "questions": "Rum-1/6 glass , Coffee-1/6 glass strong black , Water-1/2 glass cold , Whipped Cream: Stir the rum, coffee and water together. Top with the whipped cream. Sprinkle with a pinch of well ground coffee and drink with a straw.",
    "strInstructions": "Stir the rum, coffee and water together. Top with the whipped cream. Sprinkle with a pinch of well ground coffee and drink with a straw.",
-   "strIngredients": "Rum-1/6 glass , Coffee-1/6 glass strong black , Water-1/2 glass cold , Whipped Cream  ,",
+   "strIngredients": "Rum-1/6 glass , Coffee-1/6 glass strong black , Water-1/2 glass cold , Whipped Cream\n  ,",
    "incorrect": "Rusty Nail, Bourbon Sling, Vesper"
  },
  {
    "strDrink": "Japanese Fizz",
-   "questions": "Blended Whiskey-1 1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Port-1 tblsp , Egg White-1, Carbonated Water  : Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
+   "questions": "Blended Whiskey-1 1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Port-1 tblsp , Egg White-1, Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strIngredients": "Blended Whiskey-1 1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Port-1 tblsp , Egg White-1, Carbonated Water",
    "incorrect": "Adam, Zenmeister, Victor"
@@ -2250,9 +2250,9 @@ recipe_data = [
  },
  {
    "strDrink": "Just a Moonmint",
-   "questions": "Milk-2 cups , Chocolate Syrup , Mint Syrup  , : Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up.",
+   "questions": "Milk-2 cups , Chocolate Syrup, Mint Syrup: Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up.",
    "strInstructions": "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up.",
-   "strIngredients": "Milk-2 cups , Chocolate Syrup , Mint Syrup  ,",
+   "strIngredients": "Milk-2 cups , Chocolate Syrup\n , Mint Syrup\n  ,",
    "incorrect": "Melya, Flying Dutchman, Cream Soda"
  },
  {
@@ -2292,9 +2292,9 @@ recipe_data = [
  },
  {
    "strDrink": "Kioki Coffee",
-   "questions": "Kahlua-1 oz , Brandy-1/2 oz , Coffee  , : Stir. Add whipped cream to the top.",
+   "questions": "Kahlua-1 oz , Brandy-1/2 oz , Coffee: Stir. Add whipped cream to the top.",
    "strInstructions": "Stir. Add whipped cream to the top.",
-   "strIngredients": "Kahlua-1 oz , Brandy-1/2 oz , Coffee  ,",
+   "strIngredients": "Kahlua-1 oz , Brandy-1/2 oz , Coffee\n  ,",
    "incorrect": "Scottish Highland Liqueur, Jack's Vanilla Coke, Banana Daiquiri"
  },
  {
@@ -2313,16 +2313,16 @@ recipe_data = [
  },
  {
    "strDrink": "Kiss me Quick",
-   "questions": "Cranberry Vodka-1 1/3 oz , Apfelkorn-2/3 oz , Schweppes Russchian-2 1/3 oz , Apple Juice-2 2/3 oz , Ice Cubes  : mix in the glass",
+   "questions": "Cranberry Vodka-1 1/3 oz , Apfelkorn-2/3 oz , Schweppes Russchian-2 1/3 oz , Apple Juice-2 2/3 oz , Ice Cubes: mix in the glass",
    "strInstructions": "mix in the glass",
    "strIngredients": "Cranberry Vodka-1 1/3 oz , Apfelkorn-2/3 oz , Schweppes Russchian-2 1/3 oz , Apple Juice-2 2/3 oz , Ice Cubes",
    "incorrect": "Negroni, Vodka Fizz, 3-Mile Long Island Iced Tea"
  },
  {
    "strDrink": "Kiwi Lemon",
-   "questions": "Kiwi Liqueur-1 part , Bitter lemon-2 parts , Ice Cubes  , : Mix in highball glass. Stir. Garnish with slice of kiwi.",
+   "questions": "Kiwi Liqueur-1 part , Bitter lemon-2 parts , Ice Cubes: Mix in highball glass. Stir. Garnish with slice of kiwi.",
    "strInstructions": "Mix in highball glass. Stir. Garnish with slice of kiwi.",
-   "strIngredients": "Kiwi Liqueur-1 part , Bitter lemon-2 parts , Ice Cubes  ,",
+   "strIngredients": "Kiwi Liqueur-1 part , Bitter lemon-2 parts , Ice Cubes\n  ,",
    "incorrect": "Sol Y Sombra, Gin Fizz, Waikiki Beachcomber"
  },
  {
@@ -2341,7 +2341,7 @@ recipe_data = [
  },
  {
    "strDrink": "Kool-Aid Shot",
-   "questions": "Vodka-1 shot , Amaretto-1 shot , Sloe Gin-1 shot , Triple Sec-1 shot , Cranberry Juice-  : Pour into a large glass with ice and stir. Add a little cranberry juice to taste.",
+   "questions": "Vodka-1 shot , Amaretto-1 shot , Sloe Gin-1 shot , Triple Sec-1 shot , Cranberry Juice: Pour into a large glass with ice and stir. Add a little cranberry juice to taste.",
    "strInstructions": "Pour into a large glass with ice and stir. Add a little cranberry juice to taste.",
    "strIngredients": "Vodka-1 shot , Amaretto-1 shot , Sloe Gin-1 shot , Triple Sec-1 shot , Cranberry Juice-",
    "incorrect": "Affair, Flaming Lamborghini, Snake Bite (UK)"
@@ -2355,14 +2355,14 @@ recipe_data = [
  },
  {
    "strDrink": "Kurant Tea",
-   "questions": "Absolut Kurant-1 1/3 oz , Tea-Turkish apple , Sugar- (if needed)  , : Pour Absolut Kurant into a comfortably big tea-cup. Add the not too hot(!) apple tea and, if you like, some sugar. Enjoy!",
+   "questions": "Absolut Kurant-1 1/3 oz , Tea-Turkish apple , Sugar- (if needed): Pour Absolut Kurant into a comfortably big tea-cup. Add the not too hot(!) apple tea and, if you like, some sugar. Enjoy!",
    "strInstructions": "Pour Absolut Kurant into a comfortably big tea-cup. Add the not too hot(!) apple tea and, if you like, some sugar. Enjoy!",
-   "strIngredients": "Absolut Kurant-1 1/3 oz , Tea-Turkish apple , Sugar- (if needed)  ,",
+   "strIngredients": "Absolut Kurant-1 1/3 oz , Tea-Turkish apple , Sugar- (if needed)\n  ,",
    "incorrect": "Sea breeze, Kiwi Papaya Smoothie, Sangria - The World's Best"
  },
  {
    "strDrink": "Lady Love Fizz",
-   "questions": "Gin-2 oz , Light Cream-2 tsp , Powdered Sugar-1 tsp , Lemon-Juice of 1/2 , Egg White-1, Carbonated Water  : Shake all ingredients (except carbonated water) with ice and strain into a cocktail glass over two ice cubes. Fill with carbonated water, stir, and serve.",
+   "questions": "Gin-2 oz , Light Cream-2 tsp , Powdered Sugar-1 tsp , Lemon-Juice of 1/2 , Egg White-1, Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a cocktail glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a cocktail glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strIngredients": "Gin-2 oz , Light Cream-2 tsp , Powdered Sugar-1 tsp , Lemon-Juice of 1/2 , Egg White-1, Carbonated Water",
    "incorrect": "Tequila Surprise, Melya, Allies Cocktail"
@@ -2397,9 +2397,9 @@ recipe_data = [
  },
  {
    "strDrink": "Lassi Raita",
-   "questions": "Yoghurt-2 cups , Ice, Sugar , Lime , Salt  : Blend the yoghurt and ice cubes together, until the yoghurt becomes more liquid. Add sugar to taste. The lemon/lime is optional but it gives it a slightly tart taste. Dash of salt. Raita is also good for the summer. Instead of having a traditional salad you can make raita instead.",
+   "questions": "Yoghurt-2 cups , Ice, Sugar, Lime, Salt: Blend the yoghurt and ice cubes together, until the yoghurt becomes more liquid. Add sugar to taste. The lemon/lime is optional but it gives it a slightly tart taste. Dash of salt. Raita is also good for the summer. Instead of having a traditional salad you can make raita instead.",
    "strInstructions": "Blend the yoghurt and ice cubes together, until the yoghurt becomes more liquid. Add sugar to taste. The lemon/lime is optional but it gives it a slightly tart taste. Dash of salt. Raita is also good for the summer. Instead of having a traditional salad you can make raita instead.",
-   "strIngredients": "Yoghurt-2 cups , Ice, Sugar , Lime , Salt",
+   "strIngredients": "Yoghurt-2 cups , Ice, Sugar\n , Lime\n , Salt",
    "incorrect": "Lunch Box, Van Vleet, Blue Mountain"
  },
  {
@@ -2411,9 +2411,9 @@ recipe_data = [
  },
  {
    "strDrink": "Lemon Shot",
-   "questions": "Galliano-1/2 oz , Absolut Citron-1/2 oz , Lemon- wedge , Sugar-Bacardi , 151 Proof Rum- : Mix Galliano and Absolut Citron in a shot glass, lay lemon wedge sprinkled with sugar over glass and pour a rum over wedge and glass. light rum with a lighter and let burn for a second. Do shot quickly and suck on lemon. If it is done correctly, this will taste like a shot of sweet lemonade.",
+   "questions": "Galliano-1/2 oz , Absolut Citron-1/2 oz , Lemon- wedge, Sugar-Bacardi , 151 Proof Rum- : Mix Galliano and Absolut Citron in a shot glass, lay lemon wedge sprinkled with sugar over glass and pour a rum over wedge and glass. light rum with a lighter and let burn for a second. Do shot quickly and suck on lemon. If it is done correctly, this will taste like a shot of sweet lemonade.",
    "strInstructions": "Mix Galliano and Absolut Citron in a shot glass, lay lemon wedge sprinkled with sugar over glass and pour a rum over wedge and glass. light rum with a lighter and let burn for a second. Do shot quickly and suck on lemon. If it is done correctly, this will taste like a shot of sweet lemonade.",
-   "strIngredients": "Galliano-1/2 oz , Absolut Citron-1/2 oz , Lemon- wedge , Sugar-Bacardi , 151 Proof Rum-",
+   "strIngredients": "Galliano-1/2 oz , Absolut Citron-1/2 oz , Lemon- wedge\n , Sugar-Bacardi , 151 Proof Rum-",
    "incorrect": "Bourbon Sour, Classic Old-Fashioned, New York Sour"
  },
  {
@@ -2425,9 +2425,9 @@ recipe_data = [
  },
  {
    "strDrink": "Limeade",
-   "questions": "Lime-Juice of 1 , Sugar-1 tblsp , Soda Water- (Seltzer Water) , Lime Peel , : In a large glass, put the lime juice and sugar, and stir well. Add cold seltzer water to fill. Put the lime peels in the glass. Drink. Repeat until limes or soda run out.",
+   "questions": "Lime-Juice of 1 , Sugar-1 tblsp , Soda Water- (Seltzer Water), Lime Peel: In a large glass, put the lime juice and sugar, and stir well. Add cold seltzer water to fill. Put the lime peels in the glass. Drink. Repeat until limes or soda run out.",
    "strInstructions": "In a large glass, put the lime juice and sugar, and stir well. Add cold seltzer water to fill. Put the lime peels in the glass. Drink. Repeat until limes or soda run out.",
-   "strIngredients": "Lime-Juice of 1 , Sugar-1 tblsp , Soda Water- (Seltzer Water) , Lime Peel ,",
+   "strIngredients": "Lime-Juice of 1 , Sugar-1 tblsp , Soda Water- (Seltzer Water)\n , Lime Peel ,",
    "incorrect": "Moranguito, Apricot Lady, Quick-sand"
  },
  {
@@ -2460,9 +2460,9 @@ recipe_data = [
  },
  {
    "strDrink": "Lone Tree Cooler",
-   "questions": "Carbonated water , Gin , Dry Vermouth- , Powdered Sugar- , Orange Spiral- , Lemon Peel  : Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice, add gin and vermouth, and stir. Fill with carbonated water and stir again. Add the twist of lemon peel and the orange spiral so that the end dangles over rim of glass.",
+   "questions": "Carbonated water, Gin, Dry Vermouth, Powdered Sugar, Orange Spiral, Lemon Peel: Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice, add gin and vermouth, and stir. Fill with carbonated water and stir again. Add the twist of lemon peel and the orange spiral so that the end dangles over rim of glass.",
    "strInstructions": "Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice, add gin and vermouth, and stir. Fill with carbonated water and stir again. Add the twist of lemon peel and the orange spiral so that the end dangles over rim of glass.",
-   "strIngredients": "Carbonated water , Gin , Dry Vermouth- , Powdered Sugar- , Orange Spiral- , Lemon Peel",
+   "strIngredients": "Carbonated water\n , Gin\n , Dry Vermouth-\n , Powdered Sugar-\n , Orange Spiral-\n , Lemon Peel",
    "incorrect": "Fruit Cooler, Americano, A. J."
  },
  {
@@ -2558,16 +2558,16 @@ recipe_data = [
  },
  {
    "strDrink": "Masala Chai",
-   "questions": "Water-2 cups , Tea-3-4 tsp , Ginger-1 chunk dried , Cardamom-3-4 crushed , Cloves-3, Cinnamon-1 piece , Black Pepper-1-2 whole , Sugar to taste , Milk , : Bring 2 cups of water to boil. Add all the ingredients and boil again for about 15 seconds. Let stand for a minute. Warm milk in a pot. Filter tea into cups. Add milk and sugar. That's IT.",
+   "questions": "Water-2 cups , Tea-3-4 tsp , Ginger-1 chunk dried , Cardamom-3-4 crushed , Cloves-3, Cinnamon-1 piece , Black Pepper-1-2 whole , Sugar to taste, Milk , : Bring 2 cups of water to boil. Add all the ingredients and boil again for about 15 seconds. Let stand for a minute. Warm milk in a pot. Filter tea into cups. Add milk and sugar. That's IT.",
    "strInstructions": "Bring 2 cups of water to boil. Add all the ingredients and boil again for about 15 seconds. Let stand for a minute. Warm milk in a pot. Filter tea into cups. Add milk and sugar. That's IT.",
-   "strIngredients": "Water-2 cups , Tea-3-4 tsp , Ginger-1 chunk dried , Cardamom-3-4 crushed , Cloves-3, Cinnamon-1 piece , Black Pepper-1-2 whole , Sugar to taste , Milk ,",
+   "strIngredients": "Water-2 cups , Tea-3-4 tsp , Ginger-1 chunk dried , Cardamom-3-4 crushed , Cloves-3, Cinnamon-1 piece , Black Pepper-1-2 whole , Sugar to taste\n , Milk ,",
    "incorrect": "Alexander, Belgian Blue, Rum Cobbler"
  },
  {
    "strDrink": "Melya",
-   "questions": "Espresso , Honey-Unsweetened , Cocoa Powder : Brew espresso. In a coffee mug, place 1 teaspoon of unsweetened powdered cocoa, then cover a teaspoon with honey and drizzle it into the cup. Stir while the coffee brews, this is the fun part. The cocoa seems to coat the honey without mixing, so you get a dusty, sticky mass that looks as though it will never mix. Then all at once, presto! It looks like dark chocolate sauce. Pour hot espresso over the honey, Stiring to dissolve. Serve with cream.",
+   "questions": "Espresso, Honey-Unsweetened , Cocoa Powder : Brew espresso. In a coffee mug, place 1 teaspoon of unsweetened powdered cocoa, then cover a teaspoon with honey and drizzle it into the cup. Stir while the coffee brews, this is the fun part. The cocoa seems to coat the honey without mixing, so you get a dusty, sticky mass that looks as though it will never mix. Then all at once, presto! It looks like dark chocolate sauce. Pour hot espresso over the honey, Stiring to dissolve. Serve with cream.",
    "strInstructions": "Brew espresso. In a coffee mug, place 1 teaspoon of unsweetened powdered cocoa, then cover a teaspoon with honey and drizzle it into the cup. Stir while the coffee brews, this is the fun part. The cocoa seems to coat the honey without mixing, so you get a dusty, sticky mass that looks as though it will never mix. Then all at once, presto! It looks like dark chocolate sauce. Pour hot espresso over the honey, Stiring to dissolve. Serve with cream.",
-   "strIngredients": "Espresso , Honey-Unsweetened , Cocoa Powder",
+   "strIngredients": "Espresso\n , Honey-Unsweetened , Cocoa Powder",
    "incorrect": "Mary Pickford, Sazerac, AT&T"
  },
  {
@@ -2614,16 +2614,16 @@ recipe_data = [
  },
  {
    "strDrink": "Mississippi Planters Punch",
-   "questions": "Brandy-1 oz , Light Rum-1/2 oz , Bourbon-1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tblsp , Carbonated Water  : Shake all ingredients (except carbonated water) with ice and strain into a collins glass over ice cubes. Fill with carbonated water, stir, and serve.",
+   "questions": "Brandy-1 oz , Light Rum-1/2 oz , Bourbon-1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tblsp , Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a collins glass over ice cubes. Fill with carbonated water, stir, and serve.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a collins glass over ice cubes. Fill with carbonated water, stir, and serve.",
    "strIngredients": "Brandy-1 oz , Light Rum-1/2 oz , Bourbon-1/2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tblsp , Carbonated Water",
    "incorrect": "Berry Deadly, Jamaican Coffee, Affair"
  },
  {
    "strDrink": "Mocha-Berry",
-   "questions": "Coffee-6 oz , Chambord Raspberry Liqueur-2 oz , Cocoa powder-2 tblsp , Whipped Cream  , : pour 6 oz. of coffee in a mug or Irish coffee cup. add coca mix and chambord, mix well and top off with whipped cream.",
+   "questions": "Coffee-6 oz , Chambord Raspberry Liqueur-2 oz , Cocoa powder-2 tblsp , Whipped Cream: pour 6 oz. of coffee in a mug or Irish coffee cup. add coca mix and chambord, mix well and top off with whipped cream.",
    "strInstructions": "pour 6 oz. of coffee in a mug or Irish coffee cup. add coca mix and chambord, mix well and top off with whipped cream.",
-   "strIngredients": "Coffee-6 oz , Chambord Raspberry Liqueur-2 oz , Cocoa powder-2 tblsp , Whipped Cream  ,",
+   "strIngredients": "Coffee-6 oz , Chambord Raspberry Liqueur-2 oz , Cocoa powder-2 tblsp , Whipped Cream\n  ,",
    "incorrect": "Whisky Mac, Gagliardo, Whitecap Margarita"
  },
  {
@@ -2712,9 +2712,9 @@ recipe_data = [
  },
  {
    "strDrink": "New York Sour",
-   "questions": "Blended Whiskey-2 oz , Lemon-Juice of 1/2 , Sugar-1 tsp , Red wine- (Claret) , Lemon , Cherry  : Shake blended whiskey, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass. Float claret on top. Decorate with the half-slice of lemon and the cherry and serve.",
+   "questions": "Blended Whiskey-2 oz , Lemon-Juice of 1/2 , Sugar-1 tsp , Red wine- (Claret), Lemon, Cherry: Shake blended whiskey, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass. Float claret on top. Decorate with the half-slice of lemon and the cherry and serve.",
    "strInstructions": "Shake blended whiskey, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass. Float claret on top. Decorate with the half-slice of lemon and the cherry and serve.",
-   "strIngredients": "Blended Whiskey-2 oz , Lemon-Juice of 1/2 , Sugar-1 tsp , Red wine- (Claret) , Lemon , Cherry",
+   "strIngredients": "Blended Whiskey-2 oz , Lemon-Juice of 1/2 , Sugar-1 tsp , Red wine- (Claret)\n , Lemon\n , Cherry",
    "incorrect": "Wine Cooler, Spanish Chocolate, Banana Cantaloupe Smoothie"
  },
  {
@@ -2733,8 +2733,8 @@ recipe_data = [
  },
  {
    "strDrink": "Old Fashioned",
-   "questions": "Bourbon-4.1 2/3 oz, Angostura Bitters-2 dashes, Sugar-1 Cube, Water-dash , : Place sugar cube in old fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolved.  Fill the glass with ice cubes and add whiskey.    Garnish with orange twist, and a cocktail cherry.",
-   "strInstructions": "Place sugar cube in old fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolved.  Fill the glass with ice cubes and add whiskey.    Garnish with orange twist, and a cocktail cherry.",
+   "questions": "Bourbon- 2/3 oz, Angostura Bitters-2 dashes, Sugar-1 Cube, Water-dash: Place sugar cube in old fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolved. Fill the glass with ice cubes and add whiskey. Garnish with orange twist, and a cocktail cherry.",
+   "strInstructions": "Place sugar cube in old fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolved.\n \n Fill the glass with ice cubes and add whiskey.\n \n \n \n Garnish with orange twist, and a cocktail cherry.",
    "strIngredients": "Bourbon-4.1 2/3 oz, Angostura Bitters-2 dashes, Sugar-1 Cube, Water-dash ,",
    "incorrect": "Chocolate Milk, Brandy Flip, Kiwi Lemon"
  },
@@ -2747,9 +2747,9 @@ recipe_data = [
  },
  {
    "strDrink": "Orange Oasis",
-   "questions": "Cherry Brandy-1/2 oz , Gin-1 1/2 oz , Orange Juice-4 oz , Ginger Ale  , : Shake brandy, gin, and orange juice with ice and strain into a highball glass over ice cubes. Fill with ginger Ale, stir, and serve.",
+   "questions": "Cherry Brandy-1/2 oz , Gin-1 1/2 oz , Orange Juice-4 oz , Ginger Ale: Shake brandy, gin, and orange juice with ice and strain into a highball glass over ice cubes. Fill with ginger Ale, stir, and serve.",
    "strInstructions": "Shake brandy, gin, and orange juice with ice and strain into a highball glass over ice cubes. Fill with ginger Ale, stir, and serve.",
-   "strIngredients": "Cherry Brandy-1/2 oz , Gin-1 1/2 oz , Orange Juice-4 oz , Ginger Ale  ,",
+   "strIngredients": "Cherry Brandy-1/2 oz , Gin-1 1/2 oz , Orange Juice-4 oz , Ginger Ale\n  ,",
    "incorrect": "Fruit Cooler, Lassi - Mango, Japanese Fizz"
  },
  {
@@ -2775,9 +2775,9 @@ recipe_data = [
  },
  {
    "strDrink": "Orangeade",
-   "questions": "Lemon Juice-1 2/3 oz , Orange Juice-11 2/3 oz , Sugar Syrup-2-1 oz , Soda Water  , : Place some ice cubes in a large tumbler or highball glass, add lemon juice, orange juice, sugar syrup, and stir well. Top up with cold soda water, serve with a drinking straw.",
+   "questions": "Lemon Juice-1 2/3 oz , Orange Juice-11 2/3 oz , Sugar Syrup-2-1 oz , Soda Water: Place some ice cubes in a large tumbler or highball glass, add lemon juice, orange juice, sugar syrup, and stir well. Top up with cold soda water, serve with a drinking straw.",
    "strInstructions": "Place some ice cubes in a large tumbler or highball glass, add lemon juice, orange juice, sugar syrup, and stir well. Top up with cold soda water, serve with a drinking straw.",
-   "strIngredients": "Lemon Juice-1 2/3 oz , Orange Juice-11 2/3 oz , Sugar Syrup-2-1 oz , Soda Water  ,",
+   "strIngredients": "Lemon Juice-1 2/3 oz , Orange Juice-11 2/3 oz , Sugar Syrup-2-1 oz , Soda Water\n  ,",
    "incorrect": "Dirty Martini, Thriller, Artillery Punch"
  },
  {
@@ -2894,7 +2894,7 @@ recipe_data = [
  },
  {
    "strDrink": "Port Wine Flip",
-   "questions": "Port-1 1/2 oz , Light Cream-2 tsp , Powdered Sugar-1 tsp , Egg-1 whole , Nutmeg-  : Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
+   "questions": "Port-1 1/2 oz , Light Cream-2 tsp , Powdered Sugar-1 tsp , Egg-1 whole , Nutmeg: Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
    "strInstructions": "Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
    "strIngredients": "Port-1 1/2 oz , Light Cream-2 tsp , Powdered Sugar-1 tsp , Egg-1 whole , Nutmeg-",
    "incorrect": "GG, Angel Face, Zipperhead"
@@ -2908,9 +2908,9 @@ recipe_data = [
  },
  {
    "strDrink": "Pysch Vitamin Light",
-   "questions": "Orange Juice-1 part , Apple Juice-1 part , Pineapple Juice-1 part , Ice  , : Shake with ice.",
+   "questions": "Orange Juice-1 part , Apple Juice-1 part , Pineapple Juice-1 part , Ice: Shake with ice.",
    "strInstructions": "Shake with ice.",
-   "strIngredients": "Orange Juice-1 part , Apple Juice-1 part , Pineapple Juice-1 part , Ice  ,",
+   "strIngredients": "Orange Juice-1 part , Apple Juice-1 part , Pineapple Juice-1 part , Ice\n  ,",
    "incorrect": "A True Amaretto Sour, After Dinner Cocktail, White Russian"
  },
  {
@@ -2936,9 +2936,9 @@ recipe_data = [
  },
  {
    "strDrink": "Queen Charlotte",
-   "questions": "Red wine-2 oz , Grenadine-1 oz , Lemon-Lime Soda : Pour red wine and grenadine into a collins glass over ice cubes. Fill with lemon-lime soda, stir, and serve.",
+   "questions": "Red wine-2 oz , Grenadine-1 oz , Lemon-Lime Soda: Pour red wine and grenadine into a collins glass over ice cubes. Fill with lemon-lime soda, stir, and serve.",
    "strInstructions": "Pour red wine and grenadine into a collins glass over ice cubes. Fill with lemon-lime soda, stir, and serve.",
-   "strIngredients": "Red wine-2 oz , Grenadine-1 oz , Lemon-Lime Soda-  ,",
+   "strIngredients": "Red wine-2 oz , Grenadine-1 oz , Lemon-Lime Soda-\n  ,",
    "incorrect": "Bruised Heart, Amaretto Stone Sour, Midnight Cowboy"
  },
  {
@@ -2985,16 +2985,16 @@ recipe_data = [
  },
  {
    "strDrink": "Rail Splitter",
-   "questions": "Sugar Syrup-2 tsp , Lemon Juice , Ginger Ale , : Mix sugar syrup with lemon juice in a tall glass. Fill up with ginger Ale.",
+   "questions": "Sugar Syrup-2 tsp , Lemon Juice, Ginger Ale , : Mix sugar syrup with lemon juice in a tall glass. Fill up with ginger Ale.",
    "strInstructions": "Mix sugar syrup with lemon juice in a tall glass. Fill up with ginger Ale.",
-   "strIngredients": "Sugar Syrup-2 tsp , Lemon Juice , Ginger Ale ,",
+   "strIngredients": "Sugar Syrup-2 tsp , Lemon Juice\n , Ginger Ale ,",
    "incorrect": "Atlantic Sun, ABC, Homemade Kahlua"
  },
  {
    "strDrink": "Raspberry Cooler",
-   "questions": "Raspberry Vodka-2 oz , Lemon-lime soda-4 oz , Ice  , : Pour the raspberry vodka and soda into a highball glass almost filled with ice cubes. Stir well.",
+   "questions": "Raspberry Vodka-2 oz , Lemon-lime soda-4 oz , Ice: Pour the raspberry vodka and soda into a highball glass almost filled with ice cubes. Stir well.",
    "strInstructions": "Pour the raspberry vodka and soda into a highball glass almost filled with ice cubes. Stir well.",
-   "strIngredients": "Raspberry Vodka-2 oz , Lemon-lime soda-4 oz , Ice  ,",
+   "strIngredients": "Raspberry Vodka-2 oz , Lemon-lime soda-4 oz , Ice\n  ,",
    "incorrect": "Zenmeister, Rum Sour, Vodka Martini"
  },
  {
@@ -3020,9 +3020,9 @@ recipe_data = [
  },
  {
    "strDrink": "Royal Fizz",
-   "questions": "Gin-1 oz , Sweet and Sour-2 oz , Egg-1 whole , Coca-Cola  , : Shake all ingredients (except cola) with ice and strain into a chilled collins glass. Fill with cola and serve.",
+   "questions": "Gin-1 oz , Sweet and Sour-2 oz , Egg-1 whole , Coca-Cola: Shake all ingredients (except cola) with ice and strain into a chilled collins glass. Fill with cola and serve.",
    "strInstructions": "Shake all ingredients (except cola) with ice and strain into a chilled collins glass. Fill with cola and serve.",
-   "strIngredients": "Gin-1 oz , Sweet and Sour-2 oz , Egg-1 whole , Coca-Cola  ,",
+   "strIngredients": "Gin-1 oz , Sweet and Sour-2 oz , Egg-1 whole , Coca-Cola\n  ,",
    "incorrect": "Black and Brown, Americano, Godmother"
  },
  {
@@ -3034,7 +3034,7 @@ recipe_data = [
  },
  {
    "strDrink": "Royal Gin Fizz",
-   "questions": "Gin-2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Egg-1 whole , Carbonated Water-  : Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
+   "questions": "Gin-2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Egg-1 whole , Carbonated Water: Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strInstructions": "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes. Fill with carbonated water, stir, and serve.",
    "strIngredients": "Gin-2 oz , Lemon-Juice of 1/2 , Powdered Sugar-1 tsp , Egg-1 whole , Carbonated Water-",
    "incorrect": "Acapulco, Casino RoyAle, Ace"
@@ -3062,9 +3062,9 @@ recipe_data = [
  },
  {
    "strDrink": "Rum Milk Punch",
-   "questions": "Light Rum-2 oz , Milk-1 cup , Powdered Sugar-1 tsp , Nutmeg  , : Shake all ingredients (except nutmeg) with ice and strain into a collins glass. Sprinkle nutmeg on top and serve.",
+   "questions": "Light Rum-2 oz , Milk-1 cup , Powdered Sugar-1 tsp , Nutmeg: Shake all ingredients (except nutmeg) with ice and strain into a collins glass. Sprinkle nutmeg on top and serve.",
    "strInstructions": "Shake all ingredients (except nutmeg) with ice and strain into a collins glass. Sprinkle nutmeg on top and serve.",
-   "strIngredients": "Light Rum-2 oz , Milk-1 cup , Powdered Sugar-1 tsp , Nutmeg  ,",
+   "strIngredients": "Light Rum-2 oz , Milk-1 cup , Powdered Sugar-1 tsp , Nutmeg\n  ,",
    "incorrect": "Bruce's Puce, Almond Chocolate Coffee, B-52"
  },
  {
@@ -3132,21 +3132,21 @@ recipe_data = [
  },
  {
    "strDrink": "San Francisco",
-   "questions": "Vodka-2/3 oz , Creme de Banane-2/3 oz , Grenadine- , Orange Juice : Take a tall glass and put in a few ice cubes, fill the vodka over it and fill with juice then the \"creme\", to end fill in the grenadine but very carefully at the side of the glass so it will lay down in the bottom. garnish with orange and strawberry.",
+   "questions": "Vodka-2/3 oz , Creme de Banane-2/3 oz , Grenadine, Orange Juice : Take a tall glass and put in a few ice cubes, fill the vodka over it and fill with juice then the \"creme\", to end fill in the grenadine but very carefully at the side of the glass so it will lay down in the bottom. garnish with orange and strawberry.",
    "strInstructions": "Take a tall glass and put in a few ice cubes, fill the vodka over it and fill with juice then the \"creme\", to end fill in the grenadine but very carefully at the side of the glass so it will lay down in the bottom. garnish with orange and strawberry.",
-   "strIngredients": "Vodka-2/3 oz , Creme de Banane-2/3 oz , Grenadine- , Orange Juice",
+   "strIngredients": "Vodka-2/3 oz , Creme de Banane-2/3 oz , Grenadine-\n , Orange Juice",
    "incorrect": "Abilene, Clover Club, Mississippi Planters Punch"
  },
  {
    "strDrink": "Sangria #1",
-   "questions": "Red wine-1 bottle , Sugar-1/2 cup , Orange Juice-1 cup , Lemon Juice-1 cup , Cloves , Cinnamon : Mix all together in a pitcher and refrigerate. Add cloves and cinnamon sticks to taste. Serve in wine glasses.",
+   "questions": "Red wine-1 bottle , Sugar-1/2 cup , Orange Juice-1 cup , Lemon Juice-1 cup , Cloves, Cinnamon : Mix all together in a pitcher and refrigerate. Add cloves and cinnamon sticks to taste. Serve in wine glasses.",
    "strInstructions": "Mix all together in a pitcher and refrigerate. Add cloves and cinnamon sticks to taste. Serve in wine glasses.",
-   "strIngredients": "Red wine-1 bottle , Sugar-1/2 cup , Orange Juice-1 cup , Lemon Juice-1 cup , Cloves , Cinnamon",
+   "strIngredients": "Red wine-1 bottle , Sugar-1/2 cup , Orange Juice-1 cup , Lemon Juice-1 cup , Cloves\n , Cinnamon",
    "incorrect": "Arctic Mouthwash, Orange Push-up, Flaming Lamborghini"
  },
  {
    "strDrink": "Sangria - The World's Best",
-   "questions": "Red wine-1 1/2 L , Sugar-1 cup , Lemon-1 large , Orange-1 large , Apple-1 large , Brandy-3-4 oz plain , Soda Water  : Mix wine, sugar and fruit, and let sit in the fridge for 18-24 hours. The mixture will have a somewhat syrupy consistency. Before serving stir in brandy and cut the mixture with soda water until it have a thinner, more wine like consistency. Serve from a pitcher in wine glasses.",
+   "questions": "Red wine-1 1/2 L , Sugar-1 cup , Lemon-1 large , Orange-1 large , Apple-1 large , Brandy-3-4 oz plain , Soda Water: Mix wine, sugar and fruit, and let sit in the fridge for 18-24 hours. The mixture will have a somewhat syrupy consistency. Before serving stir in brandy and cut the mixture with soda water until it have a thinner, more wine like consistency. Serve from a pitcher in wine glasses.",
    "strInstructions": "Mix wine, sugar and fruit, and let sit in the fridge for 18-24 hours. The mixture will have a somewhat syrupy consistency. Before serving stir in brandy and cut the mixture with soda water until it have a thinner, more wine like consistency. Serve from a pitcher in wine glasses.",
    "strIngredients": "Red wine-1 1/2 L , Sugar-1 cup , Lemon-1 large , Orange-1 large , Apple-1 large , Brandy-3-4 oz plain , Soda Water",
    "incorrect": "Zippy's Revenge, Old Fashioned, Moscow Mule"
@@ -3230,14 +3230,14 @@ recipe_data = [
  },
  {
    "strDrink": "Sherry Eggnog",
-   "questions": "Sherry-2 oz Cream , Powdered sugar-1 tsp , Egg-1 whole , Milk- , Nutmeg- : Shake sherry, powdered sugar, and egg with ice and strain into a collins glass. Fill with milk and stir. Sprinkle nutmeg on top and serve.",
+   "questions": "Sherry-2 oz Cream , Powdered sugar-1 tsp , Egg-1 whole , Milk-, Nutmeg- : Shake sherry, powdered sugar, and egg with ice and strain into a collins glass. Fill with milk and stir. Sprinkle nutmeg on top and serve.",
    "strInstructions": "Shake sherry, powdered sugar, and egg with ice and strain into a collins glass. Fill with milk and stir. Sprinkle nutmeg on top and serve.",
-   "strIngredients": "Sherry-2 oz Cream , Powdered sugar-1 tsp , Egg-1 whole , Milk- , Nutmeg-",
+   "strIngredients": "Sherry-2 oz Cream , Powdered sugar-1 tsp , Egg-1 whole , Milk-\n , Nutmeg-",
    "incorrect": "New York Lemonade, Blue Margarita, Gin Fizz"
  },
  {
    "strDrink": "Sherry Flip",
-   "questions": "Sherry-1 1/2 oz Cream , Light Cream-2 tsp , Powdered Sugar-1 tsp , Egg-1 whole , Nutmeg-  : Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
+   "questions": "Sherry-1 1/2 oz Cream , Light Cream-2 tsp , Powdered Sugar-1 tsp , Egg-1 whole , Nutmeg-: Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
    "strInstructions": "Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
    "strIngredients": "Sherry-1 1/2 oz Cream , Light Cream-2 tsp , Powdered Sugar-1 tsp , Egg-1 whole , Nutmeg-",
    "incorrect": "Irish Cream, After Five, Microwave Hot Cocoa"
@@ -3300,23 +3300,23 @@ recipe_data = [
  },
  {
    "strDrink": "Snowball",
-   "questions": "Advocaat-1 1/2 oz , Lemonade-8-10 oz cold , Lemon-1 slIce , Ice Cubes  , : Place one ice cube in the glass and add 1 1/2 oz of Advocaat. Fill up the glass with lemonade and decorate with a slice of lemon. Serve at once.",
+   "questions": "Advocaat-1 1/2 oz , Lemonade-8-10 oz cold , Lemon-1 slIce , Ice Cubes: Place one ice cube in the glass and add 1 1/2 oz of Advocaat. Fill up the glass with lemonade and decorate with a slice of lemon. Serve at once.",
    "strInstructions": "Place one ice cube in the glass and add 1 1/2 oz of Advocaat. Fill up the glass with lemonade and decorate with a slice of lemon. Serve at once.",
-   "strIngredients": "Advocaat-1 1/2 oz , Lemonade-8-10 oz cold , Lemon-1 slIce , Ice Cubes  ,",
+   "strIngredients": "Advocaat-1 1/2 oz , Lemonade-8-10 oz cold , Lemon-1 slIce , Ice Cubes\n  ,",
    "incorrect": "Adonis Cocktail, 151 Florida Bushwacker, Raspberry Cooler"
  },
  {
    "strDrink": "Sol Y Sombra",
-   "questions": "Brandy-1 1/2 oz , Anisette-1 1/2 oz , : Shake ingredients with ice, strain into a brandy snifter, and serve. (The English translation of the name of this drink is \"Sun and Shade\", and after sampling this drink, you'll understand why. Thanks, Kirby.)",
+   "questions": "Brandy-1 1/2 oz , Anisette-1 1/2 oz : Shake ingredients with ice, strain into a brandy snifter, and serve. (The English translation of the name of this drink is \"Sun and Shade\", and after sampling this drink, you'll understand why. Thanks, Kirby.)",
    "strInstructions": "Shake ingredients with ice, strain into a brandy snifter, and serve. (The English translation of the name of this drink is \"Sun and Shade\", and after sampling this drink, you'll understand why. Thanks, Kirby.)",
    "strIngredients": "Brandy-1 1/2 oz , Anisette-1 1/2 oz ,",
    "incorrect": "A Furlong Too Late, Alabama Slammer, Blind Russian"
  },
  {
    "strDrink": "Space Odyssey",
-   "questions": "151 Proof Rum-1 shot Bacardi , Malibu Rum-1 shot , Pineapple Juice-1 shot , Orange Juice- , Grenadine- , Cherries : Fill glass with ice and add shots of Bacardi and Malibu. Add splash of Pineapple juice and top with orange juice. Add grenadine for color and garnish with cherries.",
+   "questions": "151 Proof Rum-1 shot Bacardi , Malibu Rum-1 shot , Pineapple Juice-1 shot , Orange Juice, Grenadine, Cherries : Fill glass with ice and add shots of Bacardi and Malibu. Add splash of Pineapple juice and top with orange juice. Add grenadine for color and garnish with cherries.",
    "strInstructions": "Fill glass with ice and add shots of Bacardi and Malibu. Add splash of Pineapple juice and top with orange juice. Add grenadine for color and garnish with cherries.",
-   "strIngredients": "151 Proof Rum-1 shot Bacardi , Malibu Rum-1 shot , Pineapple Juice-1 shot , Orange Juice- , Grenadine- , Cherries",
+   "strIngredients": "151 Proof Rum-1 shot Bacardi , Malibu Rum-1 shot , Pineapple Juice-1 shot , Orange Juice-\n , Grenadine-\n , Cherries",
    "incorrect": "Godchild, Harvey Wallbanger, Sol Y Sombra"
  },
  {
@@ -3335,9 +3335,9 @@ recipe_data = [
  },
  {
    "strDrink": "Spiking coffee",
-   "questions": "Coffee , Cinnamon : Incidentally, a pinch of cinnamon is indeed a nice addition to coffee but true heaven is a cardamom seed. Of course, you serve it in a coffee mug.",
+   "questions": "Coffee, Cinnamon : Incidentally, a pinch of cinnamon is indeed a nice addition to coffee but true heaven is a cardamom seed. Of course, you serve it in a coffee mug.",
    "strInstructions": "Incidentally, a pinch of cinnamon is indeed a nice addition to coffee but true heaven is a cardamom seed. Of course, you serve it in a coffee mug.",
-   "strIngredients": "Coffee , Cinnamon",
+   "strIngredients": "Coffee\n , Cinnamon",
    "incorrect": "Aloha Fruit punch, 501 Blue, Lassi Raita"
  },
  {
@@ -3377,7 +3377,7 @@ recipe_data = [
  },
  {
    "strDrink": "Strawberry Margarita",
-   "questions": "Strawberry Schnapps-1/2 oz , Tequila-1 oz , Triple Sec-1/2 oz , Lemon Juice-1 oz , Strawberries-1 oz , Salt  : Rub rim of cocktail glass with lemon juice and dip rim in salt. Shake schnapps, tequila, triple sec, lemon juice, and strawberries with ice, strain into the salt-rimmed glass, and serve.",
+   "questions": "Strawberry Schnapps-1/2 oz , Tequila-1 oz , Triple Sec-1/2 oz , Lemon Juice-1 oz , Strawberries-1 oz , Salt: Rub rim of cocktail glass with lemon juice and dip rim in salt. Shake schnapps, tequila, triple sec, lemon juice, and strawberries with ice, strain into the salt-rimmed glass, and serve.",
    "strInstructions": "Rub rim of cocktail glass with lemon juice and dip rim in salt. Shake schnapps, tequila, triple sec, lemon juice, and strawberries with ice, strain into the salt-rimmed glass, and serve.",
    "strIngredients": "Strawberry Schnapps-1/2 oz , Tequila-1 oz , Triple Sec-1/2 oz , Lemon Juice-1 oz , Strawberries-1 oz , Salt",
    "incorrect": "A. J., Vodka Fizz, Rum Punch"
@@ -3419,14 +3419,14 @@ recipe_data = [
  },
  {
    "strDrink": "Sweet Sangria",
-   "questions": "Red wine-2 bottles , Sugar-1 cup , Water-2 cups hot , Apple-1 cup , Orange- wedges , Lime- wedges , Lemon- , Fresca ,  ,  : Dissolve the sugar in hot water and cool. Peel the citrus fruits and break into wedges. Mix the wine, sugar syrup, fruit, and Fresca in a pitcher and put in the fridge for a few hours. Serve in tall glasses with a straw.",
+   "questions": "Red wine-2 bottles , Sugar-1 cup , Water-2 cups hot , Apple-1 cup , Orange- wedges, Lime- wedges, Lemon, Fresca: Dissolve the sugar in hot water and cool. Peel the citrus fruits and break into wedges. Mix the wine, sugar syrup, fruit, and Fresca in a pitcher and put in the fridge for a few hours. Serve in tall glasses with a straw.",
    "strInstructions": "Dissolve the sugar in hot water and cool. Peel the citrus fruits and break into wedges. Mix the wine, sugar syrup, fruit, and Fresca in a pitcher and put in the fridge for a few hours. Serve in tall glasses with a straw.",
-   "strIngredients": "Red wine-2 bottles , Sugar-1 cup , Water-2 cups hot , Apple-1 cup , Orange- wedges , Lime- wedges , Lemon- , Fresca ,  ,",
+   "strIngredients": "Red wine-2 bottles , Sugar-1 cup , Water-2 cups hot , Apple-1 cup , Orange- wedges\n , Lime- wedges\n , Lemon-\n , Fresca\n , \n ,",
    "incorrect": "English Rose Cocktail, Dark Caipirinha, Amaretto Stinger"
  },
  {
    "strDrink": "Sweet Tooth",
-   "questions": "Godiva Liqueur-2 shots , Milk  : Put 2 shots Godiva Liquour into a glass, add as much or as little milk as you would like.",
+   "questions": "Godiva Liqueur-2 shots , Milk: Put 2 shots Godiva Liquour into a glass, add as much or as little milk as you would like.",
    "strInstructions": "Put 2 shots Godiva Liquour into a glass, add as much or as little milk as you would like.",
    "strIngredients": "Godiva Liqueur-2 shots , Milk",
    "incorrect": "Lady Love Fizz, French Connection, Pink Panty Pulldowns"
@@ -3440,14 +3440,14 @@ recipe_data = [
  },
  {
    "strDrink": "Tennesee Mud",
-   "questions": "Coffee-8 oz , Jack Daniels-4 oz , Amaretto-4 oz , Whipped Cream  , : Mix Coffee, Jack Daniels and Amaretto. Add Cream on top.",
+   "questions": "Coffee-8 oz , Jack Daniels-4 oz , Amaretto-4 oz , Whipped Cream: Mix Coffee, Jack Daniels and Amaretto. Add Cream on top.",
    "strInstructions": "Mix Coffee, Jack Daniels and Amaretto. Add Cream on top.",
-   "strIngredients": "Coffee-8 oz , Jack Daniels-4 oz , Amaretto-4 oz , Whipped Cream  ,",
+   "strIngredients": "Coffee-8 oz , Jack Daniels-4 oz , Amaretto-4 oz , Whipped Cream\n  ,",
    "incorrect": "Flaming Dr. Pepper, Cherry Electric Lemonade, Brainteaser"
  },
  {
    "strDrink": "Tequila Fizz",
-   "questions": "Tequila-2 oz , Lemon Juice-1 tblsp , Grenadine-3/4 oz , Egg White-1, Ginger Ale  : Shake all ingredients (except ginger Ale) with ice and strain into a collins glass over ice cubes. Fill with ginger Ale, stir, and serve.",
+   "questions": "Tequila-2 oz , Lemon Juice-1 tblsp , Grenadine-3/4 oz , Egg White-1, Ginger Ale: Shake all ingredients (except ginger Ale) with ice and strain into a collins glass over ice cubes. Fill with ginger Ale, stir, and serve.",
    "strInstructions": "Shake all ingredients (except ginger Ale) with ice and strain into a collins glass over ice cubes. Fill with ginger Ale, stir, and serve.",
    "strIngredients": "Tequila-2 oz , Lemon Juice-1 tblsp , Grenadine-3/4 oz , Egg White-1, Ginger Ale",
    "incorrect": "Snakebite and Black, Bobby Burns Cocktail, Arise My Love"
@@ -3496,16 +3496,16 @@ recipe_data = [
  },
  {
    "strDrink": "Thai Iced Coffee",
-   "questions": "Coffee-black, Sugar , Cream- pods , Cardamom  , : Prepare a pot of coffee at a good European strength. In the ground coffee, add 2 or 3 freshly ground cardamom pods. Sweeten while hot, then cool quickly. Serve in highball glass over ice, with cream. To get the layered effect, place a spoon atop the coffee and pour the milk carefully into the spoon so that it floats on the top of the coffee.",
+   "questions": "Coffee-black, Sugar, Cream- pods, Cardamom: Prepare a pot of coffee at a good European strength. In the ground coffee, add 2 or 3 freshly ground cardamom pods. Sweeten while hot, then cool quickly. Serve in highball glass over ice, with cream. To get the layered effect, place a spoon atop the coffee and pour the milk carefully into the spoon so that it floats on the top of the coffee.",
    "strInstructions": "Prepare a pot of coffee at a good European strength. In the ground coffee, add 2 or 3 freshly ground cardamom pods. Sweeten while hot, then cool quickly. Serve in highball glass over ice, with cream. To get the layered effect, place a spoon atop the coffee and pour the milk carefully into the spoon so that it floats on the top of the coffee.",
-   "strIngredients": "Coffee-black, Sugar , Cream- pods , Cardamom  ,",
+   "strIngredients": "Coffee-black, Sugar\n , Cream- pods\n , Cardamom\n  ,",
    "incorrect": "Bloody Mary, Kamikaze, Mimosa"
  },
  {
    "strDrink": "Thai Iced Tea",
-   "questions": "Tea-1/4 cup Thai , Water-1/2 cup boiling , Condensed milk-2 tsp sweetened , Ice Cubes , Mint : Combine Thai tea (i.e., the powder), boiling water, and sweetened condensed milk, stir until blended. Pour into 2 tall glasses filled with ice cubes. Garnish with mint leaves. Makes 2 servings.",
+   "questions": "Tea-1/4 cup Thai , Water-1/2 cup boiling , Condensed milk-2 tsp sweetened , Ice Cubes, Mint : Combine Thai tea (i.e., the powder), boiling water, and sweetened condensed milk, stir until blended. Pour into 2 tall glasses filled with ice cubes. Garnish with mint leaves. Makes 2 servings.",
    "strInstructions": "Combine Thai tea (i.e., the powder), boiling water, and sweetened condensed milk, stir until blended. Pour into 2 tall glasses filled with ice cubes. Garnish with mint leaves. Makes 2 servings.",
-   "strIngredients": "Tea-1/4 cup Thai , Water-1/2 cup boiling , Condensed milk-2 tsp sweetened , Ice Cubes , Mint",
+   "strIngredients": "Tea-1/4 cup Thai , Water-1/2 cup boiling , Condensed milk-2 tsp sweetened , Ice Cubes\n , Mint",
    "incorrect": "Absolutely Fabulous, Fruit Flip-Flop, Hot Chocolate to Die for"
  },
  {
@@ -3572,7 +3572,7 @@ recipe_data = [
    "incorrect": "Arizona Antifreeze, Afterglow, Chocolate Black Russian"
  },
  {
-   "strDrink": "Valencia  Cocktail",
+   "strDrink": "Valencia Cocktail",
    "questions": "Apricot Brandy-1 1/2 oz , Orange Juice-1 tblsp , Orange Bitters-2 dashes : Shake all ingredients with ice, strain into a cocktail glass, and serve.",
    "strInstructions": "Shake all ingredients with ice, strain into a cocktail glass, and serve.",
    "strIngredients": "Apricot Brandy-1 1/2 oz , Orange Juice-1 tblsp , Orange Bitters-2 dashes",
@@ -3594,9 +3594,9 @@ recipe_data = [
  },
  {
    "strDrink": "Vermouth Cassis",
-   "questions": "Dry Vermouth-1 1/2 oz , Creme de Cassis-3/4 oz , Carbonated Water  , : Stir vermouth and creme de cassis in a highball glass with ice cubes. Fill with carbonated water, stir again, and serve.",
+   "questions": "Dry Vermouth-1 1/2 oz , Creme de Cassis-3/4 oz , Carbonated Water: Stir vermouth and creme de cassis in a highball glass with ice cubes. Fill with carbonated water, stir again, and serve.",
    "strInstructions": "Stir vermouth and creme de cassis in a highball glass with ice cubes. Fill with carbonated water, stir again, and serve.",
-   "strIngredients": "Dry Vermouth-1 1/2 oz , Creme de Cassis-3/4 oz , Carbonated Water  ,",
+   "strIngredients": "Dry Vermouth-1 1/2 oz , Creme de Cassis-3/4 oz , Carbonated Water\n  ,",
    "incorrect": "3 Wise Men, Amaretto Sour, Baby Eskimo"
  },
  {
@@ -3636,16 +3636,16 @@ recipe_data = [
  },
  {
    "strDrink": "Vodka And Tonic",
-   "questions": "Vodka-2 oz , Tonic water  : Pour vodka into a highball glass over ice cubes. Fill with tonic water, stir, and serve.",
+   "questions": "Vodka-2 oz , Tonic water: Pour vodka into a highball glass over ice cubes. Fill with tonic water, stir, and serve.",
    "strInstructions": "Pour vodka into a highball glass over ice cubes. Fill with tonic water, stir, and serve.",
    "strIngredients": "Vodka-2 oz , Tonic water",
    "incorrect": "Banana Strawberry Shake, Shark Attack, Citrus Coke"
  },
  {
    "strDrink": "Vodka Fizz",
-   "questions": "Vodka-2 oz , Half-and-half-2 oz , Limeade-2 oz , Ice , Nutmeg  : Blend all ingredients, save nutmeg. Pour into large white wine glass and sprinkle nutmeg on top.",
+   "questions": "Vodka-2 oz , Half-and-half-2 oz , Limeade-2 oz , Ice, Nutmeg: Blend all ingredients, save nutmeg. Pour into large white wine glass and sprinkle nutmeg on top.",
    "strInstructions": "Blend all ingredients, save nutmeg. Pour into large white wine glass and sprinkle nutmeg on top.",
-   "strIngredients": "Vodka-2 oz , Half-and-half-2 oz , Limeade-2 oz , Ice , Nutmeg",
+   "strIngredients": "Vodka-2 oz , Half-and-half-2 oz , Limeade-2 oz , Ice\n , Nutmeg",
    "incorrect": "Brandy Sour, Boozy Snickers Milkshake, Scooter"
  },
  {
@@ -3657,7 +3657,7 @@ recipe_data = [
  },
  {
    "strDrink": "Vodka Russian",
-   "questions": "Vodka-2 oz , Schweppes Russchian-  : Mix it as a ordinary drink .",
+   "questions": "Vodka-2 oz , Schweppes Russchian: Mix it as a ordinary drink .",
    "strInstructions": "Mix it as a ordinary drink .",
    "strIngredients": "Vodka-2 oz , Schweppes Russchian-",
    "incorrect": "Margarita, Boston Sour, Bailey's Dream Shake"
@@ -3692,9 +3692,9 @@ recipe_data = [
  },
  {
    "strDrink": "White Russian",
-   "questions": "Vodka-2 oz , Coffee Liqueur-1 oz , Light Cream  , : Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve.",
+   "questions": "Vodka-2 oz , Coffee Liqueur-1 oz , Light Cream: Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve.",
    "strInstructions": "Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve.",
-   "strIngredients": "Vodka-2 oz , Coffee Liqueur-1 oz , Light Cream  ,",
+   "strIngredients": "Vodka-2 oz , Coffee Liqueur-1 oz , Light Cream\n  ,",
    "incorrect": "Adam, Malibu Twister, Chicago Fizz"
  },
  {
@@ -3706,9 +3706,9 @@ recipe_data = [
  },
  {
    "strDrink": "Wine Cooler",
-   "questions": "Red wine-2 oz white or , Lemon-lime soda-5 oz , Ice Cubes  , : Mix wine and soft drink. Pour into glass. Add ice.",
+   "questions": "Red wine-2 oz white or , Lemon-lime soda-5 oz , Ice Cubes: Mix wine and soft drink. Pour into glass. Add ice.",
    "strInstructions": "Mix wine and soft drink. Pour into glass. Add ice.",
-   "strIngredients": "White or Red Wine-2 oz, Lemon-lime soda-5 oz , Ice Cubes  ,",
+   "strIngredients": "White or Red Wine-2 oz, Lemon-lime soda-5 oz , Ice Cubes\n  ,",
    "incorrect": "Ziemes Martini Apfelsaft, Shot-gun, Queen Charlotte"
  },
  {
@@ -3727,16 +3727,16 @@ recipe_data = [
  },
  {
    "strDrink": "Yoghurt Cooler",
-   "questions": "Yoghurt-1 cup , Fruit-1 cup , Ice  , : Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up. Note: Use lots of ice in this one - great on hot days! To add ice: Remove the center of the cover while the blender is on - drop 3 or 4 ice cubs and blend until they're completely crushed.",
+   "questions": "Yoghurt-1 cup , Fruit-1 cup , Ice: Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up. Note: Use lots of ice in this one - great on hot days! To add ice: Remove the center of the cover while the blender is on - drop 3 or 4 ice cubs and blend until they're completely crushed.",
    "strInstructions": "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up. Note: Use lots of ice in this one - great on hot days! To add ice: Remove the center of the cover while the blender is on - drop 3 or 4 ice cubs and blend until they're completely crushed.",
-   "strIngredients": "Yoghurt-1 cup , Fruit-1 cup , Ice  ,",
+   "strIngredients": "Yoghurt-1 cup , Fruit-1 cup , Ice\n  ,",
    "incorrect": "Happy Skipper, Rose, Hot Creamy Bush"
  },
  {
    "strDrink": "Zambeer",
-   "questions": "Sambuca-1 1/2 oz , Root Beer-Add 10 oz , Ice Cubes  , : Mix sambuca with rootbeer and stir. Add ice",
+   "questions": "Sambuca-1 1/2 oz , Root Beer-Add 10 oz , Ice Cubes: Mix sambuca with rootbeer and stir. Add ice",
    "strInstructions": "Mix sambuca with rootbeer and stir. Add ice",
-   "strIngredients": "Sambuca-1 1/2 oz , Root Beer-Add 10 oz , Ice Cubes  ,",
+   "strIngredients": "Sambuca-1 1/2 oz , Root Beer-Add 10 oz , Ice Cubes\n  ,",
    "incorrect": "Cranberry Punch, Tequila Sunrise, Apricot Lady"
  },
  {
@@ -3790,16 +3790,16 @@ recipe_data = [
  },
  {
    "strDrink": "Zizi Coin-coin",
-   "questions": "Cointreau-1 2/3 oz , Lemon Juice-2/3 oz , Ice Cubes , Lemon or Lime  , : Pour 5cl of Cointreau on ice, add 2cl of fresh lemon (or lime) juice, stir gently, and finally add slices of lemon/lime in glass.",
+   "questions": "Cointreau-1 2/3 oz , Lemon Juice-2/3 oz , Ice Cubes, Lemon or Lime: Pour 5cl of Cointreau on ice, add 2cl of fresh lemon (or lime) juice, stir gently, and finally add slices of lemon/lime in glass.",
    "strInstructions": "Pour 5cl of Cointreau on ice, add 2cl of fresh lemon (or lime) juice, stir gently, and finally add slices of lemon/lime in glass.",
-   "strIngredients": "Cointreau-1 2/3 oz , Lemon Juice-2/3 oz , Ice Cubes , Lemon or Lime  ,",
+   "strIngredients": "Cointreau-1 2/3 oz , Lemon Juice-2/3 oz , Ice Cubes\n , Lemon or Lime\n  ,",
    "incorrect": "Affinity, A Night In Old Mandalay, Thai Iced Coffee"
  },
  {
    "strDrink": "Zoksel",
-   "questions": "Beer , Root Beer , Lemonade , Coca-Cola , 7-Up , Creme de Cassis , Lemon  : No specific mixinginstructions, just Pour every ingredient in one glass. The lemon goes with it.",
+   "questions": "Beer, Root Beer, Lemonade, Coca-Cola, 7-Up, Creme de Cassis, Lemon: No specific mixinginstructions, just Pour every ingredient in one glass. The lemon goes with it.",
    "strInstructions": "No specific mixinginstructions, just Pour every ingredient in one glass. The lemon goes with it.",
-   "strIngredients": "Beer , Root Beer , Lemonade , Coca-Cola , 7-Up , Creme de Cassis , Lemon",
+   "strIngredients": "Beer\n , Root Beer\n , Lemonade\n , Coca-Cola\n , 7-Up\n , Creme de Cassis\n , Lemon",
    "incorrect": "Tom Collins, Iced Coffee Fillip, Amaretto Tea"
  },
  {

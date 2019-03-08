@@ -47,11 +47,10 @@ class Round < ActiveRecord::Base
   def self.play_game
     self.get_questions_and_answers
     puts
-    puts "Here's how to make the drink:".cyan
-    puts "#{self.question}\n".magenta
-    puts "It's ingredients are: ".cyan + "#{self.ingredients}".magenta
+    puts "It's ingredients are:".bold.colorize(:color => :black, :background => :cyan) + " " + "   #{self.ingredients}".strip.cyan
+    puts "\nHere's how to make the drink: ".bold.colorize(:color => :black, :background => :cyan) + " " + "#{self.question}\n".strip.cyan
     puts "\nWhat's your guess?".cyan + " FYI SPELLING MATTERS\n".cyan.bold
-    self.choices.each {|choice| puts "* " + "#{choice}".green.bold}
+    self.choices.each {|choice| puts "• " + " #{choice}".strip.green.bold}
   end
 
 
@@ -68,20 +67,20 @@ class Round < ActiveRecord::Base
 
   def self.play_game_hard
     self.get_questions_and_answers_hard
-    puts "#{self.question}".cyan
+    puts "\nHere's how to make the drink: ".bold.colorize(:color => :black, :background => :cyan) + " " + "#{self.question}\n".strip.cyan
     puts
-    self.choices.each {|choice| puts "*" + " #{choice}".green}
+    self.choices.each {|choice| puts "• " + " #{choice}".strip.green}
   end
 
   def self.save_round(user_answer)
      if user_answer.downcase == @@answer.downcase
        round = @@current_round.update(correct?: true)
-       puts "\nWell done!".cyan
-       puts "You added ".cyan + "10 points".green.bold + " to your score!".cyan
+       puts "\nWell done!".bold.colorize(:color => :black, :background => :green)
+       puts "You added ".cyan+ "10 points".green.bold + " to your score!".cyan
        puts
      else
        round = @@current_round.update(incorrect?: false)
-       puts "\nHmm... that's not quite right.".cyan
+       puts "\nHmm... that's not quite right.".bold.colorize(:color => :black, :background => :red)
        puts "The correct answer is".cyan + " #{@@answer.green.bold}.\n"
        puts
      end
