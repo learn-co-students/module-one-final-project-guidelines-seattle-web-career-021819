@@ -1,6 +1,8 @@
 RECIPE TIME - Recipe Generator App
 ------
 
+by Adrienne Miller and Chris Cable
+
 This is our final project for Flatiron School, Module One. Below are details of the application and instructions for how to run it on your computer.
 
 ![recipe time welcome screen](https://github.com/adriennemiller/module-one-final-project-guidelines-seattle-web-career-021819/blob/master/recipe-time.png)
@@ -17,14 +19,22 @@ Recipe Time is a Command Line database app that allows users to:
 Feeling hungry? Ever had the desire to have a vast, customizable list of recipes at your very fingertips?
 Be hungry no more, Recipe Time is ready to serve you :)
 
+Project video: https://youtu.be/LSt9nLO7f_o 
 
 Installation Instructions
 -------------------------------------
 
 1. Clone the repository to your computer
 2. Run ```bundle install``` to install the required Gems
-3. Run ```brew install imagemagick@6``` and ```brew link --force imagemagick@6```
 3. Run ```rake db:migrate``` and ```rake db:seed```
 4. Run ```ruby bin/run.db``` to enter the app
 
 Bon Appétit!
+
+Includes Gems from: 
+```
+artii - https://github.com/miketierney/artii 
+ascii art - https://www.asciiart.eu/food-and-drinks/other 
+colorize - https://github.com/fazibear/colorize
+terminal table - https://github.com/tj/terminal-table
+```
