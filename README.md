@@ -20,7 +20,9 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 1. Clone the repository using your favorite clone method, or typing "git clone git@github.com:WTFCodingPotato/module-one-final-project-guidelines-seattle-web-career-021819.git" into your terminal
 2. Still in terminal type, "cd module-one-final-project-guidelines-seattle-web-career-021819"
 3. Type "bundle install"
-4. Type "rake run" to start the program
+4. Type "rake db:migrate"
+5. Type "rake seed"
+6. Type "rake run" to start the program
 
 ![alt text](lib/art/Bundle_install.png)
 [![Everything Is AWESOME](lib/art/got_screenshot_1.png)](https://youtu.be/-6aCt-y7opo)
