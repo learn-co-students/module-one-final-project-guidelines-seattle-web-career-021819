@@ -5,10 +5,9 @@
 Below is a short clip of the game.
 BUT in case you love reading, *Boozy* is a simple cocktail guessing game.
 The user logs in and is presented with either ingredients and a recipe (easy mode)
-or ingredients only (hard mode) and must guess the name of the cocktail. Users
-aren't expected to know all 500+ drink names, so to help the user guess we provide
-4 potential answers.
-The one caveat, SPELLING MATTERS.
+or ingredients only (hard mode). With the given information the user must guess 
+the name of the cocktail. Usersaren't expected to know all 500+ drink names, so to help the 
+user guess we provide 4 potential answers. The one caveat, SPELLING MATTERS.
 The user plays a total of 5 rounds and will then be award 10 points for each correct answer.
 The user's points are tracked over each new game, and the user accumulates a "total points" value across all games.  
 
