@@ -157,23 +157,23 @@ end
 
 #delete recipe by number
 def user_delete_recipes
-  arr = []
- user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
- saved_recipes = user_recipes.map {|ur| ur.recipe.title}
- saved_recipes.each_with_index do |recipe, index|
-  arr << "#{index+1}: #{recipe}"
-   end
- puts arr
- puts ""
- puts "Please enter the number of the recipe you'd like to delete: ".colorize(:magenta)
- unwanted_recipe_num = STDIN.gets.chomp
- unwanted_recipe_num = unwanted_recipe_num.to_i - 1
- recipe = arr[unwanted_recipe_num][2..-1].strip
- recipe_to_be_deleted = Recipe.find_by(title: recipe)
- if recipe_to_be_deleted == nil
-   puts "Sorry I couldnt find it".colorize(:magenta)
- else
-   user_recipe = UserRecipe.find_by(recipe_id: recipe_to_be_deleted.id)
-   user_recipe.delete
+    arr = []
+   user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
+   saved_recipes = user_recipes.map {|ur| ur.recipe.title}
+   saved_recipes.each_with_index do |recipe, index|
+    arr << "#{index+1}: #{recipe}"
+     end
+   puts arr
+   puts ""
+   puts "Please enter the number of the recipe you'd like to delete: ".colorize(:magenta)
+   unwanted_recipe_num = STDIN.gets.chomp
+   if unwanted_recipe_num.to_i > arr.length
+     puts "Sorry, I couldnt find any recipes with that number.".colorize(:magenta)
+   else
+     unwanted_recipe_num = unwanted_recipe_num.to_i - 1
+     recipe = arr[unwanted_recipe_num][2..-1].strip
+     recipe_to_be_deleted = Recipe.find_by(title: recipe)
+     user_recipe = UserRecipe.find_by(recipe_id: recipe_to_be_deleted.id)
+     user_recipe.delete
  end
 end
