@@ -145,8 +145,7 @@ class CLI
 		    if input.starts_with? "y" || input == "yes"
 		      	puts "Give me your best guess.."
 		      	input = STDIN.gets.chomp
-			    if input == "443"
-
+			    if input == "#{House.all.count}"
 			      	puts "Congratulations, you are officially a G.O.T NERD"
 			      	is_running = false
 			    else
@@ -166,14 +165,18 @@ class CLI
 		   		puts
 	        puts "Enter a house name to find out their Coat of Arms, or press 0 to return to main menu"
 	        puts "===================================================================================="
-	        puts "Suggested Searches:"
-	        puts "==================="
+	        puts "Suggested Searches (copy and paste works best!):"
+	        puts "=============================================="
 	        puts
 	        puts "House Targaryen of King's Landing"
 	        puts
+					puts "House Baratheon of King's Landing"
+					puts
 	        puts "House Stark of Winterfell"
 	        puts
 	        puts "House Lannister of Casterly Rock"
+					puts
+					puts "House Baelish of Harrenhal"
 					puts "================================="
 					puts
 	        input = STDIN.gets.chomp
