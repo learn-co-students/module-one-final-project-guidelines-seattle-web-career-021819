@@ -160,12 +160,10 @@ class CLI
 		  	else
 		  		puts "Invalid input"
 	        end
-					puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-
-
+			DownArrow.display
 		end
    		while is_running2
-		    puts "\n\n\n\n\n\n\n"
+		   		puts
 	        puts "Enter a house name to find out their Coat of Arms, or press 0 to return to main menu"
 	        puts "===================================================================================="
 	        puts "Suggested Searches:"
@@ -185,6 +183,7 @@ class CLI
 	        if found_house != nil
 	        	slogan = found_house.coat_of_arms
 	        	puts slogan
+					SideArrow.display
 	        elsif input == "0"
       			is_running2 = false
       		else
