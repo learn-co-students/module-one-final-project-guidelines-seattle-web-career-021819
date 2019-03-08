@@ -30,7 +30,9 @@ Installation Instructions
 Bon Appétit!
 
 Includes Gems from: 
-*artii - https://github.com/miketierney/artii 
-*ascii art - https://www.asciiart.eu/food-and-drinks/other 
-*colorize - https://github.com/fazibear/colorize
-*terminal table - https://github.com/tj/terminal-table
+```
+artii - https://github.com/miketierney/artii 
+ascii art - https://www.asciiart.eu/food-and-drinks/other 
+colorize - https://github.com/fazibear/colorize
+terminal table - https://github.com/tj/terminal-table
+```
