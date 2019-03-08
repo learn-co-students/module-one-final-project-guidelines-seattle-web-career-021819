@@ -25,10 +25,10 @@ class CLI
 		puts "\n\n\n\n\n\n\n\n\n\n\n\n"
 		Dragon.display
 		puts "Which category would you like to choose?"
-		puts "0. exit"
-		puts "1. characters"
-		puts "2. books"
-		puts "3. houses"
+		puts "0. Exit"
+		puts "1. Characters"
+		puts "2. Books"
+		puts "3. Houses"
 	end
 
 	def self.character
