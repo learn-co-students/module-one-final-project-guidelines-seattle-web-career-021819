@@ -23,6 +23,7 @@ Installation Instructions
 
 1. Clone the repository to your computer
 2. Run ```bundle install``` to install the required Gems
-3. Run ```ruby bin/run.db``` to enter the app
+3. Run ```rake db:migrate``` and ```rake db:seed```
+4. Run ```ruby bin/run.db``` to enter the app
 
 Bon Appétit!
