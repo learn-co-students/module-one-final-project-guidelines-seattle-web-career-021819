@@ -17,14 +17,13 @@ class Game < ActiveRecord::Base
     correct_num = array.map { |xx| xx.correct? }.inject(:+)
     points = correct_num * 10
     @@new_game.update(number_correct: correct_num, game_points: points)
-    puts "you scored #{points} on this game!"
+    puts "You scored " + "#{points} points ".green.bold + "on this game!"
     User.total
     if points < 30
-      puts "Might want to drink more. Return to your local watering hole.".magenta.italic
+      puts "Might want to drink more. Return to your local watering hole.\n".magenta.italic
     else
-      puts "You're one step closer to earning your mixology degree.\n".magenta
+      puts "You're one step closer to earning your mixology degree.\n".magenta.italic
     end
   end
-
 
 end

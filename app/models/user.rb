@@ -1,4 +1,3 @@
-require 'pry'
 class User < ActiveRecord::Base
   has_many :games
 
@@ -13,12 +12,10 @@ class User < ActiveRecord::Base
   end
 
   def self.total
-   array = Game.all.select { |game| game.user_id == @@current_user.id}
-   points = array.map { |xx| xx.game_points }.inject(:+)
-   @@current_user.update(total_points: points)
-   puts "You have scored #{points} over #{array.length} game(s)!"
-end
-
-
+     array = Game.all.select { |game| game.user_id == @@current_user.id}
+     points = array.map { |xx| xx.game_points }.inject(:+)
+     @@current_user.update(total_points: points)
+     puts "You have scored " + "#{points} points".green.bold + " over " + "#{array.length} game(s)".green.bold + "!"
+  end
 
 end
