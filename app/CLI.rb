@@ -126,7 +126,7 @@ class CLI
 			elsif 0 < input.to_i && input.to_i < 12
 				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters fighting for the throne."
 				puts "\nWHAT A SCUFFLE!!!"
-			else	
+			else
 				puts "Invalid input"
 			end
 		end
@@ -190,7 +190,7 @@ class CLI
 	        if found_house != nil
 	        	slogan = found_house.coat_of_arms
 	        	puts slogan
-					SideArrow.display
+					UpArrow.display
 	        elsif input == "0"
       			is_running2 = false
       		else
