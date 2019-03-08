@@ -8,6 +8,5 @@ gem "require_all"
 gem 'rest-client'
 gem 'json'
 gem 'artii'
-gem 'catpix'
 gem 'terminal-table'
 gem 'colorize'

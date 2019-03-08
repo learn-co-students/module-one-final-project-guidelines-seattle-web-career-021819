@@ -1,4 +1,3 @@
-require 'catpix'
 require 'terminal-table'
 require 'colorize'
 
@@ -178,6 +177,7 @@ def user_delete_recipes
  end
 end
 
+#user delete recipe method in progress to delete by number
 # def user_delete_recipes
 #   arr = []
 #  user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
@@ -199,34 +199,5 @@ end
 #  else
 #    user_recipe = UserRecipe.find_by(recipe_id: recipe_to_be_deleted.id)
 #    user_recipe.delete
-#  end
-# end
-# def user_delete_recipes
-#   arr = []
-#  user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
-#  saved_recipes = user_recipes.map {|ur| ur.recipe.title}
-#
-#  saved_recipes.each_with_index do |recipe, index|
-#   arr << "#{index+1}: #{recipe}"
-#    end
-#    puts ""
-#    puts "Here are your saved recipes:".colorize(:magenta)
-#    puts arr
-#
-#    puts ""
-#    puts "Please enter the number of the recipe you'd like to delete: ".colorize(:magenta)
-#    unwanted_recipe_num = STDIN.gets.chomp
-#    unwanted_recipe_num = unwanted_recipe_num.to_i - 1
-#    if unwanted_recipe_num == nil
-#    binding.pry
-#    recipe = arr[unwanted_recipe_num][2..-1].strip
-#    recipe_to_be_deleted = Recipe.find_by(title: recipe)
-#
-#    # if recipe_to_be_deleted == nil
-#      puts "Sorry I couldnt find it"
-#
-#    else
-#      user_recipe = UserRecipe.find_by(recipe_id: recipe_to_be_deleted.id)
-#      user_recipe.delete
 #  end
 # end
