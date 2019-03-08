@@ -26,4 +26,4 @@ The one caveat, SPELLING MATTERS.
 ### I have suggestions. How can I let you know?
 We would love your input to help make a smoother running game.
 Feel free to fork and do a pull request!
-We may not reply immediately, but it's worth a shot. ^*Ba dum tss*
+We may not reply immediately, but it's worth a shot. *Ba dum tss*
