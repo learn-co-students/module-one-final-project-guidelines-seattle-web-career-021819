@@ -20,7 +20,7 @@ ___
 5. Finally, to run the game type `rake run`.
 ___
 ### Where the legal stuff at?
-[Click Here for More Information]()
+[Click Here for More Information](https://github.com/knheidorn/module-one-final-project-guidelines-seattle-web-career-021819/blob/building_classes/LICENSE.md)
 ___
 ### I have suggestions. How can I let you know?
 We would love your input to help make a smoother running game.
