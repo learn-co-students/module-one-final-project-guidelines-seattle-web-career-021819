@@ -45,9 +45,9 @@ class CLI
 
   def self.main_menu
     puts "\nHi, #{@@input.upcase.bold}! Pick your poison.".cyan
-    puts "\n[0]".red.bold + " Nope. exit".cyan
-    puts "\n[1]".green.bold + " Sure, but let's play on easy mode".cyan
-    puts "\n[2]".green.bold + " I consider myself a connisuer.  Let's play on hard mode.".cyan
+    puts "\n[0]".red.bold + " Nope. I'm going pour myself a cold one.".cyan
+    puts "\n[1]".green.bold + " Sure... but let's play on easy mode.".cyan
+    puts "\n[2]".green.bold + " I consider myself a connisuer. Let's play on hard mode.".cyan
     puts "\n[3]".green.bold + " Get my current point total".cyan
     puts
     choice = STDIN.gets.chomp
@@ -99,7 +99,8 @@ C H E E R S !!!      \\     .  .     /
       User.total
       self.restart?
     else
-        puts "\n[Please enter in option 0, 1, 2, or 3]".cyan
+      puts "\n[Please enter in option 0, 1, 2, or 3]".cyan
+      self.main_menu
     end
   end
 
