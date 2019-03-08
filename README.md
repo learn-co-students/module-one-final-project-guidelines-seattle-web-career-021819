@@ -2,7 +2,7 @@
 By Josh Loran and Sofia Jonsson
 
 ![alt text](lib/art/Game_of_Thrones_title_card.jpg)
-
+![alt text](lib/art/mod_one_proj_video.mov)
 ##Welcome
 
 For our final project we have built a database sourced from the Game of Thrones "Ice and Fire" API. We have provided instructions below for you to run the application on your local computer.
@@ -13,7 +13,7 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 
 1.  Choose from a list of Characters, Books or Houses. This will direct the user to a new list of options relating the topic chosen.
 
-2. From here, the user will be able to dive one step deeper into the facts. 
+2. From here, the user will be able to dive one step deeper into the facts.
 
 
 ##Install Instructions
@@ -32,7 +32,7 @@ ASP.NET Core - The API is built on top of this awesome framework by Microsoft.
 Azure - The API has been hosted on Azure from the very first day and it's been a smooth ride ever since.
 Dapper - This micro ORM has been invaluable since we switched from Entity Framework. (Information sourced from API website)
 
-Thank you to Christopher Johnson and his website https://asciiart.website/ as well as ASCII artists: Tua Xiong, hrr, and "unknown" 
+Thank you to Christopher Johnson and his website https://asciiart.website/ as well as ASCII artists: Tua Xiong, hrr, and "unknown"
 
 ###Copyright
 
