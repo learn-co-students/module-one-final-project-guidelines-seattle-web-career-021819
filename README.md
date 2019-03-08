@@ -28,3 +28,9 @@ Installation Instructions
 4. Run ```ruby bin/run.db``` to enter the app
 
 Bon Appétit!
+
+Included Gems from: 
+artii - https://github.com/miketierney/artii 
+ascii art - https://www.asciiart.eu/food-and-drinks/other 
+colorize - https://github.com/fazibear/colorize
+terminal table - https://github.com/tj/terminal-table
