@@ -75,11 +75,12 @@ class CLI
 					end
 				end.uniq
 				puts brethren
-				puts "\n\n"
+				puts "\n"
+				UpArrow.display
 				puts "#{found_character.name} has allegience with #{found_character.house.name}."
 				puts "---------------------------------------------------------------"
 				puts "Above are #{found_character.name}'s house brethren"
-				puts "\n\n\n\n\n\n\n"
+				puts "\n\n\n\n"
 			elsif input == "0"
 				is_running = false
 			else
@@ -94,7 +95,6 @@ class CLI
 		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 		is_running = true
 		while is_running == true
-			puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 			BookArt.display
 			puts "\n========================================"
 			puts "Here is a list of Game of Thrones books."
@@ -125,8 +125,11 @@ class CLI
 			if input == "0"
 				is_running = false
 			elsif 0 < input.to_i && input.to_i < 12
+				puts "\n\n\n\n\n\n\n\n\n"
+				DownArrow.display
 				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters fighting for the throne."
 				puts "\nWHAT A SCUFFLE!!!"
+				puts "\n\n"
 			else
 				puts "Invalid input"
 			end
@@ -185,8 +188,8 @@ class CLI
 					puts "================================="
 					puts
 	        input = STDIN.gets.chomp
-	        puts "\n\n\n\n\n\n\n\n\n\n\n\n"
-	        puts
+	        puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+	        puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 	        found_house = House.find_by(name: input)
 	        if found_house != nil
 	        	slogan = found_house.coat_of_arms
