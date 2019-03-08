@@ -184,7 +184,7 @@ class CLI
 					puts "================================="
 					puts
 	        input = STDIN.gets.chomp
-	        puts
+	        puts "\n\n\n\n\n\n\n\n\n\n\n\n"
 	        puts
 	        found_house = House.find_by(name: input)
 	        if found_house != nil
@@ -199,11 +199,3 @@ class CLI
  		end
 	end
 end
-
-
-	       #  end
-	       #  puts "Cool huh? Look up another house or press 0 to return to main menu"
-      		# input = STDIN.gets.chomp
-      		# if input == 0
-      		# 	is_running2 = false
-      		# end
