@@ -9,6 +9,8 @@ or ingredients only (hard mode) and must guess the name of the cocktail. Users
 aren't expected to know all 500+ drink names, so to help the user guess we provide
 4 potential answers.
 The one caveat, SPELLING MATTERS.
+The user plays a total of 5 rounds and will then be award 10 points for each correct answer.
+The user's points are tracked over each new game, and the user accumulates a "total points" value across all games.  
 
 ![Boozy Game Play](https://github.com/knheidorn/module-one-final-project-guidelines-seattle-web-career-021819/blob/building_classes/media/boozy.gif)
 ___
