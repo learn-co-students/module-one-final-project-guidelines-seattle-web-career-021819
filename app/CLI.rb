@@ -2,12 +2,13 @@ class CLI
 
 	def self.run
 		puts "Running CLI..."
-
 		is_running = true
 		while is_running
+			fork{ exec 'afplay', "app/GameofThrones.mp3" } 
 			self.main_menu
 			input= STDIN.gets.chomp
 			if input == "0"
+				fork{ exec 'killall', "afplay" }
 				is_running = false
 			elsif input == "1"
 				self.character
