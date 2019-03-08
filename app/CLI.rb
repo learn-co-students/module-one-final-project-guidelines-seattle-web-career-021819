@@ -84,7 +84,7 @@ class CLI
 			else
 				puts "Nobody matches that name"
 				puts "Please enter a valid name"
-			end	
+			end
 		end
 	end
 
@@ -123,7 +123,7 @@ class CLI
 				is_running = false
 			elsif 0 < input.to_i && input.to_i < 12
 				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters in it."
-			else	
+			else
 				puts "Invalid input"
 			end
 		end
@@ -131,18 +131,22 @@ class CLI
 
 
 	def self.house
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 		HouseArt.display
 		is_running = true
 		is_running2 = true
  		while is_running
-			puts "========================================================"
+			puts "\n\n\n\n\n"
+				puts "====================================================="
 	  		puts "Think you know how many houses are in G.O.T? (yes/no)"
-	  		puts "========================================================"
+	  		puts "====================================================="
 	      	input = STDIN.gets.chomp
 		    if input.starts_with? "y" || input == "yes"
 		      	puts "Give me your best guess.."
 		      	input = STDIN.gets.chomp
 			    if input == "443"
+
 			      	puts "Congratulations, you are officially a G.O.T NERD"
 			      	is_running = false
 			    else
@@ -156,20 +160,24 @@ class CLI
 		  	else
 		  		puts "Invalid input"
 	        end
+					puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+
+
 		end
    		while is_running2
 		    puts "\n\n\n\n\n\n\n"
 	        puts "Enter a house name to find out their Coat of Arms, or press 0 to return to main menu"
-	        puts "=================================================="
+	        puts "===================================================================================="
 	        puts "Suggested Searches:"
-	        puts "================="
+	        puts "==================="
 	        puts
 	        puts "House Targaryen of King's Landing"
 	        puts
 	        puts "House Stark of Winterfell"
 	        puts
 	        puts "House Lannister of Casterly Rock"
-	        puts
+					puts "================================="
+					puts
 	        input = STDIN.gets.chomp
 	        puts
 	        puts
@@ -179,7 +187,7 @@ class CLI
 	        	puts slogan
 	        elsif input == "0"
       			is_running2 = false
-      		else 
+      		else
       			puts "invalid input"
       		end
  		end
@@ -193,4 +201,3 @@ end
       		# if input == 0
       		# 	is_running2 = false
       		# end
-
