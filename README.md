@@ -1,6 +1,8 @@
 RECIPE TIME - Recipe Generator App
 ------
 
+by Adrienne Miller and Chris Cable
+
 This is our final project for Flatiron School, Module One. Below are details of the application and instructions for how to run it on your computer.
 
 ![recipe time welcome screen](https://github.com/adriennemiller/module-one-final-project-guidelines-seattle-web-career-021819/blob/master/recipe-time.png)
