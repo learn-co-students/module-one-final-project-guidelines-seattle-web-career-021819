@@ -1,5 +1,5 @@
 require 'pry'
-
+#Modified database from https://www.kaggle.com/ai-first/cocktail-ingredients/version/1
 recipe_data = [
  {
    "strDrink": "1-900-FUK-MEUP",
@@ -31,9 +31,9 @@ recipe_data = [
  },
  {
    "strDrink": "24k nightmare",
-   "questions": "Goldschlager-1/2 oz , Jagermeister-1/2 oz , Rumple Minze-1/2 oz , 151 Proof Rum-1/2 oz Bacardi: Add over ice,shake and pour.",
+   "questions": "Goldschlager-1/2 oz , Jägermeister-1/2 oz , Rumple Minze-1/2 oz , 151 Proof Rum-1/2 oz Bacardi: Add over ice,shake and pour.",
    "strInstructions": "Add over ice,shake and pour.",
-   "strIngredients": "Goldschlager-1/2 oz , Jagermeister-1/2 oz , Rumple Minze-1/2 oz , 151 Proof Rum-1/2 oz Bacardi",
+   "strIngredients": "Goldschlager-1/2 oz , Jägermeister-1/2 oz , Rumple Minze-1/2 oz , 151 Proof Rum-1/2 oz Bacardi",
    "incorrect": "Jitterbug, Arctic Mouthwash, Apple Karate"
  },
  {
@@ -122,9 +122,9 @@ recipe_data = [
  },
  {
    "strDrink": "A Night In Old Mandalay",
-   "questions": "Light Rum-1 oz , Anejo Rum-1 oz , Orange Juice-1 oz , Lemon Juice-1/2 oz, Ginger Ale-3 oz , Twist of Lemon Peel : In a shaker half-filled with ice cubes, combine the light rum, anejo rum, orange juice, and lemon juice. Shake well. Strain into a highball glass almost filled with ice cubes. Top with the ginger Ale. Garnish with the lemon twist.",
-   "strInstructions": "In a shaker half-filled with ice cubes, combine the light rum, anejo rum, orange juice, and lemon juice. Shake well. Strain into a highball glass almost filled with ice cubes. Top with the ginger Ale. Garnish with the lemon twist.",
-   "strIngredients": "Light Rum-1 oz , Anejo Rum-1 oz , Orange Juice-1 oz , Lemon Juice-1/2 oz, Ginger Ale-3 oz , Twist of Lemon Peel",
+   "questions": "Light Rum-1 oz , Añejo Rum-1 oz , Orange Juice-1 oz , Lemon Juice-1/2 oz, Ginger Ale-3 oz , Twist of Lemon Peel : In a shaker half-filled with ice cubes, combine the light rum, Añejo rum, orange juice, and lemon juice. Shake well. Strain into a highball glass almost filled with ice cubes. Top with the ginger Ale. Garnish with the lemon twist.",
+   "strInstructions": "In a shaker half-filled with ice cubes, combine the light rum, Añejo rum, orange juice, and lemon juice. Shake well. Strain into a highball glass almost filled with ice cubes. Top with the ginger Ale. Garnish with the lemon twist.",
+   "strIngredients": "Light Rum-1 oz , Añejo Rum-1 oz , Orange Juice-1 oz , Lemon Juice-1/2 oz, Ginger Ale-3 oz , Twist of Lemon Peel",
    "incorrect": "Spiking coffee, Sangria - The World's Best, 110 in the shade"
  },
  {
@@ -787,9 +787,9 @@ recipe_data = [
  },
  {
    "strDrink": "Auburn Headbanger",
-   "questions": "Jagermeister-1 oz , Goldschlager-1 oz , : Mix in spread glass over ice. Strain and pour in shot glass. Sit down before shotting. ENJOY!!",
+   "questions": "Jägermeister-1 oz , Goldschlager-1 oz , : Mix in spread glass over ice. Strain and pour in shot glass. Sit down before shotting. ENJOY!!",
    "strInstructions": "Mix in spread glass over ice. Strain and pour in shot glass. Sit down before shotting. ENJOY!!",
-   "strIngredients": "Jagermeister-1 oz , Goldschlager-1 oz ,",
+   "strIngredients": "Jägermeister-1 oz , Goldschlager-1 oz ,",
    "incorrect": "Gin Squirt, 3 Wise Men, French 75"
  },
  {
@@ -860,7 +860,7 @@ recipe_data = [
    "questions": "Light Rum-1 3/4 oz Bacardi , Lime Juice-1 oz , Sugar Syrup-1/2 tsp , Grenadine-1 dash : Shake together with ice. Strain into glass and serve.",
    "strInstructions": "Shake together with ice. Strain into glass and serve.",
    "strIngredients": "Light Rum-1 3/4 oz Bacardi , Lime Juice-1 oz , Sugar Syrup-1/2 tsp , Grenadine-1 dash",
-   "incorrect": "SCreaming Orgasm, Orange Oasis, B-53"
+   "incorrect": "Screaming Orgasm, Orange Oasis, B-53"
  },
  {
    "strDrink": "Bailey's Dream Shake",
@@ -1053,9 +1053,9 @@ recipe_data = [
  },
  {
    "strDrink": "Blue Mountain",
-   "questions": "Anejo Rum-1 1/2 oz , Tia Maria-1/2 oz , Vodka-1/2 oz , Orange Juice-1 oz , Lemon Juice-1 tsp : In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into an old-fashioned glass alomst filled with ice cubes.",
+   "questions": "Añejo Rum-1 1/2 oz , Tia Maria-1/2 oz , Vodka-1/2 oz , Orange Juice-1 oz , Lemon Juice-1 tsp : In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into an old-fashioned glass alomst filled with ice cubes.",
    "strInstructions": "In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into an old-fashioned glass alomst filled with ice cubes.",
-   "strIngredients": "Anejo Rum-1 1/2 oz , Tia Maria-1/2 oz , Vodka-1/2 oz , Orange Juice-1 oz , Lemon Juice-1 tsp",
+   "strIngredients": "Añejo Rum-1 1/2 oz , Tia Maria-1/2 oz , Vodka-1/2 oz , Orange Juice-1 oz , Lemon Juice-1 tsp",
    "incorrect": "Adam, Gin Daisy, Godfather"
  },
  {
@@ -1067,9 +1067,9 @@ recipe_data = [
  },
  {
    "strDrink": "Bob Marley",
-   "questions": "Midori Melon Liqueur-1/2 oz , Jagermeister-1/2 oz , Goldschlager-1/2 oz : Layer in a 2 oz shot glass or pony glass",
+   "questions": "Midori Melon Liqueur-1/2 oz , Jägermeister-1/2 oz , Goldschlager-1/2 oz : Layer in a 2 oz shot glass or pony glass",
    "strInstructions": "Layer in a 2 oz shot glass or pony glass",
-   "strIngredients": "Midori Melon Liqueur-1/2 oz , Jagermeister-1/2 oz , Goldschlager-1/2 oz",
+   "strIngredients": "Midori Melon Liqueur-1/2 oz , Jägermeister-1/2 oz , Goldschlager-1/2 oz",
    "incorrect": "Adonis Cocktail, Auburn Headbanger, Lemouroudji"
  },
  {
@@ -1711,9 +1711,9 @@ recipe_data = [
  },
  {
    "strDrink": "Freddy Kruger",
-   "questions": "Jagermeister-1/2 oz , Sambuca-1/2 oz , Vodka-1/2 oz : make it an ample size shot!!",
+   "questions": "Jägermeister-1/2 oz , Sambuca-1/2 oz , Vodka-1/2 oz : make it an ample size shot!!",
    "strInstructions": "make it an ample size shot!!",
-   "strIngredients": "Jagermeister-1/2 oz , Sambuca-1/2 oz , Vodka-1/2 oz",
+   "strIngredients": "Jägermeister-1/2 oz , Sambuca-1/2 oz , Vodka-1/2 oz",
    "incorrect": "Space Odyssey, Autodafa, Rum Toddy"
  },
  {
@@ -1991,9 +1991,9 @@ recipe_data = [
  },
  {
    "strDrink": "Grizzly Bear",
-   "questions": "Amaretto-1 part , Jagermeister-1 part , Kahlua-1 part , Milk-2 1/2 parts : Served over ice. Sounds nasty, but tastes great.",
+   "questions": "Amaretto-1 part , Jägermeister-1 part , Kahlua-1 part , Milk-2 1/2 parts : Served over ice. Sounds nasty, but tastes great.",
    "strInstructions": "Served over ice. Sounds nasty, but tastes great.",
-   "strIngredients": "Amaretto-1 part , Jagermeister-1 part , Kahlua-1 part , Milk-2 1/2 parts",
+   "strIngredients": "Amaretto-1 part , Jägermeister-1 part , Kahlua-1 part , Milk-2 1/2 parts",
    "incorrect": "randy Alexander, Hawaiian Cocktail, 151 Florida Bushwacker"
  },
  {
@@ -3741,9 +3741,9 @@ recipe_data = [
  },
  {
    "strDrink": "Zenmeister",
-   "questions": "Jagermeister-1/2 oz , Root Beer-1/2 oz , : Mix together and enjoy",
+   "questions": "Jägermeister-1/2 oz , Root Beer-1/2 oz , : Mix together and enjoy",
    "strInstructions": "Mix together and enjoy",
-   "strIngredients": "Jagermeister-1/2 oz , Root Beer-1/2 oz ,",
+   "strIngredients": "Jägermeister-1/2 oz , Root Beer-1/2 oz ,",
    "incorrect": "Herbal flame, Highland Fling Cocktail, Quentin"
  },
  {
