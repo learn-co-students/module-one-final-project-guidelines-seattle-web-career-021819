@@ -142,12 +142,21 @@ def get_ingredient_from_user
 end
 
 def user_delete_recipes
+  arr = []
  user_recipes = UserRecipe.all.select {|ur| ur.user_id == $curr_user.id}
  saved_recipes = user_recipes.map {|ur| ur.recipe.title}
+
+ saved_recipes.each_with_index do |recipe, index|
+  arr << "#{index+1}: #{recipe}"
+   end
+ puts arr
+
  puts ""
- puts "Please enter the name of the recipe you'd like to delete: "
- unwanted_recipe = STDIN.gets.chomp
- recipe_to_be_deleted = Recipe.find_by(title: unwanted_recipe)
+ puts "Please enter the number of the recipe you'd like to delete: "
+ unwanted_recipe_num = STDIN.gets.chomp
+ unwanted_recipe_num = unwanted_recipe_num.to_i - 1
+ recipe = arr[unwanted_recipe_num][2..-1].strip
+ recipe_to_be_deleted = Recipe.find_by(title: recipe)
  if recipe_to_be_deleted == nil
    puts "Sorry I couldnt find it"
  else
