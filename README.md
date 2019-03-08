@@ -1,6 +1,10 @@
 RECIPE TIME - Recipe Generator App
+------
 
-This is our final project for Flatiron School, Module One. Below details of the application and instructions for how to run it on your computer.
+This is our final project for Flatiron School, Module One. Below are details of the application and instructions for how to run it on your computer.
+
+Project Details
+------
 
 Recipe Time is a Command Line database app that allows users to:
 1. Create an account
