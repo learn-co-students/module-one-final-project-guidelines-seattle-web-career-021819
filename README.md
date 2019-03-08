@@ -2,7 +2,6 @@
 By Josh Loran and Sofia Jonsson
 
 ![alt text](lib/art/Game_of_Thrones_title_card.jpg)
-https://youtu.be/1vymGlDuC5o
 
 ##Welcome
 
@@ -24,6 +23,7 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 4. Type "rake run" to start the program
 
 ![alt text](lib/art/Bundle_install.png)
+[![Everything Is AWESOME](lib/art/got_screenshot_1.png)](https://youtu.be/1vymGlDuC5o)
 
 ###Recognitions
 
