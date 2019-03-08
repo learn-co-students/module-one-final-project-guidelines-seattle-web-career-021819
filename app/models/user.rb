@@ -14,10 +14,9 @@ class User < ActiveRecord::Base
 
   def self.total
    array = Game.all.select { |game| game.user_id == @@current_user.id}
-   binding.pry
    points = array.map { |xx| xx.game_points }.inject(:+)
    @@current_user.update(total_points: points)
-   puts "You have scored #{points} over #{array.length} games!"
+   puts "You have scored #{points} over #{array.length} game(s)!"
 end
 
 
