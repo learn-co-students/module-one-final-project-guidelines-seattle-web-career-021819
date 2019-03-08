@@ -4,7 +4,7 @@
 ### How do I play?
 Below is a short clip of the game.
 
-![Boozy Game Play]()
+![Boozy Game Play](https://github.com/knheidorn/module-one-final-project-guidelines-seattle-web-career-021819/blob/building_classes/media/boozy.gif)
 
 BUT in case you love reading, "Boozy" is a simple cocktail guessing game.
 The user logs in and is presented with either ingredients and a recipe (easy mode)
