@@ -91,9 +91,10 @@ class CLI
 	def self.book
 		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 		puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-		BookArt.display
 		is_running = true
 		while is_running == true
+			puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+			BookArt.display
 			puts "\n========================================"
 			puts "Here is a list of Game of Thrones books."
 			puts "========================================\n\n"
@@ -118,12 +119,14 @@ class CLI
 				book_list << other_list
 				book_list = book_list.flatten
 			puts "\nEnter a book number to see what a loon George R.R. Martin is, or push 0 to return to main menu"
+			puts "\n\n\n\n\n"
 			input = STDIN.gets.chomp
 			if input == "0"
 				is_running = false
 			elsif 0 < input.to_i && input.to_i < 12
-				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters in it."
-			else
+				puts "#{book_list[input.to_i - 1].name} has #{book_list[input.to_i - 1].characters.count} characters fighting for the throne."
+				puts "\nWHAT A SCUFFLE!!!"
+			else	
 				puts "Invalid input"
 			end
 		end
@@ -138,7 +141,7 @@ class CLI
 		is_running2 = true
  		while is_running
 			puts "\n\n\n\n\n"
-				puts "====================================================="
+			puts "====================================================="
 	  		puts "Think you know how many houses are in G.O.T? (yes/no)"
 	  		puts "====================================================="
 	      	input = STDIN.gets.chomp
@@ -161,6 +164,7 @@ class CLI
 	        end
 			DownArrow.display
 		end
+
    		while is_running2
 		   		puts
 	        puts "Enter a house name to find out their Coat of Arms, or press 0 to return to main menu"
