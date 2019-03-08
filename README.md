@@ -17,6 +17,7 @@ Recipe Time is a Command Line database app that allows users to:
 Feeling hungry? Ever had the desire to have a vast, customizable list of recipes at your very fingertips?
 Be hungry no more, Recipe Time is ready to serve you :)
 
+Project video: https://youtu.be/LSt9nLO7f_o 
 
 Installation Instructions
 -------------------------------------
