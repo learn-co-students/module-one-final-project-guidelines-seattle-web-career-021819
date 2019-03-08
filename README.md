@@ -3,7 +3,7 @@
 
 ### How do I play?
 Below is a short clip of the game.
-BUT in case you love reading, "Boozy" is a simple cocktail guessing game.
+BUT in case you love reading, *Boozy* is a simple cocktail guessing game.
 The user logs in and is presented with either ingredients and a recipe (easy mode)
 or ingredients only (hard mode) and must guess the name of the cocktail. Users
 aren't expected to know all 500+ drink names, so to help the user guess we provide
