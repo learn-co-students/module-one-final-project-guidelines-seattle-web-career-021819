@@ -2,9 +2,7 @@ require_relative '../config/environment'
 
 class CLI
 
-  @@input = ""
-
-  @@cheers = <<~'CHEERS'
+  GOODBYE_TEXT = <<~'CHEERS'
                     o           o
                         o   o
                            o         o
@@ -30,39 +28,34 @@ class CLI
                         ==============
   CHEERS
 
+  BOOZY_TEXT = <<~'BOOZY'
 
-  def self.input
-    @@input
-  end
+          /
+        #/
+        ##
+        ##
+        ##
+        ## /###     /###     /###     ######  ##   ####
+        ##/ ###  / / ###  / / ###  / /#######  ##    ###  /
+        ##   ###/ /   ###/ /   ###/ /      ##  ##     ###/
+        ##    ## ##    ## ##    ##         /   ##      ##
+        ##    ## ##    ## ##    ##        /    ##      ##
+        ##    ## ##    ## ##    ##       ###   ##      ##
+        ##    ## ##    ## ##    ##        ###  ##      ##
+        ##    /# ##    ## ##    ##         ### ##      ##
+         ####/    ######   ######           ##  #########
+          ###      ####     ####            ##    #### ###
+                                            /           ###
+                                           /     #####   ###
+                                          /    /#######  /#
+                                         /    /      ###/
 
+  BOOZY
 
-  def self.run
-    puts "
+  attr_accessor :current_user
 
-
-
-        /
-      #/
-      ##
-      ##
-      ##
-      ## /###     /###     /###     ######  ##   ####
-      ##/ ###  / / ###  / / ###  / /#######  ##    ###  /
-      ##   ###/ /   ###/ /   ###/ /      ##  ##     ###/
-      ##    ## ##    ## ##    ##         /   ##      ##
-      ##    ## ##    ## ##    ##        /    ##      ##
-      ##    ## ##    ## ##    ##       ###   ##      ##
-      ##    ## ##    ## ##    ##        ###  ##      ##
-      ##    /# ##    ## ##    ##         ### ##      ##
-       ####/    ######   ######           ##  #########
-        ###      ####     ####            ##    #### ###
-                                          /           ###
-                                         /     #####   ###
-                                        /    /#######  /#
-                                       /    /      ###/
-".green
-
-
+  def run
+    puts BOOZY_TEXT.green
     self.get_user
     self.main_menu
     is_running = false
@@ -70,11 +63,10 @@ class CLI
     end
   end
 
-
-  def self.main_menu
+  def main_menu
     puts <<~MAIN_MENU
 
-    #{"Hi, #{@@input.upcase.bold}! Pick your poison.".cyan}
+    #{"Hi, #{self.current_user.name.upcase.bold}! Pick your poison.".cyan}
 
     #{"[0]".red.bold} #{" Nope. I'm going pour myself a cold one.".cyan}
 
@@ -87,24 +79,20 @@ class CLI
     MAIN_MENU
     choice = STDIN.gets.chomp
     if choice == "0"
-      puts @@cheers.yellow
+      puts GOODBYE_TEXT.yellow
       is_running = false
     elsif choice == "1"  || choice == "one"
-      Game.create_game
-      4.times do
-        self.easy_game
-      end
-      Game.save_game
+      game = Game.create(user: self.current_user, game_points: 0)
+      game.easy_game
+      game.save_game
       self.restart?
     elsif choice == "2"  || choice == "two"
-      Game.create_game
-      4.times do
-        self.hard_game
-      end
-      Game.save_game
+      game = Game.create(user: self.current_user, game_points: 0)
+      game.hard_game
+      game.save_game
       self.restart?
     elsif choice == "3" || choice == "three"
-      User.total
+      self.current_user.total
       self.restart?
     else
       puts "\n[Please enter in option 0, 1, 2, or 3]".cyan
@@ -112,21 +100,21 @@ class CLI
     end
   end
 
-  def self.get_user
+  def get_user
     puts <<~GET_USER
 
     #{"Welcome!".cyan.bold}
 
     #{"Who may I ask is playing today?".cyan}
     GET_USER
-    @@input = STDIN.gets.chomp
-    User.create_or_find_user(input)
+    input = STDIN.gets.chomp
+    self.current_user = User.find_or_create_by(name: input.downcase)
   end
 
-  def self.restart?
+  def restart?
     puts <<~RESTART
 
-    #{"Would you like to play again, #{@@input.upcase.bold}?".cyan}
+    #{"Would you like to play again, #{self.current_user.name.upcase.bold}?".cyan}
 
     #{"[0]".red} #{" GET ME OUT OF HERE! I'm thirsty.".cyan}
 
@@ -135,27 +123,11 @@ class CLI
     RESTART
     play_a = STDIN.gets.chomp
     if play_a == "0"
-      puts @@cheers.yellow
+      puts GOODBYE_TEXT.yellow
       is_running = false
     else
       self.main_menu
     end
-  end
-
-  def self.easy_game
-    Round.create_round
-    Round.get_questions_and_answers
-    Round.play_game
-    answer = STDIN.gets.chomp
-    Round.save_round(answer)
-  end
-
-  def self.hard_game
-    Round.create_round
-    Round.get_questions_and_answers
-    Round.play_game_hard
-    answer = STDIN.gets.chomp
-    Round.save_round(answer)
   end
 
 end
