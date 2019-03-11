@@ -47,7 +47,7 @@ class CLI
     puts "\nHi, #{@@input.upcase.bold}! Pick your poison.".cyan
     puts "\n[0]".red.bold + " Nope. I'm going pour myself a cold one.".cyan
     puts "\n[1]".green.bold + " Sure... but let's play on easy mode.".cyan
-    puts "\n[2]".green.bold + " I consider myself a connisuer. Let's play on hard mode.".cyan
+    puts "\n[2]".green.bold + " I consider myself a connoisseur. Let's play on hard mode.".cyan
     puts "\n[3]".green.bold + " Get my current point total".cyan
     puts
     choice = STDIN.gets.chomp

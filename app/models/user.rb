@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   def self.total
      array = Game.all.select { |game| game.user_id == @@current_user.id}
      points = array.map { |xx| xx.game_points }.inject(:+)
+     # make points 0 instead of nil if no games have been played
+     points = points.nil? ? 0 : points
      @@current_user.update(total_points: points)
      puts "You have scored " + "#{points} points".green.bold + " over " + "#{array.length} game(s)".green.bold + "!"
   end
