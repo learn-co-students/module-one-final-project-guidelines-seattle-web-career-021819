@@ -3,6 +3,34 @@ require_relative '../config/environment'
 class CLI
 
   @@input = ""
+
+  @@cheers = <<~'CHEERS'
+                    o           o
+                        o   o
+                           o         o
+
+                       o       o  o
+                    ________._____________
+                    |   .                |
+                    |^^^.^^^^^.^^^^^^.^^^|
+                    |     .   .   .      |
+                     \      . . . .     /
+ C H E E R S !!!       \     .  .     /
+                         \    ..    /
+                           \      /
+                             \  /
+                              \/
+                              ||
+                              ||
+                              ||
+                              ||
+                              ||
+                              /\
+                             /;;\
+                        ==============
+  CHEERS
+
+
   def self.input
     @@input
   end
@@ -44,54 +72,34 @@ class CLI
 
 
   def self.main_menu
-    puts "\nHi, #{@@input.upcase.bold}! Pick your poison.".cyan
-    puts "\n[0]".red.bold + " Nope. I'm going pour myself a cold one.".cyan
-    puts "\n[1]".green.bold + " Sure... but let's play on easy mode.".cyan
-    puts "\n[2]".green.bold + " I consider myself a connoisseur. Let's play on hard mode.".cyan
-    puts "\n[3]".green.bold + " Get my current point total".cyan
-    puts
+    puts <<~MAIN_MENU
+
+    #{"Hi, #{@@input.upcase.bold}! Pick your poison.".cyan}
+
+    #{"[0]".red.bold} #{" Nope. I'm going pour myself a cold one.".cyan}
+
+    #{"[1]".green.bold} #{" Sure... but let's play on easy mode.".cyan}
+
+    #{"[2]".green.bold} #{" I consider myself a connoisseur. Let's play on hard mode.".cyan}
+
+    #{"[3]".green.bold} #{" Get my current point total".cyan}
+
+    MAIN_MENU
     choice = STDIN.gets.chomp
     if choice == "0"
-      puts "\n                    o           o
-                      o   o
-                         o         o
-
-                     o       o  o
-                  ________._____________
-                  |   .                |
-                  |^^^.^^^^^.^^^^^^.^^^|
-                  |     .   .   .      |
-                   \\      . . . .     /
-C H E E R S !!!      \\     .  .     /
-                       \\    ..    /
-                         \\      /
-                          \\   /
-                            \\/
-                            ||
-                            ||
-                            ||
-                            ||
-                            ||
-                            /\\
-                           /;;\\
-                      ==============
-      ".yellow
-        is_running = false
+      puts @@cheers.yellow
+      is_running = false
     elsif choice == "1"  || choice == "one"
-          Game.create_game
-        i = 0
-        for i in i..4 do
-          self.easy_game
-          i+= 1
-        end
-        Game.save_game
-        self.restart?
+      Game.create_game
+      4.times do
+        self.easy_game
+      end
+      Game.save_game
+      self.restart?
     elsif choice == "2"  || choice == "two"
       Game.create_game
-      i = 0
-      for i in i..4 do
+      4.times do
         self.hard_game
-        i+= 1
       end
       Game.save_game
       self.restart?
@@ -105,42 +113,29 @@ C H E E R S !!!      \\     .  .     /
   end
 
   def self.get_user
-    puts "\nWelcome!".cyan.bold
-    puts "\nWho may I ask is playing today?".cyan
+    puts <<~GET_USER
+
+    #{"Welcome!".cyan.bold}
+
+    #{"Who may I ask is playing today?".cyan}
+    GET_USER
     @@input = STDIN.gets.chomp
-    User.create_user(input)
+    User.create_or_find_user(input)
   end
 
   def self.restart?
-    puts "\nWould you like to play again, #{@@input.upcase.bold}?".cyan
-    puts "\n[0]".red + " GET ME OUT OF HERE! I'm thirsty.".cyan
-    puts "\n[1]".green + " Hell yah! Pour me another.".cyan
+    puts <<~RESTART
+
+    #{"Would you like to play again, #{@@input.upcase.bold}?".cyan}
+
+    #{"[0]".red} #{" GET ME OUT OF HERE! I'm thirsty.".cyan}
+
+    #{"[1]".green} #{" Hell yah! Pour me another.".cyan}
+
+    RESTART
     play_a = STDIN.gets.chomp
     if play_a == "0"
-      puts "\n                    o           o
-                      o   o
-                         o         o
-
-                     o       o  o
-                  ________._____________
-                  |   .                |
-                  |^^^.^^^^^.^^^^^^.^^^|
-                  |     .   .   .      |
-                   \\      . . . .     /
-C H E E R S !!!      \\     .  .     /
-                       \\    ..    /
-                         \\      /
-                          \\   /
-                            \\/
-                            ||
-                            ||
-                            ||
-                            ||
-                            ||
-                            /\\
-                           /;;\\
-                      ==============
-      ".yellow
+      puts @@cheers.yellow
       is_running = false
     else
       self.main_menu
@@ -148,11 +143,11 @@ C H E E R S !!!      \\     .  .     /
   end
 
   def self.easy_game
-      Round.create_round
-      Round.get_questions_and_answers
-      Round.play_game
-      answer = STDIN.gets.chomp
-      Round.save_round(answer)
+    Round.create_round
+    Round.get_questions_and_answers
+    Round.play_game
+    answer = STDIN.gets.chomp
+    Round.save_round(answer)
   end
 
   def self.hard_game

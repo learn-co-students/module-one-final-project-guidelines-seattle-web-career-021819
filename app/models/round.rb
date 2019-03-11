@@ -1,4 +1,3 @@
-require 'pry'
 class Round < ActiveRecord::Base
   belongs_to :recipe
   belongs_to :game
@@ -46,11 +45,16 @@ class Round < ActiveRecord::Base
 
   def self.play_game
     self.get_questions_and_answers
-    puts
-    puts "It's ingredients are:".bold.colorize(:color => :black, :background => :cyan) + " " + "   #{self.ingredients}".strip.cyan
-    puts "\nHere's how to make the drink: ".bold.colorize(:color => :black, :background => :cyan) + " " + "#{self.question}\n".strip.cyan
-    puts "\nWhat's your guess?".cyan + " FYI SPELLING MATTERS\n".cyan.bold
-    self.choices.each {|choice| puts "• " + " #{choice}".strip.green.bold}
+    puts <<~PLAY_GAME
+
+    #{question_heading("It's ingredients are:")} #{self.ingredients.strip.cyan}
+
+    #{question_heading("Here's how to make the drink:")} #{self.question.strip.cyan}
+
+    #{"What's your guess? #{"FYI SPELLING MATTERS".bold}".cyan}
+
+    PLAY_GAME
+    self.choices.each {|choice| puts "• #{choice.strip.green.bold}"}
   end
 
 
@@ -67,23 +71,36 @@ class Round < ActiveRecord::Base
 
   def self.play_game_hard
     self.get_questions_and_answers_hard
-    puts "\nHere's how to make the drink: ".bold.colorize(:color => :black, :background => :cyan) + " " + "#{self.question}\n".strip.cyan
-    puts
-    self.choices.each {|choice| puts "• " + " #{choice}".strip.green}
+    puts <<~PLAY_GAME_HARD
+
+    #{question_heading("Here's how to make the drink:")} #{self.question.strip.cyan}
+
+    PLAY_GAME_HARD
+    self.choices.each {|choice| puts "• #{choice.strip.green}"}
   end
 
   def self.save_round(user_answer)
      if user_answer.downcase == @@answer.downcase
        round = @@current_round.update(correct?: true)
-       puts "\nWell done!".bold.colorize(:color => :black, :background => :green)
-       puts "You added ".cyan+ "10 points".green.bold + " to your score!".cyan
-       puts
+       puts <<~RIGHT_ANSWER
+
+       #{"Well done!".bold.colorize(:color => :black, :background => :green)}
+       #{"You added".cyan} #{"10 points".green.bold} #{"to your score!".cyan}
+
+       RIGHT_ANSWER
      else
        round = @@current_round.update(incorrect?: false)
-       puts "\nHmm... that's not quite right.".bold.colorize(:color => :black, :background => :red)
-       puts "The correct answer is".cyan + " #{@@answer.green.bold}.\n"
-       puts
+       puts <<~WRONG_ANSWER
+
+       #{"Hmm... that's not quite right.".bold.colorize(:color => :black, :background => :red)}
+       #{"The correct answer is".cyan} #{@@answer.green.bold}.
+       
+       WRONG_ANSWER
      end
+  end
+
+  def self.question_heading(string)
+    string.bold.colorize(:color => :black, :background => :cyan)
   end
 
 end
