@@ -3,7 +3,7 @@ require 'sinatra/activerecord/rake'
 
 desc 'Run the CLI'
 task :run do
-    CLI.run
+    CLI.new.run
 end
 
 desc 'starts a console'
