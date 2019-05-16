@@ -1,9 +1,7 @@
 RECIPE TIME - Recipe Generator App
 ------
 
-by Adrienne Miller and Chris Cable
-
-This is our final project for Flatiron School, Module One. Below are details of the application and instructions for how to run it on your computer.
+Final project for Flatiron School, Module One. Below are details of the application and instructions for how to run it on your computer.
 
 ![recipe time welcome screen](https://github.com/adriennemiller/module-one-final-project-guidelines-seattle-web-career-021819/blob/master/recipe-time.png)
 
@@ -16,7 +14,8 @@ Recipe Time is a Command Line database app that allows users to:
 3. Save recipes to their account
 4. Delete recipes from their saved recipe list
 
-Feeling hungry? Ever had the desire to have a vast, customizable list of recipes at your very fingertips?
+This app uses data from the API Recipe Puppy: http://www.recipepuppy.com 
+
 Be hungry no more, Recipe Time is ready to serve you :)
 
 Project video: https://youtu.be/LSt9nLO7f_o 
