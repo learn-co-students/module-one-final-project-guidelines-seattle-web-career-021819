@@ -3,12 +3,12 @@ By Josh Loran and Sofia Jonsson
 
 ![alt text](lib/art/Game_of_Thrones_title_card.jpg)
 
-##Welcome
+## Welcome
 
 For our final project we have built a database sourced from the Game of Thrones "Ice and Fire" API. We have provided instructions below for you to run the application on your local computer.
 
 
-##Details
+## Details
 We have built a Game of Thrones themed searching database using An API Of Ice And Fire. This public database is hosted at https://anapioficeandfire.com/ and requires no authorization to use. Using our CLI, a user will be able to:
 
 1.  Choose from a list of Characters, Books or Houses. This will direct the user to a new list of options relating the topic chosen.
@@ -16,7 +16,7 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 2. From here, the user will be able to dive one step deeper into the facts.
 
 
-##Install Instructions
+## Install Instructions
 1. Clone the repository using your favorite clone method, or typing "git clone git@github.com:WTFCodingPotato/module-one-final-project-guidelines-seattle-web-career-021819.git" into your terminal
 2. Still in terminal type, "cd module-one-final-project-guidelines-seattle-web-career-021819"
 3. Type "bundle install"
@@ -27,7 +27,7 @@ We have built a Game of Thrones themed searching database using An API Of Ice An
 ![alt text](lib/art/Bundle_install.png)
 [![Everything Is AWESOME](lib/art/got_screenshot_1.png)](https://youtu.be/-6aCt-y7opo)
 
-###Recognitions
+### Recognitions
 
 This API uses several frameworks and libraries, with the most important ones being listed below:
 
@@ -37,7 +37,7 @@ Dapper - This micro ORM has been invaluable since we switched from Entity Framew
 
 Thank you to Christopher Johnson and his website https://asciiart.website/ as well as ASCII artists: Tua Xiong, hrr, and "unknown"
 
-###Copyright
+### Copyright
 
 The data associated with "An API of Ice and Fire" is the property of George R.R. Martin. The data displayed by the creator, and us, is used without any claim of ownership.
 
