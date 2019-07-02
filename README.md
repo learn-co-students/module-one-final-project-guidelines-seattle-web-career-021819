@@ -1,4 +1,4 @@
-#Module 1 Final Project
+# Module 1 Final Project
 By Josh Loran and Sofia Jonsson
 
 ![alt text](lib/art/Game_of_Thrones_title_card.jpg)
